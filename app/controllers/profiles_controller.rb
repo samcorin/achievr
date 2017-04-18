@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def before_action
+  def set_user
     @user = current_user
   end
 end
