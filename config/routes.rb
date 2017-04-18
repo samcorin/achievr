@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # root 'dashboards#show'
 
   authenticated :user do
-    root "dashboard#show"
+    root "dashboards#show"
   end
 
   root "pages#home"
