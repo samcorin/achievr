@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  # Styleguide
+  get 'styleguide', to: 'pages#styleguide'
+
   # get ‘/dashboard’ to: 'dashboards#show'
   resource :dashboard, only: [:show]
 
