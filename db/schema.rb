@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418043520) do
+ActiveRecord::Schema.define(version: 20170418051847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,7 +80,9 @@ ActiveRecord::Schema.define(version: 20170418043520) do
     t.string   "photo"
     t.string   "position"
     t.integer  "team_id"
+    t.integer  "mentor_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["mentor_id"], name: "index_users_on_mentor_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["team_id"], name: "index_users_on_team_id", using: :btree
   end
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(version: 20170418043520) do
   add_foreign_key "resources", "teams"
   add_foreign_key "teams", "companies"
   add_foreign_key "users", "teams"
+  add_foreign_key "users", "users", column: "mentor_id"
 end

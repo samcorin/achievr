@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :team #, optional: true
+  belongs_to :mentor, class_name: "User", optional: true, dependent: :destroy
   has_many :badges
 end
