@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'dashboards/show'
-
   authenticated :user do
     root "dashboards#show"
   end
