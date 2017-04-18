@@ -1,0 +1,40 @@
+.btn, .btn-primary {
+  border: none;
+  color: white;
+  &:hover {
+    // background-color: inherit;
+    border: none;
+  }
+  &:focus {
+    background-color: inherit !important;
+    border: none;
+  }
+}
+
+/* Instead of bootstraps really shitty buttons */
+button {
+  border: none !important;
+  color: white;
+  border-width: 0px;
+  padding: 7px;
+  &:hover {
+    // background-color: inherit !important;
+    // border: none;
+  }
+  &:focus {
+    // background-color: inherit !important;
+    // border: none;
+  }
+}
+
+.btn-wide {
+  width: 130px;
+  border-radius: 20px;
+}
+
+.btn-pink {
+  background-color: pink;
+}
+
+.btn-default:hover {
+}
