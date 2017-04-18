@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   authenticated :user do
-    root "dashboards#show"
+    root "dashboards#show", subdomain: 'app'
   end
 
   root "pages#home"
