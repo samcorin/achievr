@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'dashboard#show'
+  # root 'dashboards#show'
+
+  authenticated :user do
+    root "dashboard#show"
+  end
+
+  root "pages#home"
 
   # get ‘/dashboard’ to: 'dashboards#show'
   resource :dashboard, only: [:show]
@@ -9,7 +15,7 @@ Rails.application.routes.draw do
 
   resource :company, only: [:show] do
     member do
-      get :welcome
+      get :welcome, as: 'company_welcome'
     end
   end
 
