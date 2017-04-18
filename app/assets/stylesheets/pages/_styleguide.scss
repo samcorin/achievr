@@ -6,7 +6,7 @@
 }
 
 .style-guide--subentry {
-  background-color: #FAFAFA; // custom color only for this page
+  background-color: white; // custom color only for this page
                              // that's why it's not in variables.scss
   padding: 1.5em;
   margin: 1em 0;
@@ -18,6 +18,7 @@
   .brand-color { background-color: $brand-color; }
 
   .red { background-color: $red; }
+  .pink { background-color: $pink; }
   .blue { background-color: $blue; }
   .yellow { background-color: $yellow; }
   .orange { background-color: $orange; }
