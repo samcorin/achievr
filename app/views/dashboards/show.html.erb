@@ -1,4 +1,155 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
 
-<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+<div class="dashboard-wrapper">
+
+  <!-- <div class="container"> -->
+    <div id="sidebar">
+      <div class="user-front">
+        <img src="http://placehold.it/100x100" class="img-circle">
+        <p>Gill Dates</p>
+        <div class="user-points">
+          <p>5/2000</p>
+        </div>
+      </div>
+      <div class="sidebar-links">
+        <ul>
+          <a href="#"><li>Link 1</li></a>
+          <a href="#"><li>Link 2</li></a>
+          <a href="#"><li>Link 3</li></a>
+        </ul>
+      </div>
+    </div>
+    <!-- TODO -->
+    <!-- Try masonry
+
+    <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      ...
+    </div>
+     -->
+
+
+
+    <!-- <div id="main">
+      <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="grid-item">
+              <div class="card">
+                <h3>email</h3>
+                <p><%#= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%= @user.bio %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <div class="grid-item">
+              <div class="card">
+                <h3>email</h3>
+                <p><%#= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%#= @user.bio %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <div class="grid-item">
+              <div class="card">
+                <h3>email</h3>
+                <p><%#= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%#= @user.bio %></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div> -->
+
+
+    <div id="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>email</h3>
+              <p><%= @user.email %></p>
+              <h5>Bio</h5>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script>
+  // setInterval(function() {
+  //   $(document).ready(function() {
+  //     // Masonry grid setup
+  //     $(".grid").masonry({
+  //       itemSelector: ".grid-item",
+  //       columnWidth: ".grid-item",
+  //       gutter: 15,
+  //       percentPosition: true
+  //     });
+
+  //     // Image replacement handler
+  //     // $(document).on("click", ".js-button", function() {
+  //     //   var imageSrc = $(this).parents(".grid__item").find("img").attr("src");
+  //     //   $(".js-download").attr("href", imageSrc);
+  //     //   $(".js-modal-image").attr("src", imageSrc);
+  //     //   $(document).on("click", ".js-heart", function() {
+  //     //     $(this).toggleClass("active");
+  //     //   });
+  //     // });
+  //   })
+  // }, 200)
+</script>

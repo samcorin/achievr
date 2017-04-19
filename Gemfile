@@ -21,6 +21,7 @@ gem 'autoprefixer-rails'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'active_admin_flat_skin'
+gem 'rails-assets-masonry', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'binding_of_caller'
