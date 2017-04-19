@@ -1,4 +1,4 @@
-<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('bg1.png');">
+<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), asset-url('bg1.jpg');">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
@@ -19,14 +19,11 @@
             <div class="card-footer text-center">
               <%= f.button :submit, "Log in", class: "btn-wide btn-pink" %>
               <div class="forgot">
-                  <%#= link_to "Forgot your password?", %>
-                  <a href="#pablo">Forgot your password?</a>
-                  <%= render "devise/shared/links" %>
+                  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
               </div>
             </div>
           </div>
         <% end %>
-
 
       </div>
     </div>
