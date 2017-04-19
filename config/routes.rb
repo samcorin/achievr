@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
 
   authenticated :user do
     root "dashboards#show" #, subdomain: 'app'
