@@ -74,31 +74,17 @@
     </div> -->
 
 
-
-    <% content_for(:after_js) do %>
-      <%= javascript_tag do %>
-        $('#test-sw').click(function(){
-          swal(
-          'Oops...',
-          'Something went wrong!',
-          'error'
-          );
-        })
-      <% end %>
-    <% end %>
-
-
     <div id="main">
       <div class="container-fluid">
         <div class="row">
 
           <div class="col-xs-12 col-md-6">
-            <div class="card" id="team">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
+            <div class="card">
+              <h3>Your mentor</h3>
+              <p><%= mentor(@user) %></p>
               <h5>Bio</h5>
               <p><%= @user.bio %></p>
-              <div class="btn btn-primary" id="test-sw"></div>
+              <div class="btn btn-primary" id="team">Check more information about your mentor and set the meeting with your mentor</div>
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
