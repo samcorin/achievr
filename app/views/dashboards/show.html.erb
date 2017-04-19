@@ -12,9 +12,11 @@
       </div>
       <div class="sidebar-links">
         <ul>
-          <a href="#"><li>Link 1</li></a>
+          <a href="#" id="modal-1"><li>Link 1</li></a>
           <a href="#"><li>Link 2</li></a>
-          <a href="#"><li>Link 3</li></a>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -75,8 +77,9 @@
     <div id="main">
       <div class="container-fluid">
         <div class="row">
+
           <div class="col-xs-12 col-md-6">
-            <div class="card">
+            <div class="card" id="team">
               <h3>email</h3>
               <p><%= @user.email %></p>
               <h5>Bio</h5>
@@ -129,7 +132,24 @@
     </div>
 </div>
 
+<!-- TODO -->
+<!-- Dynamic ID clicks -->
+<% content_for(:after_js) do %>
+  <script>
+    $("#team").click(function() {
+    swal(
+      'Good job!',
+      'You got a perfect score!',
+      'success'
+    )
+  })
+  </script>
+<% end %>
 
+
+
+
+<!-- Grid -->
 <script>
   // setInterval(function() {
   //   $(document).ready(function() {
