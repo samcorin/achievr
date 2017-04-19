@@ -117,7 +117,8 @@
 <% content_for(:after_js) do %>
 
   <script>
-    <% if @user.points > 10 %>
+    <%# if @user.points > 10 %>
+    // need to add default value on points for users
       $.notify({
         // options
         message: 'Hello World'
@@ -125,7 +126,7 @@
         // settings
         type: 'danger'
       });
-    <% end %>
+    <%# end %>
   </script>
 
   <script>
