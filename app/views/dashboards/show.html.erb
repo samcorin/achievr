@@ -5,7 +5,7 @@
     <div id="sidebar">
       <div class="user-front">
         <img src="http://placehold.it/100x100" class="img-circle">
-        <p>Gill Dates</p>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
         <div class="user-points">
           <p>5/2000</p>
         </div>
@@ -14,7 +14,9 @@
         <ul>
           <a href="#"><li>Link 1</li></a>
           <a href="#"><li>Link 2</li></a>
-          <a href="#"><li>Link 3</li></a>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %>
         </ul>
       </div>
     </div>
