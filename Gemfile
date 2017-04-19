@@ -24,6 +24,8 @@ gem 'active_admin_flat_skin'
 gem 'rails-assets-masonry', source: 'https://rails-assets.org'
 gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
 
+gem 'devise_invitable'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
