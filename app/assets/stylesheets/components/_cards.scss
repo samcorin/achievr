@@ -5,30 +5,30 @@
   color: #252422;
   margin-bottom: 10px;
   border-radius: 6px;
+  padding: 20px;
 }
 
-// .card .card-title,
-// .card .stats,
-// .card .category,
-// .card .description,
-// .card .social-line,
-// .card .actions,
-// .card .card-content,
-// .card .card-footer,
-// .card small,
-// .card a {
-//   position: relative;
-// }
-
-.card-title {
-  position: relative;
+.card h2 {
+  margin: 15px 0;
+  font-size: 26px;
+  font-weight: 300;
+}
+.card label {
+  font-size: 14px;
 }
 
-.card-content {
-  position: relative;
-}
-
+.card-header,
+.card-title,
+.card-content,
 .card-footer {
   position: relative;
 }
 
+.card-footer, .card-content {
+  margin-top: 20px;
+}
+
+.card a {
+  margin-top: 15px;
+  font-weight: 300;
+}
