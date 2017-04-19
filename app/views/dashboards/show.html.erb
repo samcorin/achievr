@@ -2,17 +2,18 @@
 <div class="dashboard-wrapper">
 
   <!-- <div class="container"> -->
+    <!-- PARTIAL FOR SIDEBAR? -->
     <div id="sidebar">
       <div class="user-front">
         <img src="http://placehold.it/100x100" class="img-circle">
-        <p>Gill Dates</p>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
         <div class="user-points">
-          <p>5/2000</p>
+          <p><%= @user.points %>/100</p>
         </div>
       </div>
       <div class="sidebar-links">
         <ul>
-          <a href="#" id="modal-1"><li>Link 1</li></a>
+          <a href="#" id="test"><li>TEST</li></a>
           <a href="#"><li>Link 2</li></a>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <%= t(".sign_out", default: "Log out") %>
@@ -87,7 +88,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
-            <div class="card">
+            <div class="card" id="mentor">
               <h3>email</h3>
               <p><%= @user.email %></p>
               <h5>Bio</h5>
@@ -95,7 +96,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
-            <div class="card">
+            <div class="card" id="expectations">
               <h3>email</h3>
               <p><%= @user.email %></p>
               <h5>Bio</h5>
@@ -135,15 +136,94 @@
 <!-- TODO -->
 <!-- Dynamic ID clicks -->
 <% content_for(:after_js) do %>
+
   <script>
-    $("#team").click(function() {
-    swal(
-      'Good job!',
-      'You got a perfect score!',
-      'success'
-    )
-  })
+    <% if @user.points > 10 %>
+      $.notify({
+        // options
+        message: 'Hello World'
+      },{
+        // settings
+        type: 'danger'
+      });
+    <% end %>
   </script>
+
+  <script>
+
+    $(".card").click(function(el) {
+        swal(
+        'Good job!',
+        'You got a perfect score!',
+        'success'
+      )
+    })
+
+    // TEST QUIZ
+    $("#test").click(function(el) {
+      swal.setDefaults({
+        input: 'text',
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+        animation: false,
+        inputValidator: function (value) {
+          return new Promise(function (resolve, reject) {
+            if (value) {
+              resolve()
+            } else {
+              reject('You need to write something!')
+            }
+          })
+        },
+        progressSteps: ['1', '2', '3']
+      })
+
+      var steps = [
+        {
+          title: 'Question 1',
+          text: 'Chaining swal2 modals is easy'
+        },
+        {
+          title: 'Question 2',
+          text: 'What is the name of this company?'
+        },
+        {
+          title: 'Question 3',
+          text: 'What is your name?'
+        }
+      ]
+
+      swal.queue(steps).then(function (result) {
+        swal.resetDefaults()
+        swal({
+          title: 'All done!',
+          html:
+            'Your answers: <pre>' +
+              JSON.stringify(result) +
+            '</pre>',
+          confirmButtonText: 'Lovely!',
+          showCancelButton: false
+        })
+      }, function () {
+        swal.resetDefaults()
+      }).then(function() {
+        // helper function
+        <% add_points(@user, 6) %>
+        console.log("HELLOOO")
+
+      })
+    })
+
+    // $("#team").click(function() {
+    //   swal(
+    //     'Good job!',
+    //     'You got a perfect score!',
+    //     'success'
+    //   )
+    // })
+  </script>
+
+
 <% end %>
 
 
