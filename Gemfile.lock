@@ -200,6 +200,7 @@ GEM
       rails-assets-ev-emitter (>= 1.0.0, < 2)
       rails-assets-fizzy-ui-utils (>= 2.0.0, < 3)
       rails-assets-get-size (>= 2.0.2, < 3)
+    rails-assets-sweetalert2 (6.6.0)
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6)
@@ -283,6 +284,7 @@ DEPENDENCIES
   puma
   rails (= 5.0.2)
   rails-assets-masonry!
+  rails-assets-sweetalert2!
   redis
   sass-rails
   simple_form
