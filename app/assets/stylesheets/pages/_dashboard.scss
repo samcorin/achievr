@@ -6,11 +6,12 @@
 }
 
 #sidebar {
-  color: white;
+  color: rgba(255,255,255,0.6); // Needs a variable
   padding: 40px;
   height: inherit;
   width: 250px;
   min-width: 250px;
+
   background-color: $brand-color;
   .user-front {
     text-align: center;
@@ -22,8 +23,6 @@
 
 @media (max-width: 700px) {
   .dashboard-wrapper {
-    // width: 100vw;
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     #sidebar {
@@ -41,10 +40,38 @@
   opacity: 0.7;
 }
 
+.sidebar-links {
+  margin-top: 50px;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    color: rgba(255,255,255,0.6);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* MAIN CONTENT */
+
 #main {
   height: inherit;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #E8E7EE;
   overflow-y: auto;
+  .card {
+    margin: 15px;
+  }
 }
