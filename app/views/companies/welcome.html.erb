@@ -1,2 +1,4 @@
-<h1>Companies#welcome</h1>
+<h1>Companies#welcome - Only for first sign in</h1>
 <p>Find me in app/views/companies/welcome.html.erb</p>
+
+<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
