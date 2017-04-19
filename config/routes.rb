@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show]
 
   # get ‘/login’ to: 'devise#login'
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resource :company, only: [:show] do
     member do
-      get :welcome, as: 'company_welcome'
+      get :welcome, as: 'welcome'
     end
   end
 

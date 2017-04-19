@@ -75,6 +75,20 @@
     </div> -->
 
 
+
+    <% content_for(:after_js) do %>
+      <%= javascript_tag do %>
+        $('#test-sw').click(function(){
+          swal(
+          'Oops...',
+          'Something went wrong!',
+          'error'
+          );
+        })
+      <% end %>
+    <% end %>
+
+
     <div id="main">
       <div class="container-fluid">
       <%= react_component("Cards", props: {name: 'HELLO'}) %>
