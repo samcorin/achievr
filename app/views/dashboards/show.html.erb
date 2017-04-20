@@ -96,7 +96,7 @@
       <div class="lg-card">
         <div class="lg-card-content">
           <i class="fa fa-times close" aria-hidden="true"></i>
-          <h1>Insert Video Here</h1>
+          <%= render 'welcome' %>
         </div>
       </div>
       <!-- <div class="container-fluid"> -->
@@ -131,27 +131,27 @@
               <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>Meet the mentor</h3>
-              <div class="mentor">
-                <div class="mentor-photo">
-                  <% if @user.mentor %>
-                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                  <% end %>
+          <% if @user.mentor %>
+            <div class="col-xs-12 col-md-6">
+              <div class="card">
+                <h3>Meet the mentor</h3>
+                <div class="mentor">
+                  <div class="mentor-photo">
+                      <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
+                  </div>
+                  <div class="mentor-text">
+                    <h4>
+                        <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
+                    </h4>
+                    <h5>
+                        <%= @user.mentor.team.name %>
+                    </h5>
+                  </div>
                 </div>
-                <div class="mentor-text">
-                  <h4>
-                    <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                  </h4>
-                  <h5>
-                    <%= @user.mentor.team.name %>
-                  </h5>
-                </div>
+                <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
               </div>
-              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
             </div>
-          </div>
+          <% end %>
 
           <% @users.each do |user| %>
             <div class="col-xs-12 col-md-6">
