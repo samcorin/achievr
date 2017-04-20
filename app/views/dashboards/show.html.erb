@@ -126,7 +126,10 @@
           <div class="col-xs-12 col-md-6">
             <div class="card" id="meet-the-mentor">
               <h3>Meet the mentor</h3>
-              <%= image_tag @user.mentor.photo, class: 'img-circle' %>
+              <div>
+                <%= image_tag @user.mentor.photo, class: 'img-circle' %>
+              </div>
+
             </div>
           </div>
           <% @users.each do |user| %>
@@ -237,6 +240,7 @@
     // })
 
     // for point up by clicking checkbox
+    // Not yet
 
   </script>
 
