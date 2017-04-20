@@ -1,10 +1,4 @@
 module DashboardsHelper
-  def add_points(user, points)
-    @user = user
-    @user.points += points
-    @user.save!
-  end
-
   def days_passed
     ( ( (Time.now - @user.created_at) / 1.day) + 1).round
   end
