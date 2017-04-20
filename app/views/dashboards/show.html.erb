@@ -132,14 +132,24 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
-            <div class="card" id="meet-the-mentor">
+            <div class="card">
               <h3>Meet the mentor</h3>
-              <div>
-              <% if @user.mentor %>
-                <%= image_tag @user.mentor.photo, class: 'img-circle' %>
-              <% end %>
+              <div class="mentor">
+                <div class="mentor-photo">
+                  <% if @user.mentor %>
+                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
+                  <% end %>
+                </div>
+                <div class="mentor-text">
+                  <h4>
+                    <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
+                  </h4>
+                  <p>
+                    <%= @user.mentor.bio %>
+                  </p>
+                </div>
               </div>
-
+              <div class="btn btn-primary" id="meet-the-mentor">Click to more info and set the meeting</div>
             </div>
           </div>
 
@@ -171,14 +181,15 @@
 
 <% content_for(:after_js) do %>
   <script>
-    // temporarily commeted out for checkboxes
-    // $(".card").click(function(el) {
-    //     swal(
-    //     'Good job!',
-    //     'You got a perfect score!',
-    //     'success'
-    //   )
-    // })
+
+    // for meet the mentor modal
+    $("#meet-the-mentor").click(function(el) {
+        swal(
+        'Good job!',
+        'You got a perfect score!',
+        'success'
+      )
+    })
 
     var current_user_points = <%= current_user.points %>;
     $('.close').click(function(el) {
