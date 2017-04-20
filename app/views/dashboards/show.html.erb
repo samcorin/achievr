@@ -131,6 +131,7 @@
 
 <% content_for(:after_js) do %>
   <script>
+    var current_user_points = <%= current_user.points %>;
     $('.close').click(function(el) {
       console.log(el)
       console.log($('.lg-card'))
@@ -189,18 +190,19 @@
         progressSteps: ['1', '2', '3']
       })
 
+      // should be a hash? with correct answers?
       var steps = [
         {
           title: 'Question 1',
-          text: 'Chaining swal2 modals is easy'
+          text: '<%= eq_module1 %>'
         },
         {
           title: 'Question 2',
-          text: 'What is the name of this company?'
+          text: '<%= eq_module1 %>'
         },
         {
           title: 'Question 3',
-          text: 'What is your name?'
+          text: '<%= eq_module1 %>'
         }
       ]
 
@@ -222,7 +224,6 @@
       }, function () {
         swal.resetDefaults()
       }).then(function() {
-
         var data = { user_id: <%= current_user.id %>, points: 10 };
         console.log(data);
         $.ajax({
@@ -239,9 +240,9 @@
         });
         // if perfect score ...
 
-        var updated_score = <%= current_user.points %> + 10;
-        $("#user-points-updatable").text(updated_score);
-        $("#user-progress-bar").css({"width": updated_score + "%"});
+        current_user_points += 10;
+        $("#user-points-updatable").text(current_user_points);
+        $("#user-progress-bar").css({"width": current_user_points + "%"});
 
       })
     })
