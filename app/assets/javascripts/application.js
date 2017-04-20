@@ -1,5 +1,4 @@
 //= require webpack-bundle
-
 //= require sweetalert2
 //= require masonry
 //= require jquery
