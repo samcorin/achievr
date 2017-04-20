@@ -1,11 +1,11 @@
-<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('bg1.jpg');">
+<div class="wrapper" style="background-color: #3D2C63">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="card">
             <div class="card-header">
-                <h2 class="card-title">Log in</h2>
+                <h2 class="card-title text-center">Log in</h2>
             </div>
             <div class="card-content">
               <div class="form-group">
@@ -16,17 +16,13 @@
               </div>
             </div>
             <div class="card-footer text-center">
-              <%= f.button :submit, "Log in", class: "btn-wide btn-pink" %>
+              <%= f.button :submit, "Log in", class: "btn-pink" %>
               <div class="forgot">
-                  <%#= link_to "Forgot your password?", %>
-                  <a href="#pablo">Forgot your password?</a>
-                  <%= render "devise/shared/links" %>
+                  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
               </div>
             </div>
           </div>
         <% end %>
-
-
       </div>
     </div>
   </div>

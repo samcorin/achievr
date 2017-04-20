@@ -1,176 +1,300 @@
 
 <div class="dashboard-wrapper">
 
-  <!-- <div class="container"> -->
+    <!-- PARTIAL FOR SIDEBAR? -->
+    <!-- <div id="mini-sidebar">
+      <div class="small-menu right">
+        test
+      </div>
+    </div> -->
+
     <div id="sidebar">
       <div class="user-front">
         <img src="http://placehold.it/100x100" class="img-circle">
-        <p>Gill Dates</p>
+        <p><%= current_user.first_name %> <%= current_user.last_name %></p>
         <div class="user-points">
-          <p>5/2000</p>
+          <p><span id="user-points-updatable"><%= current_user.points %></span>/100</p>
+        </div>
+        <div class="progress">
+          <div id="user-progress-bar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= current_user.points %>%">
+            <span class="sr-only"><span id="user-points-updatable"><%= current_user.points %></span>% Complete (success)</span>
+          </div>
         </div>
       </div>
       <div class="sidebar-links">
         <ul>
-          <a href="#" id="modal-1"><li>Link 1</li></a>
+          <a href="#" id="test"><li>TEST</li></a>
           <a href="#"><li>Link 2</li></a>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <%= t(".sign_out", default: "Log out") %>
           <% end %>
         </ul>
       </div>
+      <br>
+      <div class="days-passed">
+        Days passed: <%= days_passed %>
+      </div>
+      <div class="question">
+        <em><%= eq_module1  %></em>
+      </div>
     </div>
-    <!-- TODO -->
-    <!-- Try masonry
-
-    <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      ...
-    </div>
-     -->
 
 
-
+    <!-- MAIN -->
     <!-- <div id="main">
       <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <div class="grid-item">
+          <div class="col-xs-12 col-md-6 grid-item">
+
               <div class="card">
                 <h3>email</h3>
-                <p><%#= @user.email %></p>
+                <p><%= @user.email %></p>
                 <h5>Bio</h5>
+                <p><%= @user.bio %></p>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6 grid-item">
+
+              <div class="card">
+                <h3>email</h3>
+                <p><%= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%= @user.bio %></p>
+                <p><%= @user.bio %></p>
+                <p><%= @user.bio %></p>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6 grid-item">
+
+              <div class="card">
+                <h3>email</h3>
+                <p><%= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%= @user.bio %></p>
+                <p><%= @user.bio %></p>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6 grid-item">
+
+              <div class="card">
+                <h3>email</h3>
+                <p><%= @user.email %></p>
+                <h5>Bio</h5>
+                <p><%= @user.bio %></p>
                 <p><%= @user.bio %></p>
               </div>
             </div>
           </div>
-
-          <div class="col-xs-12 col-md-6">
-            <div class="grid-item">
-              <div class="card">
-                <h3>email</h3>
-                <p><%#= @user.email %></p>
-                <h5>Bio</h5>
-                <p><%#= @user.bio %></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-md-6">
-            <div class="grid-item">
-              <div class="card">
-                <h3>email</h3>
-                <p><%#= @user.email %></p>
-                <h5>Bio</h5>
-                <p><%#= @user.bio %></p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </div> -->
 
 
+    <!-- React output -->
     <div id="main">
+      <div class="lg-card">
+        <div class="lg-card-content">
+          <i class="fa fa-times close" aria-hidden="true"></i>
+          <h1>Close me</h1>
+        </div>
+      </div>
       <div class="container-fluid">
         <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>HR Docs</h3>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <a href="#">Fill the personal finformation</a>
+                  </h4>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <a href="#">Fill the payroll finformation</a>
+                  </h4>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <%= link_to "Check the #{@user.team.company.name}'s info", company_path %>
+                  </h4>
+                </label>
+              </div>
+              <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card" id="meet-the-mentor">
+              <h3>Meet the mentor</h3>
+              <div>
+              <% if @user.mentor %>
+                <%= image_tag @user.mentor.photo, class: 'img-circle' %>
+              <% end %>
+              </div>
 
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>Your mentor</h3>
-              <p><%= mentor(@user) %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
-              <div class="btn btn-primary" id="team">Check more information about your mentor and set the meeting with your mentor</div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="card">
-              <h3>email</h3>
-              <p><%= @user.email %></p>
-              <h5>Bio</h5>
-              <p><%= @user.bio %></p>
             </div>
           </div>
 
+          <% @users.each do |user| %>
+            <div class="col-xs-12 col-md-6">
+              <div class="card" id="team">
+                <h3>email</h3>
+                <h4><%= user.email %></h4>
+                <br>
+                <h5>Bio</h5>
+                <p><%= user.bio %></p>
+                <!-- Testing purposes -->
+                <% if user.first_name == "Nicolas" %>
+                  <h3>***MarkdownEditor***</h3>
+                  <%= react_component("MarkdownEditor") %>
+                <% end %>
+                <% if user.first_name == "Sam" %>
+                  <h3>***MarkdownEditor***</h3>
+                  <%= react_component("MarkdownEditor") %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
+
 </div>
 
-<!-- TODO -->
-<!-- Dynamic ID clicks -->
 <% content_for(:after_js) do %>
   <script>
-    $("#team").click(function() {
-    swal(
-      'Good job!',
-      'You got a perfect score!',
-      'success'
-    )
-  })
-  </script>
-<% end %>
+    // temporarily commeted out for checkboxes
+    // $(".card").click(function(el) {
+    //     swal(
+    //     'Good job!',
+    //     'You got a perfect score!',
+    //     'success'
+    //   )
+    // })
+
+    var current_user_points = <%= current_user.points %>;
+    $('.close').click(function(el) {
+      console.log(el)
+      console.log($('.lg-card'))
+      $('.lg-card').remove();
+    })
 
 
+    // Masonry JS
+    // ERROR
+    // .masonry is not a function...
+    // v1
+    // $(".grid").masonry({
+    //   itemSelector: ".grid-item",
+    //   columnWidth: 200,
+    //   gutter: 15,
+    //   percentPosition: true
+    // });
 
 
-<!-- Grid -->
-<script>
-  // setInterval(function() {
-  //   $(document).ready(function() {
-  //     // Masonry grid setup
-  //     $(".grid").masonry({
-  //       itemSelector: ".grid-item",
-  //       columnWidth: ".grid-item",
-  //       gutter: 15,
-  //       percentPosition: true
-  //     });
+    // Points events
+    // <%# if @user.points > 10 %>
+    // // need to add default value on points for users
+    //   $.notify({
+    //     // options
+    //     message: 'Hello World'
+    //   },{
+    //     // settings
+    //     type: 'danger'
+    //   });
+    // <%# end %>
 
-  //     // Image replacement handler
-  //     // $(document).on("click", ".js-button", function() {
-  //     //   var imageSrc = $(this).parents(".grid__item").find("img").attr("src");
-  //     //   $(".js-download").attr("href", imageSrc);
-  //     //   $(".js-modal-image").attr("src", imageSrc);
-  //     //   $(document).on("click", ".js-heart", function() {
-  //     //     $(this).toggleClass("active");
-  //     //   });
-  //     // });
-  //   })
-  // }, 200)
+    // Good job modal
+    // $(".card").click(function(el) {
+    //     swal(
+    //     'Good job!',
+    //     'You got a perfect score!',
+    //     'success'
+    //   )
+    // })
+
+    // TEST QUIZ
+    $("#test").click(function(el) {
+      swal.setDefaults({
+        input: 'text',
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+        animation: false,
+        inputValidator: function (value) {
+          return new Promise(function (resolve, reject) {
+            if (value) {
+              resolve()
+            } else {
+              reject('You need to write something!')
+            }
+          })
+        },
+        progressSteps: ['1', '2', '3']
+      })
+
+      // should be a hash? with correct answers?
+      var steps = [
+        {
+          title: 'Question 1',
+          text: '<%= eq_module1 %>'
+        },
+        {
+          title: 'Question 2',
+          text: '<%= eq_module1 %>'
+        },
+        {
+          title: 'Question 3',
+          text: '<%= eq_module1 %>'
+        }
+      ]
+
+      swal.queue(steps).then(function (result) {
+        swal.resetDefaults()
+        // add ADV logic later
+        var correct_answers = ['true', 'false', 'true'];
+        console.log(result)
+
+        swal({
+          title: 'All done!',
+          html:
+            'Your answers: <pre>' +
+              JSON.stringify(result) +
+            '</pre>',
+          confirmButtonText: 'Lovely!',
+          showCancelButton: false
+        })
+      }, function () {
+        swal.resetDefaults()
+      }).then(function() {
+        var data = { user_id: <%= current_user.id %>, points: 10 };
+        console.log(data);
+        $.ajax({
+          crossOrigin: true,
+          type: "POST",
+          data: data,
+          url: "<%= request.base_url %>/add_points",
+          success: function(response) {
+            console.log(response)
+            // var updated_score = <%= current_user.points %> + 10;
+            // $("#user-points-updatable").text(updated_score);
+            // $("#user-progress-bar").css({"width": updated_score + "%"});
+          }
+        });
+        // if perfect score ...
+
+        current_user_points += 10;
+        $("#user-points-updatable").text(current_user_points);
+        $("#user-progress-bar").css({"width": current_user_points + "%"});
+
+      })
+    })
 </script>
+<% end %>

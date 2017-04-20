@@ -5,19 +5,25 @@
   flex-direction: row;
 }
 
+#mini-sidebar {
+  visibility: hidden;
+}
+
 #sidebar {
   color: rgba(255,255,255,0.6); // Needs a variable
   padding: 40px;
   height: inherit;
   width: 250px;
   min-width: 250px;
-
   background-color: $brand-color;
   .user-front {
     text-align: center;
   }
   img {
     margin: 15px auto;
+  }
+  .question {
+    margin-top: 30px;
   }
 }
 
@@ -32,6 +38,9 @@
         display: none;
       }
     }
+  }
+  #mini-siderbar {
+    visibility: visible;
   }
 }
 
@@ -62,7 +71,6 @@
 }
 
 
-
 /* MAIN CONTENT */
 
 #main {
@@ -73,5 +81,28 @@
   overflow-y: auto;
   .card {
     margin: 15px auto;
+  }
+}
+
+
+.lg-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #C8CBFF;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  h1 {
+    font-size: 6rem;
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 5rem;
   }
 }

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'hello_world', to: 'hello_world#index'
   ActiveAdmin.routes(self)
 
   authenticated :user do
     root "dashboards#show" #, subdomain: 'app'
+    post '/add_points', to: 'users#update'
   end
 
   root "pages#home"
