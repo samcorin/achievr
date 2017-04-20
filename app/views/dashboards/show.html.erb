@@ -93,7 +93,42 @@
       <div class="container-fluid">
       <%= react_component("Cards", props: {name: 'HELLO'}) %>
         <div class="row">
-
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <h3>HR Docs</h3>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <a href="#">Fill the personal finformation</a>
+                  </h4>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <a href="#">Fill the payroll finformation</a>
+                  </h4>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <h4>
+                    <input type="checkbox" value="first_checkbox">
+                    <%= link_to "Check the #{@user.team.company.name}'s info", company_path %>
+                  </h4>
+                </label>
+              </div>
+              <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="card" id="meet-the-mentor">
+              <h3>Meet the mentor</h3>
+              <%= image_tag @user.mentor.photo, class: 'img-circle' %>
+            </div>
+          </div>
           <% @users.each do |user| %>
             <div class="col-xs-12 col-md-6">
               <div class="card" id="team">
@@ -105,8 +140,6 @@
               </div>
             </div>
           <% end %>
-
-
         </div>
       </div>
     </div>
@@ -131,13 +164,14 @@
 
   <script>
 
-    $(".card").click(function(el) {
-        swal(
-        'Good job!',
-        'You got a perfect score!',
-        'success'
-      )
-    })
+    // temporarily commeted out for checkboxes
+    // $(".card").click(function(el) {
+    //     swal(
+    //     'Good job!',
+    //     'You got a perfect score!',
+    //     'success'
+    //   )
+    // })
 
     // TEST QUIZ
     $("#test").click(function(el) {
@@ -201,6 +235,9 @@
     //     'success'
     //   )
     // })
+
+    // for point up by clicking checkbox
+
   </script>
 
 
