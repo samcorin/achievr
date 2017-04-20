@@ -1,11 +1,28 @@
-<h2><%= t 'devise.invitations.edit.header' %></h2>
-
-<%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token %>
-
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-
-  <%= f.button :submit, t("devise.invitations.edit.submit_button") %>
-<% end %>
+<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), asset-url('bg1.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+        <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :invitation_token %>
+          <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><%= t 'devise.invitations.edit.header' %></h2>
+            </div>
+            <div class="card-content">
+              <div class="form-group">
+                  <%= f.input :password, class: "input-no-border" %>
+              </div>
+              <div class="form-group">
+                  <%= f.input :password_confirmation, class: "input-no-border" %>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+                <%= f.button :submit, t("devise.invitations.edit.submit_button"), class: "btn-wide btn-pink" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
