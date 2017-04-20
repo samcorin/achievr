@@ -25,6 +25,7 @@ gem 'rails-assets-masonry', source: 'https://rails-assets.org'
 gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
 gem 'rails-assets-remarkable-bootstrap-notify', source: 'https://rails-assets.org'
 gem "react_on_rails", "~> 6"
+gem 'rails-assets-animate.css', source: 'https://rails-assets.org'
 
 gem 'devise_invitable'
 
