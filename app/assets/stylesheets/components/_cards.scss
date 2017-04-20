@@ -32,3 +32,19 @@
   margin-top: 15px;
   font-weight: 300;
 }
+
+.card .mentor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mentor-photo {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.mentor-text {
+  width: 200px;
+}
+

@@ -132,14 +132,24 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
-            <div class="card" id="meet-the-mentor">
+            <div class="card">
               <h3>Meet the mentor</h3>
-              <div>
-              <% if @user.mentor %>
-                <%= image_tag @user.mentor.photo, class: 'img-circle' %>
-              <% end %>
+              <div class="mentor">
+                <div class="mentor-photo">
+                  <% if @user.mentor %>
+                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
+                  <% end %>
+                </div>
+                <div class="mentor-text">
+                  <h4>
+                    <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
+                  </h4>
+                  <h5>
+                    <%= @user.mentor.team.name %>
+                  </h5>
+                </div>
               </div>
-
+              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
             </div>
           </div>
 
@@ -166,15 +176,57 @@
         </div>
       </div>
     </div>
-
 </div>
+
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title" id="myModalLabel">More About <%= @user.mentor.first_name %></h4>
+      </div>
+      <div class="modal-body">
+        <center>
+        <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
+        <h3 class="media-heading"><%= @user.mentor.first_name %> <%= @user.mentor.last_name %><small> <%= @user.mentor.team.name %></small></h3>
+        <span><strong>Skills: </strong></span>
+            <span class="label label-warning">HTML5/CSS</span>
+            <span class="label label-info">Adobe CS 5.5</span>
+            <span class="label label-info">Microsoft Office</span>
+            <span class="label label-success">Windows XP, Vista, 7</span>
+        </center>
+        <hr>
+        <center>
+        <p class="text-left"><strong>Bio: </strong><br>
+            <%= @user.mentor.bio %></p>
+        <br>
+        </center>
+      </div>
+      <div class="modal-footer">
+        <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <% content_for(:after_js) do %>
   <script>
-    // temporarily commeted out for checkboxes
-    // $(".card").click(function(el) {
+
+    // for meet the mentor modal (do not use anymore)
+    // $("#meet-the-mentor").click(function(el) {
     //     swal(
-    //     'Good job!',
+    //     '<%= j @user.mentor.first_name %> <%= j @user.mentor.last_name %>',
     //     'You got a perfect score!',
     //     'success'
     //   )
