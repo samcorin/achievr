@@ -135,7 +135,9 @@
             <div class="card" id="meet-the-mentor">
               <h3>Meet the mentor</h3>
               <div>
+              <% if @user.mentor %>
                 <%= image_tag @user.mentor.photo, class: 'img-circle' %>
+              <% end %>
               </div>
 
             </div>
@@ -177,7 +179,7 @@
     //     'success'
     //   )
     // })
-    
+
     var current_user_points = <%= current_user.points %>;
     $('.close').click(function(el) {
       console.log(el)
