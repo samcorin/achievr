@@ -34,47 +34,55 @@ sam = User.create!(
   points: 0,
   email: 'sam@indeed.com',
   password: '123123',
-  photo: "https://lorempixel.com/200/200/business",
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/sam_jokcp6.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
 )
 
-User.create!(
+nico = User.create!(
   first_name: 'Nicolas',
   last_name: 'Duchemin',
   points: 0,
   email: 'nicolas@indeed.com',
   password: '123123',
-  photo: "https://lorempixel.com/200/200/business",
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/nico_r2kflm.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team,
-  mentor: sam
 )
 
-User.create!(
+hide = User.create!(
   first_name: 'Hidehiro',
   last_name: 'Nagaoka',
   points: 0,
   email: 'hidehiro@indeed.com',
   password: '123123',
-  photo: "https://lorempixel.com/200/200/business",
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
 )
 
-User.create!(
+dim = User.create!(
   first_name: 'Dimitri',
   last_name: 'Bosch',
   points: 0,
   email: 'dimitri@indeed.com',
   password: '123123',
-  photo: "https://lorempixel.com/200/200/business",
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/dim_e8ykqe.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
 )
 
-sam.mentor = User.last
+sam.mentor = dim
 sam.save!
+
+nico.mentor = dim
+nico.save!
+
+hide.mentor = dim
+hide.save!
+
+dim.mentor = sam
+dim.save!
 
 puts "Creating resources..."
 
