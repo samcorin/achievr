@@ -25,7 +25,6 @@ gem "react_on_rails", "~> 6"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css'
-  gem 'rails-assets-masonry'
   gem 'rails-assets-sweetalert2'
   gem 'rails-assets-remarkable-bootstrap-notify'
 end
