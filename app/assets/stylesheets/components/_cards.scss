@@ -17,12 +17,19 @@
 .card label {
   font-size: 14px;
 }
+.card-header {
+  text-align: center;
+  h2 {
+    font-size: 30px;
+  }
+}
 
 .card-header,
 .card-title,
 .card-content,
 .card-footer {
   position: relative;
+
 }
 
 .card-footer, .card-content {

@@ -1,3 +1,21 @@
+button, .btn-group, .btn-group-vertical {
+  outline: none !important;
+}
+
+.login-wrapper {
+  position: relative;
+  top: -70px;
+}
+
+.forgot {
+  margin-top: 10px;
+}
+
+.login-logo {
+  width: 100px;
+  height: 100px;
+}
+
 .form-control.input-no-border {
   border: none !important;
   outline: none !important;
@@ -31,5 +49,216 @@
 
 *:focus {
   outline: none !important;
-  box-shadow: none;
+  box-shadow: none !important;
 }
+
+
+
+label.btn span {
+  font-size: 1.5em ;
+  outline: none;
+}
+
+label input[type="checkbox"] ~ i.fa.fa-square-o{
+    color: #c8c8c8;
+    display: inline;
+}
+label input[type="checkbox"] ~ i.fa.fa-check-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+  // color: #7AA3CC;
+  display: inline;
+}
+
+label input[type="checkbox"]:checked + span {
+  // color: #7AA3CC;
+  display: inline;
+  text-decoration: line-through;
+  color: grey;
+  opacity: 0.6;
+}
+
+// input[type=checkbox]:checked + .strikethrough {
+//   text-decoration: line-through;
+//   color: grey;
+// }
+
+label:hover input[type="checkbox"] ~ i.fa {
+color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label.active{
+    color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 2em;
+text-align: left;
+white-space: nowrap;
+vertical-align: top;
+cursor: pointer;
+background-color: none;
+// border: 0px solid
+// #c8c8c8;
+// border-radius: 3px;
+color: #c8c8c8;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+outline: none;
+}
+
+div[data-toggle="buttons"] label:hover {
+color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
+-webkit-box-shadow: none;
+box-shadow: none;
+outline: none !important;
+}
+
+
+
+
+
+
+// Logic gates
+input[type="checkbox"] {
+  display: none;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.doc-continue,
+.show-close {
+  visibility: hidden;
+}
+
+.checkbox-container {
+  margin: 0 auto 30px;
+  padding: 10px;
+  position: relative;
+  width: 300px;
+  height: 160px;
+  background-color: #ddd;
+  border-radius: 6px;
+  box-shadow: 0 0 4px -1px #333;
+  overflow: hidden;
+}
+
+.box {
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.box:after {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #eee;
+  content: '';
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  z-index: 50;
+}
+.box:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.light {
+  margin-right: 15px;
+  position: relative;
+  float: right;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+.light:after {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #33d68b;
+  border-radius: 50%;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  content: '';
+}
+
+#box-AND-1:checked ~ label[for="box-AND-1"]:before,
+#box-AND-2:checked ~ label[for="box-AND-2"]:before,
+#box-AND-3:checked ~ label[for="box-AND-3"]:before {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d9517e;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'FontAwesome';
+  font-size: 2em;
+  color: #fff;
+  content: "\f00c";
+  z-index: 60;
+}
+
+#box-AND-1:checked + #box-AND-2:checked + #box-AND-3:checked ~ .light-AND:after {
+  width: 100%;
+  height: 100%;
+}
+
+// #box-AND-1:checked + #box-AND-2:checked + #box-AND-3:checked ~ .doc-continue,
+// #box-AND-1:checked + #box-AND-2:checked + #box-AND-3:checked ~ .show-close {
+//   visibility: visible;
+// }
+

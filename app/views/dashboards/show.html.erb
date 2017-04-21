@@ -1,17 +1,5 @@
 <div class="dashboard-wrapper">
     <div id="sidebar">
-      <!-- <div class="user-front"> -->
-        <!-- <img src="http://placehold.it/100x100" class="img-circle">
-        <p><%#= current_user.first_name %> <%#= current_user.last_name %></p>
-        <div class="user-points">
-          <p><span id="user-points-updatable"><%#= current_user.points %></span>/500</p>
-        </div> -->
-        <!-- <div class="progress">
-          <div id="user-progress-bar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= current_user.points %>%">
-            <span class="sr-only"><span id="user-points-updatable"><%= current_user.points %></span>% Complete (success)</span>
-          </div>
-        </div> -->
-      <!-- </div> -->
       <div class="sidebar-links">
         <ul>
           <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
@@ -44,13 +32,49 @@
         </div>
         </div>
       <% end %>
-      <!-- <div class="container-fluid"> -->
+
+            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+              <label class="btn active">
+                <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank" class="strikethrough"><span>Fill the personal information sheet</span></a>
+              </label>
+            </div>
+
+            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+              <label class="btn active">
+                <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"> Marketing Email</span>
+              </label>
+            </div>
+
+
+
+        <div class="row">
+          <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
+            <div class="card">
+            <!-- <div class="container"> -->
+              <h2>HR forms</h2>
+              <input type="checkbox" id="box-AND-1"/>
+              <input type="checkbox" id="box-AND-2"/>
+              <input type="checkbox" id="box-AND-3"/>
+              <label class="box" for="box-AND-1"></label>
+              <label class="box" for="box-AND-2"></label>
+              <label class="box" for="box-AND-3"></label>
+              <div class="light light-AND">OK</div>
+              <!-- <div class="doc-continue">Finish</div> -->
+            <!-- </div> -->
+          </div>
+        </div>
+
+
+
+
         <div class="row">
           <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
 
             <div class="card">
               <i class="fa fa-times close" aria-hidden="true"></i>
+
               <h3>HR Docs</h3>
+
               <div class="checkbox">
                 <label>
                   <h4>
@@ -59,6 +83,7 @@
                   </h4>
                 </label>
               </div>
+
               <div class="checkbox">
                 <label>
                   <h4>
@@ -250,7 +275,7 @@
       });
 
 
-    // codepen slideIn
+    // Create lg card
     $('#link-3').click(function(el) {
       var $content = $("<div class='lg-card'>" +
             "<i class='fa fa-times close' aria-hidden='true'></i>" +
@@ -265,7 +290,6 @@
         var top = $('.move-it').first();
         $(this).parent().parent().slideUp(400);
       });
-
     });
 
     var current_user_points = <%= current_user.points %>;
@@ -295,13 +319,13 @@
       $("#main").prepend($content);
       $content.show(300, function() { $(this).removeClass('transReset') });
 
-      $('.close').on( "click", function() {
+      $('.close, .light-AND').on( "click", function() {
         var top = $('.move-it').first();
         $(this).parent().parent().slideUp(400);
       });
     });
 
-    $('.close').on( "click", function() {
+    $('.close, .light-AND').on( "click", function() {
       var top = $('.move-it').first();
       $(this).parent().parent().slideUp(400);
     });
