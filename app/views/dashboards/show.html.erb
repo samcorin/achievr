@@ -117,7 +117,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                          <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> memebers</h4>
+                          <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> members</h4>
                           </div>
                         <div class="modal-body">
                           <center>
@@ -189,7 +189,7 @@
     // TEST QUIZ
 
     // TRIGGER
-      // $("#welcome-video").click(function(){
+      $("#welcome-video").click(function(){
         setTimeout(function() {
           $.notify({
             // options
@@ -237,13 +237,15 @@
               '<a href="{3}" target="{4}" data-notify="url"></a>' +
             '</div>'
           });
+
+        setTimeout(function() {
+          $("#test").trigger('click');
+        }, 4000);
+
         }, 5000);
 
-        // setTimeout(function() {
-        //   $("#test").trigger('click');
-        // }, 4000);
 
-      // });
+      });
 
 
     // codepen slideIn
@@ -355,11 +357,9 @@
         console.log(result)
 
         swal({
-          title: 'All done!',
+          title: 'Well done!',
           html:
-            'Your answers: <pre>' +
-              JSON.stringify(result) +
-            '</pre>',
+            'Have 10 points',
           confirmButtonText: 'Lovely!',
           showCancelButton: false
         })
