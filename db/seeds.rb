@@ -28,7 +28,7 @@ team = Team.create!(
 puts 'Creating users...'
 # TODO: more employees that belong to the same team
 
-sam = User.invite!(
+sam = User.create!(
   first_name: 'Sam',
   last_name: 'Corin',
   points: 0,
@@ -39,7 +39,7 @@ sam = User.invite!(
   team: team
 )
 
-User.invite!(
+User.create!(
   first_name: 'Nicolas',
   last_name: 'Duchemin',
   points: 0,
@@ -51,7 +51,7 @@ User.invite!(
   mentor: sam
 )
 
-User.invite!(
+User.create!(
   first_name: 'Hidehiro',
   last_name: 'Nagaoka',
   points: 0,
@@ -62,7 +62,7 @@ User.invite!(
   team: team
 )
 
-User.invite!(
+User.create!(
   first_name: 'Dimitri',
   last_name: 'Bosch',
   points: 0,
