@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
   ActiveAdmin.routes(self)
 
   authenticated :user do
@@ -18,11 +17,12 @@ Rails.application.routes.draw do
   # get ‘/login’ to: 'devise#login'
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  resource :company, only: [:show] do
-    member do
-      get :welcome, as: 'welcome'
-    end
-  end
+  resource :company, only: [:show]
+  # do
+  #   member do
+  #     get :welcome, as: 'welcome'
+  #   end
+  # end
 
   # get ‘/team to: “teams#show”
   resource :team, only: [:show]
