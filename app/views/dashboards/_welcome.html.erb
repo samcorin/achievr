@@ -1,13 +1,12 @@
+<!--
+<%# if @company %>
+  <h1 class="text-center">Welcome to <%#= @company.name %></h1>
+<%# else %>
+  <h1>Welcome to XYZ.</h1>
+<%# end %> -->
 
-      <% if @company %>
-        <h1 class="text-center">Welcome to <%= @company.name %></h1>
-      <% else %>
-        <h1>Welcome to XYZ.</h1>
-      <% end %>
-      <p></p>
-      <div class="center-block welcome-video" id="player"></div>
+<div class="center-block welcome-video" id="player"></div>
 
-      <p><%= link_to 'Go to your dashboard', dashboard_path, class: 'btn btn-primary' %></p>
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -21,8 +20,8 @@
   var player;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-      height: '390',
-      width: '640',
+      height: '550',
+      width: '840',
       videoId: 'CT8v87Su4e0',
       playerVars: {rel: 0},
       events: {
