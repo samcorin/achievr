@@ -75,9 +75,12 @@
                   </h4>
                 </label>
               </div>
+
               <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             </div>
+
           </div>
+
           <% if @user.mentor %>
             <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
               <div class="card">
@@ -188,12 +191,8 @@
     </div>
   </div>
 </div>
-<!-- Modal window for mentor end -->
 
 </div>
-
-
-
 
 <% content_for(:after_js) do %>
   <script>
@@ -301,68 +300,16 @@
       $("#main").prepend($content);
       $content.show(300, function() { $(this).removeClass('transReset') });
 
-
-      // ORIGINAL PREPEND SCRIPT
-      // $("#main").prepend("<div class='lg-card'>" +
-      //   "<div class='lg-card-content'>" +
-      //     "<i class='fa fa-times close' aria-hidden='true'></i>" +
-      //     "<h1>Insert Video Here</h1>" +
-      //   "</div>" +
-      // "</div>"
-      // ).hide().slideToggle();
-
       $('.close').on( "click", function() {
-        // console.log($(this).parent());
         var top = $('.move-it').first();
-        $(this).parent().slideUp(400, function() {
-          // $('#main').append(top);
-          // top.show();
-        });
-
-        // $(this).parent().parent().addClass('animated bounceOut').fadeOut('800', function() {
-            // $(this).remove();
-
-            // var top = $('.move-it').first();
-            // $('.move-it').first().slideUp(400, function() {
-            //   $('#main').append(top);
-            //   top.show();
-            // });
-        // });
+        $(this).parent().parent().slideUp(400);
       });
-
     });
 
     $('.close').on( "click", function() {
       var top = $('.move-it').first();
-      $(this).parent().slideUp(400, function() {
-        // $('#main').append(top);
-        // top.show();
+      $(this).parent().parent().slideUp(400);
     });
-      // $(this).parent().parent().addClass('animated bounceOut').fadeOut('800', function() {
-          // $(this).remove();
-
-          // function scrollList () {
-            // var top = $('.move-it').first();
-            // $('.move-it').first().slideUp(400, function() {
-            //   $('#main').append(top);
-            //   top.show();
-            // });
-          // }
-
-      // });
-    });
-
-    // Masonry JS
-    // ERROR
-    // .masonry is not a function...
-    // v1
-    // $(".grid").masonry({
-    //   itemSelector: ".grid-item",
-    //   columnWidth: 200,
-    //   gutter: 15,
-    //   percentPosition: true
-    // });
-
 
     // Points events
     // <%# if @user.points > 30 %>
