@@ -17,11 +17,6 @@
           <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
           <a href="#" id="new-task"><li><i class="fa fa-plus" aria-hidden="true"></i><p class="link-text">NEW</p></li></a>
           <a href="#" id="link-3"><li><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text">Link 3</p></li></a>
-          <i class="fa fa-sign-out" aria-hidden="true"></i>
-
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="icon-ok icon-white"></i><%= t(".sign_out", default: "Log out") %>
-          <% end %>
         </ul>
       </div>
       <br>
@@ -110,7 +105,6 @@
             <div class="card">
             <i class="fa fa-times close" aria-hidden="true"></i>
               <h3>Meet the Team</h3>
-<<<<<<< HEAD
             </div>
           </div>
 
@@ -119,27 +113,6 @@
 
             </div>
           </div> -->
-
-          <% @users.each do |user| %>
-            <div class="col-xs-12 col-md-6 col-md-offset-3">
-              <div class="card" id="team">
-                <h3>email</h3>
-                <h4><%= user.email %></h4>
-                <br>
-                <h5>Bio</h5>
-                <p><%= user.bio %></p>
-                <!-- Testing purposes -->
-                <% if user.first_name == "Nicolas" %>
-                  <h3>***MarkdownEditor***</h3>
-                  <%= react_component("MarkdownEditor") %>
-                <% end %>
-                <% if user.first_name == "Sam" %>
-                  <h3>***MarkdownEditor***</h3>
-                  <%= react_component("MarkdownEditor") %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
 
           <!-- Carousel for meet team members -->
           <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -323,11 +296,10 @@
 
     $('.close').on( "click", function() {
       var top = $('.move-it').first();
-      console.log($(this));
       $(this).parent().slideUp(400, function() {
         // $('#main').append(top);
         // top.show();
-      });
+    });
       // $(this).parent().parent().addClass('animated bounceOut').fadeOut('800', function() {
           // $(this).remove();
 
@@ -449,15 +421,15 @@
       var steps = [
         {
           title: 'Question 1',
-          text: '<%= eq_module1 %>'
+          text: 'What year was the company founded?'
         },
         {
           title: 'Question 2',
-          text: '<%= eq_module1 %>'
+          text: 'What is our best selling product?'
         },
         {
           title: 'Question 3',
-          text: '<%= eq_module1 %>'
+          text: 'How many employees do we have?'
         }
       ]
 
@@ -479,10 +451,11 @@
       }, function () {
         swal.resetDefaults()
       }).then(function() {
+
         var data = { user_id: <%= current_user.id %>, points: 10 };
 
+        // if score ok
         update_points(data);
-
         current_user_points += 10;
         $("#user-points-updatable").text(current_user_points);
         $("#user-progress-bar").css({"width": current_user_points + "%"});

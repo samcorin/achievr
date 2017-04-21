@@ -1,3 +1,7 @@
+.sign-out {
+  margin-left: 1px;
+}
+
 .dashboard-wrapper {
   width: 100vw;
   height: calc(100vh - 70px);
@@ -17,12 +21,11 @@
 #sidebar {
   z-index: 1;
   white-space: nowrap;
-
   overflow: hidden;
   color: rgba(255,255,255,0.6); // Needs a variable
   // padding: 40px;
   height: inherit;
-  width: 50px;
+  width: 55px;
   transition: width 0.3s;
   // width: 250px;
   // min-width: 250px;
