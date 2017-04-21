@@ -277,21 +277,19 @@
     // codepen slideIn
     $('#link-3').click(function(el) {
       var $content = $("<div class='lg-card'>" +
+            "<i class='fa fa-times close' aria-hidden='true'></i>" +
               "<div class='lg-card-content'>" +
-                "<i class='fa fa-times close' aria-hidden='true'></i>" +
                 "<h1>Insert Video Here</h1>" +
               "</div>" +
             "</div>").hide().addClass('transReset');
       $("#main").prepend($content);
       $content.show(300, function() { $(this).removeClass('transReset') });
 
-      // function scrollList () {
-      //   var top = $('li').first();
-      //   $('li').first().slideUp(400, function() {
-      //     $('ul').append(top);
-      //     top.show();
-      //   });
-      // }
+      $('.close').on( "click", function() {
+        var top = $('.move-it').first();
+        $(this).parent().slideUp(400, function() {
+        });
+      });
 
     });
 
