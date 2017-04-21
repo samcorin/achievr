@@ -110,45 +110,77 @@
             <div class="card">
             <i class="fa fa-times close" aria-hidden="true"></i>
               <h3>Meet the Team</h3>
-              <% @users.each do |user| %>
-              <div class="text-center">
-                <a href="#aboutModal" data-toggle="modal" data-target="#myModal<%= user.id %>"><img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" class="img-circle"></a>
-                <h4><%= user.first_name %> <%= user.last_name %></h4>
-              </div>
-
-
-                <!-- Modal -->
-                  <div class="modal fade" id="myModal<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                  <h4 class="modal-title" id="myModalLabel">More About <%= user.first_name %></h4>
-                                  </div>
-                              <div class="modal-body">
-                                  <center>
-                                  <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                                  <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
-                                  <h4 class="media-heading"><%= user.position %></h3>
-                                  </center>
-                                  <hr>
-                                  <div>
-                                  <p class="text-left"><strong>Bio: </strong><br>
-                                    <%= user.bio %>
-                                  <br>
-                                  </div>
-                              </div>
-                              <div class="modal-footer">
-                                  <center>
-                                  <button type="button" class="btn btn-pink" data-dismiss="modal">I've heard enough about <%= user.first_name %></button>
-                                  </center>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                <% end %>
+<<<<<<< HEAD
             </div>
           </div>
+
+          <!-- <div class="col-xs-12 col-md-6">
+            <div class="card">
+
+            </div>
+          </div> -->
+
+          <% @users.each do |user| %>
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+              <div class="card" id="team">
+                <h3>email</h3>
+                <h4><%= user.email %></h4>
+                <br>
+                <h5>Bio</h5>
+                <p><%= user.bio %></p>
+                <!-- Testing purposes -->
+                <% if user.first_name == "Nicolas" %>
+                  <h3>***MarkdownEditor***</h3>
+                  <%= react_component("MarkdownEditor") %>
+                <% end %>
+                <% if user.first_name == "Sam" %>
+                  <h3>***MarkdownEditor***</h3>
+                  <%= react_component("MarkdownEditor") %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
+          <!-- Carousel for meet team members -->
+          <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
+              <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
+                <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <% @user.team.users.each_with_index do |user, index| %>
+                  <div class="item <%= "active" if index == 0 %>" align="center">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                          <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> memebers</h4>
+                          </div>
+                        <div class="modal-body">
+                          <center>
+                            <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                            <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
+                            <h4 class="media-heading"><%= user.position %></h3>
+                          </center>
+                          <hr>
+                          <div>
+                          <p class="text-left"><strong>Bio: </strong></p>
+                            <%= user.bio %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+          </div>
+          <!-- Carousel for meet team members -->
+
         </div>
     </div>
 </div>
@@ -156,7 +188,7 @@
 
 
 
-
+<!-- Modal window for mentor -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -189,6 +221,7 @@
     </div>
   </div>
 </div>
+<!-- Modal window for mentor end -->
 
 </div>
 
@@ -456,5 +489,9 @@
 
       });
     });
-</script>
+
+
+    // Add this to let the carousel start automatic
+    // $('.carousel').carousel();
+  </script>
 <% end %>
