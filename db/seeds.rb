@@ -73,8 +73,11 @@ User.create!(
   team: team
 )
 
+sam.mentor = User.last
+sam.save!
 
 puts "Creating resources..."
+
 resource = Resource.create!(
   name: 'Sales Training',
   photo: 'https://lorempixel.com/200/200/business',
