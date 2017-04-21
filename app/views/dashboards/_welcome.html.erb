@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
       <% if @company %>
         <h1 class="text-center">Welcome to <%= @company.name %></h1>
       <% else %>
@@ -10,11 +8,6 @@
       <div class="center-block welcome-video" id="player"></div>
 
       <p><%= link_to 'Go to your dashboard', dashboard_path, class: 'btn btn-primary' %></p>
-    </div>
-  </div>
-</div>
-
-
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');

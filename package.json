@@ -12,6 +12,7 @@
     "test": "rspec"
   },
   "dependencies": {
+    "react": "^15.5.4",
     "remarkable": "^1.7.1"
   }
 }
