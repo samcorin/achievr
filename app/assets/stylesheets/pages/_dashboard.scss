@@ -11,13 +11,20 @@
 }
 
 #sidebar {
+  z-index: 1;
+  white-space: nowrap;
+
+  overflow: hidden;
   color: rgba(255,255,255,0.6); // Needs a variable
-  padding: 40px;
+  // padding: 40px;
   height: inherit;
-  width: 250px;
-  min-width: 250px;
+  width: 50px;
+  transition: width 0.3s;
+  // width: 250px;
+  // min-width: 250px;
   background-color: $brand-color;
   .user-front {
+    left: 10px;
     text-align: center;
   }
   img {
@@ -25,6 +32,14 @@
   }
   .question {
     margin-top: 30px;
+  }
+  &:hover  {
+    // left: 200px;
+    width: 120px;
+    transition: width 0.3s;
+  }
+  i {
+    font-size: 30px;
   }
 }
 
@@ -60,23 +75,31 @@
 }
 
 .sidebar-links {
-  margin-top: 50px;
+  position: absolute;
+  left: 12px;
+  margin-top: 150px;
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
+  clear: both;
   ul {
     padding: 0;
     margin: 0;
   }
   a {
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.5);
     &:hover {
       text-decoration: none;
+      color: rgba(255,255,255,1);
     }
   }
   li {
     list-style-type: none;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    .link-text {
+      margin-left: 15px;
+      display: inline;
+    }
   }
 }
 
@@ -84,6 +107,8 @@
 /* MAIN CONTENT */
 
 #main {
+  z-index: 2;
+  position: relative;
   height: inherit;
   padding: 40px;
   width: 100%;
@@ -115,4 +140,10 @@
     right: 15px;
     font-size: 5rem;
   }
+}
+
+input[type=checkbox]:checked + .strikethrough {
+  text-decoration: line-through;
+  color: grey;
+  opacity: 0.6;
 }
