@@ -11,11 +11,14 @@
 }
 
 #sidebar {
+  overflow: hidden;
   color: rgba(255,255,255,0.6); // Needs a variable
   padding: 40px;
   height: inherit;
-  width: 250px;
-  min-width: 250px;
+  width: 45px;
+  transition: width 0.3s;
+  // width: 250px;
+  // min-width: 250px;
   background-color: $brand-color;
   .user-front {
     text-align: center;
@@ -25,6 +28,13 @@
   }
   .question {
     margin-top: 30px;
+  }
+  &:hover {
+    width: 230px;
+    transition: width 0.3s;
+  }
+  i {
+    font-size: 30px;
   }
 }
 

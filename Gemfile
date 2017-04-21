@@ -21,11 +21,14 @@ gem 'autoprefixer-rails'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'active_admin_flat_skin'
-gem 'rails-assets-masonry', source: 'https://rails-assets.org'
-gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
-gem 'rails-assets-remarkable-bootstrap-notify', source: 'https://rails-assets.org'
 gem "react_on_rails", "~> 6"
-gem 'rails-assets-animate.css', source: 'https://rails-assets.org'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-animate.css'
+  gem 'rails-assets-masonry'
+  gem 'rails-assets-sweetalert2'
+  gem 'rails-assets-remarkable-bootstrap-notify'
+end
 
 gem 'devise_invitable'
 
