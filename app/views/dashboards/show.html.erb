@@ -193,69 +193,47 @@
               </div>
             </div>
           <% end %>
-        </div>
 
-        <!-- Carousel for meet team members -->
-        <div id="myCarousel" class="carousel slide" style="max-width: 900px; margin: 0px auto;">
-          <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
-            <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
-          </ol>
-            <div class="carousel-inner">
-              <div class="item active" align="center">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                      <h4 class="modal-title" id="myModalLabel">More About <%= @user.team.users.first.first_name %></h4>
-                      </div>
-                    <div class="modal-body">
-                      <center>
-                        <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
-                        <h3 class="media-heading"><%= @user.team.users.first.first_name %> <%= @user.team.users.first.last_name %></h3>
-                        <h4 class="media-heading"><%= @user.team.users.first.position %></h3>
-                      </center>
-                      <hr>
-                      <div>
-                      <p class="text-left"><strong>Bio: </strong></p>
-                        <%= @user.team.users.first.bio %>
+          <!-- Carousel for meet team members -->
+          <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
+              <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
+                <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <% @user.team.users.each_with_index do |user, index| %>
+                  <div class="item <%= "active" if index == 0 %>" align="center">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                          <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> memebers</h4>
+                          </div>
+                        <div class="modal-body">
+                          <center>
+                            <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                            <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
+                            <h4 class="media-heading"><%= user.position %></h3>
+                          </center>
+                          <hr>
+                          <div>
+                          <p class="text-left"><strong>Bio: </strong></p>
+                            <%= user.bio %>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                <% end %>
               </div>
-
-              <% @user.team.users.each do |user| %>
-                <div class="item" align="center">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                        <h4 class="modal-title" id="myModalLabel">More About <%= user.first_name %></h4>
-                        </div>
-                      <div class="modal-body">
-                        <center>
-                          <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
-                          <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
-                          <h4 class="media-heading"><%= user.position %></h3>
-                        </center>
-                        <hr>
-                        <div>
-                        <p class="text-left"><strong>Bio: </strong></p>
-                          <%= user.bio %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
             </div>
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+          </div>
+          <!-- Carousel for meet team members -->
         </div>
-        <!-- Carousel for meet team members -->
-
       <!-- </div> --> <!-- Container Fluid -->
     </div>
 </div>
