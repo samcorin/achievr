@@ -26,9 +26,15 @@
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
+  flex: 0 0 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.progress {
+  margin-bottom: 0px;
+  flex: 0 0 50%;
 }
 
 /* Navbar item */
