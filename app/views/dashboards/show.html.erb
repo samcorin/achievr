@@ -25,6 +25,7 @@
         <ul>
           <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i> TEST</li></a>
           <a href="#" id="link-2"><li><i class="fa fa-thumb-tack" aria-hidden="true"></i> Link 2</li></a>
+          <a href="#" id="link-3"><li><i class="fa fa-thumb-tack" aria-hidden="true"></i> Link 3</li></a>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <%= t(".sign_out", default: "Log out") %>
           <% end %>
@@ -93,7 +94,7 @@
 
     <!-- React output -->
     <div id="main">
-      <ul>
+      <ul id="card-list">
 
       </ul>
 
@@ -276,17 +277,30 @@
 
 <% content_for(:after_js) do %>
   <script>
+//         if(i >= 3) {
+//       clearInterval(timerId);
+//     }
+// },800);
+// */
+
+// $("button").on("click", function() {
+//   $n = $("<li></li>").hide().addClass('transReset');
+//   $("ul").append($n);
+//   $n.show(300, function() { $(this).removeClass('transReset') });
+// });
+
+
     // codepen slideIn
-    $('#link-2').click(function(el) {
-      $n = "<div class='lg-card'>" +
+    $('#link-3').click(function(el) {
+      var $content = $("<div class='lg-card'>" +
               "<div class='lg-card-content'>" +
                 "<i class='fa fa-times close' aria-hidden='true'></i>" +
                 "<h1>Insert Video Here</h1>" +
               "</div>" +
-            "</div>";
-      $("ul").append($n);
-      // $n.show(300, function() { $(this).removeClass('transReset') });
-      $n.show(300);
+            "</div>").hide().addClass('transReset');
+      $("#main").prepend($content);
+      $content.show(300, function() { $(this).removeClass('transReset') });
+
     });
 
     var current_user_points = <%= current_user.points %>;
@@ -303,8 +317,19 @@
       });
     }
 
+
+
     $('#link-2').click(function(el) {
 
+      // $n = "<div class='lg-card'>" +
+      //         "<div class='lg-card-content'>" +
+      //           "<i class='fa fa-times close' aria-hidden='true'></i>" +
+      //           "<h1>Insert Video Here</h1>" +
+      //         "</div>" +
+      //       "</div>";
+      // $("#card-list ul").prepend($n).show(300);
+
+      // ORIGINAL PREPEND SCRIPT
       $("#main").prepend("<div class='lg-card'>" +
         "<div class='lg-card-content'>" +
           "<i class='fa fa-times close' aria-hidden='true'></i>" +

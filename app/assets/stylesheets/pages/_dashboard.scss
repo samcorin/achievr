@@ -11,6 +11,9 @@
 }
 
 #sidebar {
+  z-index: 1;
+  white-space: nowrap;
+
   overflow: hidden;
   color: rgba(255,255,255,0.6); // Needs a variable
   padding: 40px;
@@ -29,8 +32,9 @@
   .question {
     margin-top: 30px;
   }
-  &:hover {
-    width: 230px;
+  &:hover  {
+    // left: 200px;
+    width: 220px;
     transition: width 0.3s;
   }
   i {
@@ -94,6 +98,8 @@
 /* MAIN CONTENT */
 
 #main {
+  z-index: 2;
+  position: relative;
   height: inherit;
   padding: 40px;
   width: 100%;
