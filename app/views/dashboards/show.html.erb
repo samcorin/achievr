@@ -44,7 +44,7 @@
                 <hr /> -->
             <div class="progress">
                 <!-- <div id="checkpoints"> -->
-                  <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"></div>
+                  <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
                 <!-- </div> -->
                 <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div> <!-- userpoints % 100 ? -->
             </div>
@@ -298,8 +298,12 @@
       }
       // this changes after .one changes????
       if ($('.progress-bar')[0].style.width >= '100%') {
-        $('.four').replaceWith('<div class="four success-color">');
-        // fireworks
+        // $('.four').replaceWith('<div class="four success-color">');
+        $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
+        $('.first-star-done').addClass('animated rubberBand');
+        // todo
+        // $('.four').remove();
+
       }
     }
 

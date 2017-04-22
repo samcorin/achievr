@@ -212,15 +212,15 @@ input[type=checkbox]:checked + .strikethrough {
 
 
 // Progress experiments
-.one, .two, .three, .four {
+.one, .two, .three {
   position:absolute;
   margin-top:-10px;
   z-index:1;
   height:40px;
   width:40px;
   border-radius:25px;
-
 }
+
 .one{
   left:20%;
 }
@@ -230,9 +230,36 @@ input[type=checkbox]:checked + .strikethrough {
 .three{
   left:70%;
 }
-.four{
+.four {
+  // background-image: asset-data-url("icons/009-star.png");
   left:95%;
+  position:absolute;
+  margin-top:-10px;
+  z-index:1;
+  height:45px;
+  width:45px;
+  border-radius:25px;
+  color: #BEBEBE;
+  img {
+    height:45px;
+    width:45px;
+  }
 }
+
+.first-star-done{
+    margin-top: -17px !important;
+    height: 65px !important;
+    width: 65px !important;
+    left: -9px;
+    position: relative;
+    opacity: 1;
+}
+
+// .first-star-done img {
+//   margin-top:-20px;
+//   height:60px;
+//   width:60px;
+// }
 
 .primary-color{
   background-color:#4989bd;
