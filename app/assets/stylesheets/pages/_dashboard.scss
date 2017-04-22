@@ -205,3 +205,50 @@ input[type=checkbox]:checked + .strikethrough {
         top: 20%;
     }
 }
+
+
+
+
+
+
+// Progress experiments
+.one, .two, .three, .four {
+  position:absolute;
+  margin-top:-10px;
+  z-index:1;
+  height:40px;
+  width:40px;
+  border-radius:25px;
+
+}
+.one{
+  left:20%;
+}
+.two{
+  left:45%;
+}
+.three{
+  left:70%;
+}
+.four{
+  left:95%;
+}
+
+.primary-color{
+  background-color:#4989bd;
+}
+.success-color{
+  background-color:#5cb85c;
+}
+.danger-color{
+  background-color:#d9534f;
+}
+.warning-color{
+  background-color:#f0ad4e;
+}
+.info-color{
+  background-color:#5bc0de;
+}
+.no-color{
+  background-color:inherit;
+}

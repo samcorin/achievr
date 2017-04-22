@@ -47,17 +47,17 @@ button, .btn-group, .btn-group-vertical {
   /*transition: all 0.3s linear;*/
 }
 
-*:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
 
 
 label.btn span {
   font-size: 1.5em ;
   outline: none;
 }
+
+input a, input a:focus {
+  outline: none !important;
+}
+
 
 label input[type="checkbox"] ~ i.fa.fa-square-o{
     color: #c8c8c8;
@@ -66,12 +66,17 @@ label input[type="checkbox"] ~ i.fa.fa-square-o{
 label input[type="checkbox"] ~ i.fa.fa-check-square-o{
     display: none;
 }
+
 label input[type="checkbox"]:checked ~ i.fa.fa-square-o{
     display: none;
 }
+
 label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
   // color: #7AA3CC;
   display: inline;
+}
+label input[type="checkbox"]:checked {
+  pointer-events: none;
 }
 
 label input[type="checkbox"]:checked + span {
@@ -242,7 +247,7 @@ input[type="checkbox"] {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #d9517e;
+  background-color: $brand-color;
   text-align: center;
   line-height: 50px;
   font-family: 'FontAwesome';
@@ -262,3 +267,11 @@ input[type="checkbox"] {
 //   visibility: visible;
 // }
 
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+a, a:focus, a:visited {
+  text-decoration: none;
+}

@@ -21,6 +21,46 @@
 
 
     <div id="main">
+
+      <!-- <div class="container"> -->
+        <div class="row"><br />
+          <div class="col-xs-12">
+            <!-- <div class="progress">
+              <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div> -->
+
+              <!-- logic to fill in the boxes + animations -->
+              <!--
+                if (progress-bar width >= 25%) {
+                    $('.progress').append('<div class="one success-color">');
+                    append div, with one success-color
+                    .....
+                for each checkpoint
+                }
+
+
+               -->
+              <!-- <div class="progress-bar" style="width: 20%;"></div>
+            </div>
+                <hr /> -->
+            <div class="progress">
+                <!-- <div id="checkpoints"> -->
+                  <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"></div>
+                <!-- </div> -->
+                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div> <!-- userpoints % 100 ? -->
+            </div>
+
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+
+
+
+
+
+
+
       <% if current_user.sign_in_count == 1 %>
       <div class="row">
         <div class="lg-card move-it" id="welcome-video">
@@ -33,24 +73,51 @@
         </div>
       <% end %>
 
-            <div class="btn-group btn-group-vertical" data-toggle="buttons">
-              <label class="btn active">
-                <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank" class="strikethrough"><span>Fill the personal information sheet</span></a>
-              </label>
-            </div>
 
-            <div class="btn-group btn-group-vertical" data-toggle="buttons">
-              <label class="btn active">
-                <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"> Marketing Email</span>
-              </label>
+        <div class="row">
+          <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
+            <div class="card">
+              <i class="fa fa-times close" aria-hidden="true"></i>
+
+              <!-- Item 1 -->
+              <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                <label class="btn active">
+                  <input type="checkbox" name='email1'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank"><span class="strikethrough">Fill out your personal information</span></a>
+                </label>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                <label class="btn active">
+                  <input type="checkbox" name='email1'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"><a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</span></a>
+                </label>
+              </div>
+
             </div>
+          </div>
+        </div>
 
 
 
         <div class="row">
           <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
             <div class="card">
-            <!-- <div class="container"> -->
+              <h2>HR forms #2</h2>
+              <input type="checkbox" id="box-AND-1"/>
+              <input type="checkbox" id="box-AND-2"/>
+              <input type="checkbox" id="box-AND-3"/>
+              <label class="box" for="box-AND-1"></label>
+              <label class="box" for="box-AND-2"></label>
+              <label class="box" for="box-AND-3"></label>
+              <div class="light light-AND">OK</div>
+              <div class="doc-continue">Finish</div>
+          </div>
+        </div>
+
+        <!-- COPY -->
+        <!-- <div class="row">
+          <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
+            <div class="card">
               <h2>HR forms</h2>
               <input type="checkbox" id="box-AND-1"/>
               <input type="checkbox" id="box-AND-2"/>
@@ -59,10 +126,9 @@
               <label class="box" for="box-AND-2"></label>
               <label class="box" for="box-AND-3"></label>
               <div class="light light-AND">OK</div>
-              <!-- <div class="doc-continue">Finish</div> -->
-            <!-- </div> -->
+              <div class="doc-continue">Finish</div>
           </div>
-        </div>
+        </div> -->
 
 
 
@@ -213,6 +279,36 @@
 
 <% content_for(:after_js) do %>
   <script>
+    console.log($('.progress-bar')[0].style.width);
+
+
+    function progress_checker() {
+      if ($('.progress-bar')[0].style.width >= '25%') {
+        console.log('conditional fires')
+        $('.one').replaceWith('<div class="one success-color">');
+        // fireworks
+      }
+      if ($('.progress-bar')[0].style.width >= '50%') {
+        $('.two').replaceWith('<div class="two success-color">');
+        // fireworks
+      }
+      if ($('.progress-bar')[0].style.width >= '75%') {
+        $('.three').replaceWith('<div class="three success-color">');
+        // fireworks
+      }
+      // this changes after .one changes????
+      if ($('.progress-bar')[0].style.width >= '100%') {
+        $('.four').replaceWith('<div class="four success-color">');
+        // fireworks
+      }
+    }
+
+    progress_checker();
+
+
+
+
+
     // TEST QUIZ
 
     // TRIGGER
@@ -302,10 +398,10 @@
         url: "<%= request.base_url %>/add_points",
         success: function(response) {
           console.log(response)
+
         }
       });
     }
-
 
 
     $('#new-task').click(function(el) {
@@ -398,8 +494,13 @@
         // if score ok
         update_points(data);
         current_user_points += 10;
-        $("#user-points-updatable").text(current_user_points);
+
+        $(".user-points-updatable").text(current_user_points);
+
+        $(".progress-bar").css({"width": current_user_points + "%"});
         $("#user-progress-bar").css({"width": current_user_points + "%"});
+
+        progress_checker();
 
       });
     });
