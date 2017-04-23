@@ -28,40 +28,55 @@
 
     <div id="main">
       <div class="row">
+
+        <% if current_user.sign_in_count == 0 %>
+          <div class="move-it">
+            <div class="lg-card" id="welcome-video">
+              <i class="fa fa-times close" aria-hidden="true"></i>
+              <div class="lg-card-content">
+                <%= render 'welcome' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
         <div class="tab-content">
 
           <!-- HOME -->
           <div class="tab-pane active" id="home">
             <div class="lg-card">
-              <div class="lg-card-content">
+              <div class="lg-card-content" id="welcome-content">
+              <div class="bg-image text-center"><h1>Company. Co.</h1></div>
                   <div class="text-center welcome-desc">
-                    <%= image_tag current_user.photo, class: "img-circle" %>
+                    <%#= image_tag current_user.photo, class: "img-circle" %>
                     <h1>Welcome, <%= current_user.first_name %>.</h1>
                     <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
                     <br>
-                    <h4>Your new contact info is all set up.</h4>
-                    <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-                    <br>
-                    <h4>(080) 4444 - 4444</h4>
 
                     <hr>
+
+                    <!-- INsert FIRST ANIMATION SLIDE IN -->
+
 
                     <h2>Let's get started</h2>
                     <!-- new classes here -->
                     <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
                     <br>
-                    <div class="welcome-screen-buttons text-center">
-                      <button class="btn btn-pink">Fill out data</button>
-                      <button class="btn btn-pink">Tasks to complete</button>
-                      <button class="btn btn-pink">other stuff</button>
+
+                    <!-- replace with ..... -->
+                    <div class="welcome-screen-buttons text-center" id="step1">
+                      <button class="btn btn-pink" id="step1-button">other stuff</button>
                     </div>
 
                     <hr>
 
                     <h2>Where to go and who to contact</h2>
-                    <!-- new classes here -->
-                    <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
                     <br>
+                    <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
+
+                    <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+                    <br>
+                    <hr>
 
                 </div>
               </div>
@@ -75,8 +90,8 @@
               <!-- <div class="lg-card-content"> -->
               <div class="card-nav-wrapper">
                 <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#first" class="text-center">Home</a></li>
-                    <li class=""><a data-toggle="tab" href="#second" class="text-center">Menu 1</a></li>
+                    <li class="active"><a data-toggle="tab" href="#first" class="text-center">General info</a></li>
+                    <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
                   <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
                 </ul>
               </div>
@@ -86,7 +101,6 @@
 
                     <div class="lg-card-content">
                       <div class="text-center welcome-desc">
-                        <%= image_tag current_user.photo, class: "img-circle" %>
                         <h1>First tab</h1>
                         <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
                         <br>
@@ -143,22 +157,68 @@
                   </div> <!-- Second tab -->
 
 
-                  <div id="second" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                  <div id="third" class="tab-pane fade">
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <!-- </div> -->
+                  <div id="third" class="tab-pane">
+                    <div class="lg-card-content">
+                      <div class="text-center welcome-desc">
+                        <h1>Your points etc....</h1>
+                        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+
+                      </div>
+                    </div>
+
+                        <hr>
+
+                        <!-- Objectives -->
+                          <div class="objectives-wrapper">
+                            <h1>
+                              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
+                                <div class='fa fa-plus'></div> New Objective
+                              </a>
+                            </h1>
+
+                            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
+                            <div class="lg-card-content">
+                              <h1>Your Objectives</h1>
+                              <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
+                              <br>
+                              <button type="submit" name="all" onclick="toggleAll()">All</button>
+                              <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
+                              <!-- BUTTONS FILTER -->
+                              <table class="ui single line table">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th colspan="3"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <% current_user.objectives.each do |o| %>
+                                    <tr class="objective-list">
+                                      <td><%= o.name %></td>
+                                      <td><%= Time.now %></td>
+                                      <td><%= o.status %></td>
+                                    </tr>
+                                  <% end %>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+
+                      <!-- </div>
+                    </div> -->
 
 
 
+                  </div> <!-- Third tab -->
 
-            </div> <!-- lg-card -->
-          </div> <!-- YOU -->
+
+                </div> <!-- YOU -->
+              </div>
+            </div>
+
 
 
           <!-- THE TEAM -->
@@ -200,34 +260,6 @@
           </div>
 
 
-
-
-
-
-
-          <% if @user.mentor %>
-          <div class="col-xs-12 col-md-6 col-md-offset-3" id="mentor">
-            <div class="card">
-            <i class="fa fa-times close" aria-hidden="true"></i>
-              <h3>Meet the mentor</h3>
-              <div class="mentor">
-                <div class="mentor-photo">
-                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                </div>
-                <div class="mentor-text">
-                  <h4>
-                      <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                  </h4>
-                  <h5>
-                      <%= @user.mentor.team.name %>
-                  </h5>
-                </div>
-              </div>
-              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
-            </div>
-          </div>
-        <% end %>
-
         <% if @user.mentor %>
           <div class="col-xs-12 col-md-6 col-md-offset-3 tab-pane" id="team">
             <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
@@ -267,79 +299,8 @@
             </div>
           </div>
         <% end %>
+      </div>
 
-        <div class="tab-pane" id="objectives">
-          <div class="lg-card">
-            <!-- <i class="fa fa-times close" aria-hidden="true"></i> -->
-            <h1>
-              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
-                <div class='fa fa-plus'></div> New Objective
-              </a>
-            </h1>
-
-            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
-            <div class="lg-card-content">
-                <h1>Your Objectives</h1>
-                <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
-                <br>
-                <button type="submit" name="all" onclick="toggleAll()">All</button>
-                <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
-                <!-- BUTTONS FILTER -->
-                <table class="ui single line table">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Due Date</th>
-                      <th>Status</th>
-                      <th colspan="3"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% current_user.objectives.each do |o| %>
-                      <tr class="objective-list">
-                        <td><%= o.name %></td>
-                        <td><%= Time.now %></td>
-                        <td><%= o.status %></td>
-                      </tr>
-                    <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-
-
-
-      <!-- </div> --> <!-- container -->
-
-
-
-        <!-- # Mentor -->
-        <% if @user.mentor %>
-          <div class="col-xs-12 col-md-6 col-md-offset-3" id="mentor">
-            <div class="card">
-            <i class="fa fa-times close" aria-hidden="true"></i>
-              <h3>Meet the mentor</h3>
-              <div class="mentor">
-                <div class="mentor-photo">
-                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                </div>
-                <div class="mentor-text">
-                  <h4>
-                      <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                  </h4>
-                  <h5>
-                      <%= @user.mentor.team.name %>
-                  </h5>
-                </div>
-              </div>
-              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
-            </div>
-          </div>
-        <% end %>
 
         <% if @user.mentor %>
           <div class="col-xs-12 col-md-6 col-md-offset-3" id="team">
@@ -381,47 +342,6 @@
           </div>
         <% end %>
 
-        <div class="move-it" id="objectives">
-          <div class="lg-card">
-            <!-- <i class="fa fa-times close" aria-hidden="true"></i> -->
-            <h1>
-              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
-                <div class='fa fa-plus'></div> New Objective
-              </a>
-            </h1>
-
-            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
-            <div class="lg-card-content">
-                <h1>Your Objectives</h1>
-                <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
-                <br>
-                <button type="submit" name="all" onclick="toggleAll()">All</button>
-                <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
-                <!-- BUTTONS FILTER -->
-                <table class="ui single line table">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Due Date</th>
-                      <th>Status</th>
-                      <th colspan="3"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% current_user.objectives.each do |o| %>
-                      <tr class="objective-list">
-                        <td><%= o.name %></td>
-                        <td><%= Time.now %></td>
-                        <td><%= o.status %></td>
-                      </tr>
-                    <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-
         <div class="move-it">
           <div class="lg-card">
             <i class="fa fa-times close" aria-hidden="true"></i>
@@ -432,19 +352,7 @@
           </div>
         </div>
 
-
-      <% if current_user.sign_in_count == 100 %>
-        <div class="move-it">
-          <div class="lg-card" id="welcome-video">
-            <i class="fa fa-times close" aria-hidden="true"></i>
-            <div class="lg-card-content">
-              <%= render 'welcome' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
-
+      <!-- leaderboard -->
       <div class="move-it">
         <div class="lg-card">
           <i class="fa fa-times close" aria-hidden="true"></i>
@@ -610,24 +518,6 @@
   <script>
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      // $('#home').addClass('active');
-
-      // $('#home').click(function() {
-      //   document.getElementById('home').scrollIntoView(true);
-      // })
-
-      // $('#you').click(function() {
-      //   document.getElementById('you').scrollIntoView(true);
-      // })
-
-      // $('#team').click(function() {
-      //   document.getElementById('team').scrollIntoView(true);
-      // })
-
-      // $('#resources').click(function() {
-      //   document.getElementById('resources').scrollIntoView(true);
-      // })
-
       // On video close
       $("#welcome-video").click(function(){
         welcomeNotification();
@@ -637,35 +527,15 @@
       // iterate through the resources
 
       // MODULARISE MAN
-      $('#resources').click(function(el) {
-      var $content = $(
-          "<div class='lg-card'>" +
-            "<i class='fa fa-times close' aria-hidden='true'></i>" +
-              "<div class='lg-card-content'>" +
-                "<h1>Resources</h1>" +
-              "</div>" +
-            "</div>"
-          ).hide().addClass('transReset');
-      $("#main").prepend($content);
-      $content.show(300, function() { $(this).removeClass('transReset') });
-
-      $('.close').on( "click", function() {
-        $(this).parent().slideUp(400);
-      });
-    });
-
-    // Create lg card
-    // $('#link-3').click(function(el) {
+    //   $('#resources').click(function(el) {
     //   var $content = $(
-    //     "<div class='lg-card'>" +
+    //       "<div class='lg-card'>" +
     //         "<i class='fa fa-times close' aria-hidden='true'></i>" +
     //           "<div class='lg-card-content'>" +
-    //             "<h1>Your Objectives</h1>" +
-    //             "<% current_user.objectives do |o| %>" +
-    //               "<%= o.name %>" +
-    //             "<% end %>" +
+    //             "<h1>Resources</h1>" +
     //           "</div>" +
-    //       "</div>").hide().addClass('transReset');
+    //         "</div>"
+    //       ).hide().addClass('transReset');
     //   $("#main").prepend($content);
     //   $content.show(300, function() { $(this).removeClass('transReset') });
 
@@ -673,6 +543,44 @@
     //     $(this).parent().slideUp(400);
     //   });
     // });
+
+
+
+    // STEP 1
+    // <h4>Your new contact info is all set up.</h4>
+    // <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+    // <br>
+    // <h4>(080) 4444 - 4444</h4>
+    var teamEmails = [];
+
+    <% @team.each do |member| %>
+      teamEmails.push("<%= member.email %>");
+    <% end %>
+    teamEmails.join(",");
+
+    $('#step1-button').click(function(el) {
+      var $stepOneContent = $(
+        "<div class='lg-card'>" +
+          "<div class='lg-card-content'>" +
+            "<h4>Your new contact info is all set up.</h4>" +
+            "<strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>" +
+            "<br>" +
+          "<h4>(080) 4444 - 4444</h4>" +
+          "<br>" +
+          "<h2>How about sending your team a welcome message?</h2>" +
+          "<a href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_top'>Send Mail</a>" +
+        "</div>").hide().addClass('transReset');
+      $('#step1').replaceWith($stepOneContent);
+
+      // <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
+
+      // $("#main").prepend($content);
+      $stepOneContent.show(300, function() { $(this).removeClass('transReset') });
+
+      $('.close').on( "click", function() {
+        $(this).parent().slideUp(400);
+      });
+    });
 
 
     $('.close, .light-AND').on( "click", function() {

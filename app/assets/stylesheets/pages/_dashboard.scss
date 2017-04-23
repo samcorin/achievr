@@ -2,7 +2,7 @@
 .card-nav-wrapper {
   position: absolute;
   top: 0;
-
+  left: 0;
 }
 
 .row {
@@ -71,9 +71,51 @@ li.active {
   background-color: #E8E7EE;
 }
 
+// round border for first tab
+#you .nav-tabs > li.active > a:first-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  background-color: #7361e4;
+  border: 0 !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 0 !important;
+}
+
+// round border for last tab
+#you .nav-tabs > li.active > a:last-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  background-color: #7361e4;
+  border: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 5px !important;
+}
+
+// color of #you tabs
+#you .nav-tabs > li.active > a, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  color: #ffffff;
+}
+
 // -----------------------------------------
 .tab-content, .tab-pane {
   clear:both;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), image-url("welcome-bg.jpeg") no-repeat center center fixed;
+  // background-image: image-url("welcome-bg.jpeg");
+  background-repeat:no-repeat;
+  background-position:center center;
+  clear: both;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  h1 {
+    color: #ffffff;
+    font-size: 100px !important;
+    margin-top: 200px;
+  }
 }
 
 .welcome-desc {
@@ -96,12 +138,21 @@ li.active {
   }
 }
 
+#welcome-content {
+  margin-top: 520px;
+  // margin-top: 70px;
+}
+
 #you-content {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 // -----------------------------------------
 
+.objectives-wrapper {
+  position: relative;
+  width: 800px;
+}
 
 .sub-desc {
   width: 70%;
@@ -113,7 +164,7 @@ li.active {
   // font-size: 20px !important;
   // padding: 15px 20px;
   position: absolute;
-  top: 15px;
+  top: 45px;
   right: 15px;
   font-size: 14px !important;
   text-transform: uppercase;
