@@ -20,36 +20,6 @@ $color-gold: #efb05a;
 
 $color-primary: $color-blue;
 
-
-/* -------------------------------------
- * Header
- * ------------------------------------- */
-
-.banner {
-  color: white;
-  text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.banner h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
-.banner p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-}
-
-
-
-
 a{
   text-decoration: none;
 
@@ -69,38 +39,31 @@ img{
   max-width: 900px;
 }
 
+/* -------------------------------------
+ * Header
+ * ------------------------------------- */
 
-header{
+.banner {
   color: white;
-  background: $color-primary;
-  padding: 10rem 0;
   text-align: center;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-
-  @media (max-width: $bp-s){
-    padding: 2rem 0;
-  }
-
-  h1{
-    font-size: 3rem;
-    margin: 0 0 1rem;
-
-    @media (max-width: $bp-s){
-      font-size: 2rem;
-    }
-  }
-  h2{
-    font-weight: 300;
-    font-size: 1.5rem;
-    margin: 0 0 1rem;
-
-    @media (max-width: $bp-s){
-      font-size: 1.5rem;
-    }
-  }
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+
+/* -------------------------------------
+ * 
+ * ------------------------------------- */
 
 section{
   background: #fff;
@@ -134,7 +97,6 @@ section{
 
   h3{
     text-align: center;
-    font-size: 2rem;
     font-weight: 300;
     margin: 0 0 1rem;
 
@@ -144,11 +106,10 @@ section{
   }
   
   li{
-    font-size: 1.2rem;
     font-weight: 300;
   }
+
   p{
-    font-size: 1.2rem;
     font-weight: 300;
   }
 }
@@ -231,54 +192,6 @@ section{
       float: left;
     }
   }
-
-  p{
-    margin: 0 0 1rem 0;
-    font-size: 1rem;
-
-    @media (max-width: $bp-s){
-      margin-left: 3rem;
-    }
-  }
-}
-
-blockquote{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  
-  &:before{
-    display: inline-block;
-    color: $color-primary;
-    font-size: 2rem;
-    content: '\201C';
-  }
-  
-  p{
-    margin: 0;
-    display: inline;
-    font-size: 1.5rem;
-    
-    @media (max-width: $bp-s){
-      font-size: 1.2rem;
-    }
-  }
-  
-  cite{
-    font-size: 1rem;
-    display: block;
-    margin: .5rem 0 0 1.2rem;
-    text-style: italic;
-    
-    @media (max-width: $bp-s){
-      font-size: .8rem;
-    }
-    
-    &:before{
-      content: '–';
-    }
-  }
 }
 
 footer{
@@ -286,7 +199,6 @@ footer{
   color: #fff;
   padding: 2rem 0;
   text-align: center;
-  font-size: .8rem;
   color: rgba(white,.4);
 
   ul{
@@ -300,7 +212,6 @@ footer{
       a{
         display: block;
         padding: .4rem .7rem;
-        font-size: .9rem;
         text-decoration: none;
         color: rgba(white,.7);
 
