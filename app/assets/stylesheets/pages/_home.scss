@@ -2,23 +2,8 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-$bp-s: 43.75em; //700px;
-$bp-xs: 34.375em; //550px;
 
-$color-primary: #46346B;
-
-$color-red: #cc615f;
-$color-grey: #1c262b;
-$color-grey--light: #29363e;
-
-$color-orange: #e6ac5e;
-$color-blue: #007ece;
-$color-green: #8fca53;
-$color-purple: #68647c;
-$color-gold: #efb05a;
-
-
-$color-primary: $color-blue;
+$color-primary: #182359;
 
 a{
   text-decoration: none;
@@ -37,6 +22,12 @@ img{
   margin: 0 auto;
   width: 90%;
   max-width: 900px;
+}
+
+section{
+  background: #fff;
+  color: #182359;
+  padding: 3.5rem 0;
 }
 
 /* -------------------------------------
@@ -61,138 +52,19 @@ img{
 }
 
 
-/* -------------------------------------
- * 
- * ------------------------------------- */
-
-section{
-  background: #fff;
-  color: $color-grey;
-  padding: 3.5rem 0;
-
-  @media (max-width: $bp-s){
-    padding: 2rem 0;
-  }
-  
-  &.section--primary{
+ .section--primary{
     background: $color-primary;
     color: #fff;
   }
-  &.section--primary--alt{
+  
+  .section--primary--alt{
     background: desaturate(lighten($color-primary,15%),10%);
     color: #fff;
   }
-  &.section--primary--light{
+  
+  .section--primary--light{
     background: rgba($color-primary,.1);//desaturate(lighten(mix($color-primary,white),10%),10%);
   }
-
-  &.section--grey{
-    background: $color-grey;
-    color: #fff;
-  }
-  &.section--grey--light{
-    background: $color-grey--light;
-    color: #fff;
-  }
-
-  h3{
-    text-align: center;
-    font-weight: 300;
-    margin: 0 0 1rem;
-
-    @media (max-width: $bp-s){
-      font-size: 1.5rem;
-    }
-  }
-  
-  li{
-    font-weight: 300;
-  }
-
-  p{
-    font-weight: 300;
-  }
-}
-.col{
-  margin: 0 1.5%;
-  display: inline-block;
-  vertical-align: top;
-}
-.col-7{
-  @extend .col;
-  width: 64%;
-  
-  @media (max-width: $bp-s){
-    width: 100%;
-    margin: 0;
-  }
-}
-.col-3{
-  @extend .col;
-  width: 29%;
-
-  @media (max-width: $bp-s){
-    width: 100%;
-    margin: 0;
-  }
-}
-.col-5{
-  @extend .col;
-  width: 30%;
-
-  @media (max-width: $bp-xs){
-    width: 60%;
-    margin: 0;
-  }
-}
-
-.details{
-  text-align: left;
-  
-  h3{
-    font-size: 2rem;
-    text-align: left;
-  }
-}
-.details-img--ball{
-  @media (max-width: $bp-s){
-    height: 200px;
-    width: auto;
-    margin: 0 auto;
-  }
-}
-.features{
-  text-align: center;
-  padding: 1rem;
-
-  &:hover{
-    background: rgba(white,.1);
-  }
-  
-  @media (max-width: $bp-s){
-    width: 100%;
-    margin: 0;
-    text-align: left;
-    border-bottom: 1px solid rgba(white,.2);
-
-    &:last-child{
-      border: none;
-    }
-  }
-  
-  i{
-    font-size: 4rem;
-    margin: 0 0 2rem 0;
-
-    @media (max-width: $bp-s){
-      font-size: 1.5rem;
-      width: 2rem;
-      text-align: center;
-      margin: 0 0 1rem 0;
-      float: left;
-    }
-  }
-}
 
 footer{
   background: #2d2b2a;
@@ -221,6 +93,10 @@ footer{
       }
     }
   }
+}
+
+#footer-link {
+  color: #B0B0FF;
 }
 
 .text--center{
@@ -261,4 +137,8 @@ footer{
     background-image:url('http://orbotix.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/Kids3.jpg'); 
     background-position: center center;
   }
+}
+
+#purple {
+  background-color: #F7F7FF
 }
