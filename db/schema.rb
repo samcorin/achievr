@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20170421051807) do
     t.string   "position"
     t.integer  "team_id"
     t.integer  "mentor_id"
-    t.boolean  "admin",                  default: false, null: false
+    t.booen  "admin",                  default: false, null: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

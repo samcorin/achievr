@@ -2,16 +2,20 @@
     <div id="sidebar">
       <div class="sidebar-links">
         <ul>
+          <!-- <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Profile</p></li></a> -->
+          <a href="#"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Mentor</p></li></a>
+          <a href="#"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Team</p></li></a>
+          <a href="#" id="resources"><li><i class="fa fa-list-ul" aria-hidden="true"></i><p class="link-text"> Resources</p></li></a>
+
           <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
-          <a href="#" id="new-task"><li><i class="fa fa-plus" aria-hidden="true"></i><p class="link-text">NEW</p></li></a>
           <a href="#" id="link-3"><li><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text"> Link 3</p></li></a>
         </ul>
       </div>
       <br>
       <!-- <div class="days-passed">
         Days passed: <%#= days_passed %>
-      </div>
-      <div class="question">
+      </div> -->
+      <!-- <div class="question">
         <em><%#= eq_module1  %></em>
       </div> -->
     </div>
@@ -22,55 +26,53 @@
 
     <div id="main">
 
-      <!-- <div class="container"> -->
-        <div class="row"><br />
-          <div class="col-xs-12">
-            <!-- <div class="progress">
-              <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div> -->
-
-              <!-- logic to fill in the boxes + animations -->
-              <!--
-                if (progress-bar width >= 25%) {
-                    $('.progress').append('<div class="one success-color">');
-                    append div, with one success-color
-                    .....
-                for each checkpoint
-                }
-
-
-               -->
-              <!-- <div class="progress-bar" style="width: 20%;"></div>
-            </div>
-                <hr /> -->
-            <div class="progress">
-                <!-- <div id="checkpoints"> -->
-                  <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                <!-- </div> -->
-                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div> <!-- userpoints % 100 ? -->
-            </div>
-
-          </div>
-        </div>
-      <!-- </div> -->
-
-
-
-
-
-
-
-
-
-      <% if current_user.sign_in_count == 1 %>
       <div class="row">
-        <div class="lg-card move-it" id="welcome-video">
+
+      <div class="move-it">
+        <div class="lg-card" id="welcome-video">
           <i class="fa fa-times close" aria-hidden="true"></i>
           <div class="lg-card-content">
-            <!-- <i class="fa fa-times close" aria-hidden="true"></i> -->
-            <%= render 'welcome' %>
+
+            <table class="ui single line table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Points</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @users.each do |user| %>
+                  <tr>
+                      <td>
+                          <%= user.first_name %> <%= user.last_name %>
+                      </td>
+                      <td><%= user.email %></td>
+                    <td><%= user.points %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
           </div>
         </div>
+      </div>
+
+      <% if current_user.sign_in_count == 1 %>
+
+      <div class="move-it">
+        <div class="lg-card" id="welcome-video">
+          <i class="fa fa-times close" aria-hidden="true"></i>
+          <div class="lg-card-content">
+
+            <%= render 'welcome' %>
+
+          </div>
         </div>
+      </div>
+
+
       <% end %>
 
 
@@ -79,17 +81,16 @@
             <div class="card">
               <i class="fa fa-times close" aria-hidden="true"></i>
 
-              <!-- Item 1 -->
               <div class="btn-group btn-group-vertical" data-toggle="buttons">
                 <label class="btn active">
-                  <input type="checkbox" name='email1'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank"><span class="strikethrough">Fill out your personal information</span></a>
+                  <input type="checkbox" name='personal-info' class="personal-info"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank"><span class="strikethrough">Fill out your personal information</span></a>
                 </label>
               </div>
 
               <!-- Item 2 -->
               <div class="btn-group btn-group-vertical" data-toggle="buttons">
                 <label class="btn active">
-                  <input type="checkbox" name='email1'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"><a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</span></a>
+                  <input type="checkbox" name='payroll-info' class="payroll-info"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"><a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</span></a>
                 </label>
               </div>
 
@@ -102,6 +103,7 @@
         <div class="row">
           <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
             <div class="card">
+            <i class="fa fa-times close" aria-hidden="true"></i>
               <h2>HR forms #2</h2>
               <input type="checkbox" id="box-AND-1"/>
               <input type="checkbox" id="box-AND-2"/>
@@ -114,26 +116,7 @@
           </div>
         </div>
 
-        <!-- COPY -->
-        <!-- <div class="row">
-          <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
-            <div class="card">
-              <h2>HR forms</h2>
-              <input type="checkbox" id="box-AND-1"/>
-              <input type="checkbox" id="box-AND-2"/>
-              <input type="checkbox" id="box-AND-3"/>
-              <label class="box" for="box-AND-1"></label>
-              <label class="box" for="box-AND-2"></label>
-              <label class="box" for="box-AND-3"></label>
-              <div class="light light-AND">OK</div>
-              <div class="doc-continue">Finish</div>
-          </div>
-        </div> -->
 
-
-
-
-        <div class="row">
           <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
 
             <div class="card">
@@ -171,6 +154,7 @@
           </div>
 
           <% if @user.mentor %>
+          <!-- <div class="row"> -->
             <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
               <div class="card">
               <i class="fa fa-times close" aria-hidden="true"></i>
@@ -191,12 +175,12 @@
                 <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
               </div>
             </div>
+          <!-- </div> -->
           <% end %>
 
-          <!-- Carousel for meet team members -->
           <% if @user.mentor %>
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+              <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
               <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
                 <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
@@ -215,7 +199,7 @@
                           <center>
                             <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
                             <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
-                            <h4 class="media-heading"><%= user.position %></h3>
+                            <h4 class="media-heading"><%= user.position %></h4>
                           </center>
                           <hr>
                           <div>
@@ -230,10 +214,9 @@
               </div>
               <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
               <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
             </div>
-          </div>
           <% end %>
-          <!-- Carousel for meet team members -->
       </div>
     </div>
 </div>
@@ -279,12 +262,86 @@
 
 <% content_for(:after_js) do %>
   <script>
-    console.log($('.progress-bar')[0].style.width);
+    // console.log($('.progress-bar')[0].style.width);
+    var current_user_points = <%= current_user.points %>;
+
+    // $('.personal-info i').click(function() {
+    //   if ($('.personal-info').prop("checked")) {
+    //     var data = { user_id: <%= current_user.id %>, points: 5 };
+
+    //     update_points();
+    //     current_user_points += 5;
+    //   }
+    // })
+
+    // $('.payroll-info i').click(function() {
+    //   if ($('.payroll-info').prop("checked")) {
+    //     var data = { user_id: <%= current_user.id %>, points: 5 };
+
+    //     update_points();
+    //     current_user_points += 5;
+    //   }
+    // })
 
 
-    function progress_checker() {
+
+
+
+
+
+
+// function update_points(data) {
+//       $.ajax({
+//         crossOrigin: true,
+//         type: "POST",
+//         data: data,
+//         url: "<%= request.base_url %>/add_points",
+//         success: function(response) {
+//           console.log(response)
+//         }
+//       });
+//     }
+
+
+
+
+
+
+
+
+    var progress_checker = {
+      // temp obj fffs
+      {}
+      init: function() {
+        current_user_points: <%= current_user.points %>;
+      },
+
+      update_points: function(data) {
+        $.ajax({
+          crossOrigin: true,
+          type: "POST",
+          data: data,
+          url: "<%= request.base_url %>/add_points",
+          success: function(response) {
+            console.log(response)
+          }
+        });
+      },
+
+      // init?
+      update_points(data);
+      current_user_points += 10;
+
+
+      $(".user-points-updatable").text(current_user_points);
+
+      $(".progress-bar").css({"width": current_user_points + "%"});
+      $("#user-progress-bar").css({"width": current_user_points + "%"});
+
+      update_progress_bar: function() {
+
+      }
       if ($('.progress-bar')[0].style.width >= '25%') {
-        console.log('conditional fires')
         $('.one').replaceWith('<div class="one success-color">');
         // fireworks
       }
@@ -297,23 +354,17 @@
         // fireworks
       }
       // this changes after .one changes????
-      if ($('.progress-bar')[0].style.width >= '100%') {
-        // $('.four').replaceWith('<div class="four success-color">');
+      if ($('.progress-bar')[0].style.width >= '99%') {
+        console.log('Greater than 99?')
         $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
         $('.first-star-done').addClass('animated rubberBand');
-        // todo
-        // $('.four').remove();
-
       }
     }
 
+    myFeature.init
+    // Run first time, keeps page updated
     progress_checker();
 
-
-
-
-
-    // TEST QUIZ
 
     // TRIGGER
       $("#welcome-video").click(function(){
@@ -365,15 +416,29 @@
             '</div>'
           });
 
-        setTimeout(function() {
-          $("#test").trigger('click');
-        }, 4000);
-
+          setTimeout(function() {
+            $("#test").trigger('click');
+          }, 4000);
         }, 5000);
-
-
       });
 
+      // resoureces
+      $('#resources').click(function(el) {
+      var $content = $(
+          "<div class='lg-card'>" +
+            "<i class='fa fa-times close' aria-hidden='true'></i>" +
+              "<div class='lg-card-content'>" +
+                "<h1>Resources</h1>" +
+              "</div>" +
+            "</div>"
+          ).hide().addClass('transReset');
+      $("#main").prepend($content);
+      $content.show(300, function() { $(this).removeClass('transReset') });
+
+      $('.close').on( "click", function() {
+        $(this).parent().slideUp(400);
+      });
+    });
 
     // Create lg card
     $('#link-3').click(function(el) {
@@ -382,56 +447,22 @@
               "<div class='lg-card-content'>" +
                 "<h1>Insert Video Here</h1>" +
               "</div>" +
-            "</div>").hide().addClass('transReset');
+          "</div>").hide().addClass('transReset');
       $("#main").prepend($content);
       $content.show(300, function() { $(this).removeClass('transReset') });
 
       $('.close').on( "click", function() {
-        var top = $('.move-it').first();
-        $(this).parent().parent().slideUp(400);
+        $(this).parent().slideUp(400);
       });
     });
 
-    var current_user_points = <%= current_user.points %>;
-
-    function update_points(data) {
-      $.ajax({
-        crossOrigin: true,
-        type: "POST",
-        data: data,
-        url: "<%= request.base_url %>/add_points",
-        success: function(response) {
-          console.log(response)
-
-        }
-      });
-    }
-
-
-    $('#new-task').click(function(el) {
-      // add card
-      var $content = $("<div class='lg-card'>" +
-              "<i class='fa fa-times close' aria-hidden='true'></i>" +
-              "<div class='lg-card-content'>" +
-                "<h1>Insert Video Here</h1>" +
-              "</div>" +
-            "</div>").hide().addClass('transReset');
-      $("#main").prepend($content);
-      $content.show(300, function() { $(this).removeClass('transReset') });
-
-      $('.close, .light-AND').on( "click", function() {
-        var top = $('.move-it').first();
-        $(this).parent().parent().slideUp(400);
-      });
-    });
 
     $('.close, .light-AND').on( "click", function() {
-      var top = $('.move-it').first();
       $(this).parent().parent().slideUp(400);
     });
 
     // Points events
-    // <%# if @user.points > 30 %>
+    // <%# if @user.points > 50 %>
     // // need to add default value on points for users
     //   $.notify({
     //     // options
@@ -495,16 +526,7 @@
 
         var data = { user_id: <%= current_user.id %>, points: 10 };
 
-        // if score ok
-        update_points(data);
-        current_user_points += 10;
-
-        $(".user-points-updatable").text(current_user_points);
-
-        $(".progress-bar").css({"width": current_user_points + "%"});
-        $("#user-progress-bar").css({"width": current_user_points + "%"});
-
-        progress_checker();
+        progress_checker(data);
 
       });
     });

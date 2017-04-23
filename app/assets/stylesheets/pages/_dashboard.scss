@@ -22,17 +22,19 @@
   z-index: 1;
   white-space: nowrap;
   overflow: hidden;
+  display: inline;
   color: rgba(255,255,255,0.6); // Needs a variable
   // padding: 40px;
   height: inherit;
   width: 55px;
-  transition: width 0.3s;
+  transition: width 0.4s ease;
   // width: 250px;
   // min-width: 250px;
   background-color: $brand-color;
   .user-front {
     left: 10px;
     text-align: center;
+    // text-align: left !important;
   }
   img {
     margin: 15px auto;
@@ -42,8 +44,8 @@
   }
   &:hover  {
     // left: 200px;
-    width: 120px;
-    transition: width 0.3s;
+    width: 150px;
+    transition: width 0.4s ease;
   }
   i {
     font-size: 30px;
@@ -56,6 +58,8 @@
   }
   .card {
     margin: 0 !important;
+    border-radius: 0;
+    margin-bottom: 5px;
   }
   .lg-card {
     margin: 0 !important;
@@ -87,8 +91,8 @@
   margin-top: 150px;
   justify-content: space-around;
   flex-direction: column;
-  text-align: center;
-  clear: both;
+  // text-align: center;
+  // clear: both;
   ul {
     padding: 0;
     margin: 0;
@@ -104,7 +108,7 @@
     list-style-type: none;
     margin-bottom: 30px;
     .link-text {
-      margin-left: 15px;
+      margin-left: 20px;
       display: inline;
     }
   }
