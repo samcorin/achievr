@@ -1,10 +1,64 @@
-// #resources ~ i {
-//   max-width: 24px !important;
-// }
-
-.i-box {
-  text-align: center;
+// Overriding bootstrap
+.row {
+  margin-top: -15px;
+  margin-bottom: -15px;
 }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #E8E7EE;
+  border: none !important;
+}
+
+.nav-tabs {
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+.active li, a.active, li, li ~ a, .nav-tabs {
+  border-radius: 0 !important;
+  color: $brand-color;
+  border: none !important;
+}
+
+.nav li {
+  padding: 20px auto;
+  margin-bottom: 0 !important;
+}
+
+.nav > li > a {
+  padding: 20px 15px !important;
+}
+
+.img-circle {
+  width: 100px;
+  height: 100px;
+}
+
+// -----------------------------------------
+
+.welcome-desc {
+  margin-top: 50px;
+  width: 600px;
+  font-size: 16px;
+  opacity: 0.8;
+  strong {
+    color: $green;
+  }
+}
+
+.team-desc {
+  margin-top: 50px;
+  width: 800px;
+  font-size: 16px;
+  opacity: 0.8;
+  strong {
+    color: $green;
+  }
+}
+
+// -----------------------------------------
+
+
 .sub-desc {
   width: 70%;
   opacity: 0.6;
@@ -61,7 +115,7 @@ a.btn-obj {
   color: rgba(255,255,255,0.6); // Needs a variable
   // padding: 40px;
   height: inherit;
-  width: 55px;
+  width: 60px;
   transition: width 0.4s ease;
   // width: 250px;
   // min-width: 250px;
@@ -111,10 +165,13 @@ a.btn-obj {
       }
     }
   }
-  // #mini-sidebar {
-  //   visibility: visible;
-  // }
 }
+
+
+
+
+
+
 
 .user-points {
   font-size: 16px;
@@ -123,8 +180,7 @@ a.btn-obj {
 
 .sidebar-links {
   position: absolute;
-  left: 12px;
-  margin-top: 150px;
+  margin-top: 100px;
   justify-content: space-around;
   flex-direction: column;
   // text-align: center;

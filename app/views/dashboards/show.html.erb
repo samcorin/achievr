@@ -1,15 +1,16 @@
 <div class="dashboard-wrapper">
     <div id="sidebar">
       <div class="sidebar-links">
-        <ul>
+        <ul class="nav nav-tabs nav-stacked">
           <!-- <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Profile</p></li></a> -->
           <!-- loop for links?  -->
-          <a href="#mentor"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">Mentor</p></li></a>
-          <a href="#team"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">Team</p></li></a>
-          <a href="#" id="resources"><li><i class="fa fa-list-ul i-box" aria-hidden="true"></i><p class="link-text">Resources</p></li></a>
+          <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-home" aria-hidden="true"></i><p class="link-text">Home</p></a></li>
+          <li><a data-toggle="tab" href="#you"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">You</p></a></li>
+          <li><a data-toggle="tab" href="#team"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Team</p></a></li>
+          <li><a data-toggle="tab" href="#" id="resources"><i class="fa fa-list-ul" aria-hidden="true"></i><p class="link-text">Resources</p></a></li>
 
-          <a href="#" id="test"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
-          <a href="#objectives" id="link-resources"><li><i class="fa fa-thumb-tack i-box" aria-hidden="true"></i><p class="link-text">Objectives</p></li></a>
+          <!-- <li><a data-toggle="tab" href="#" id="test"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">TEST</p></a></li>
+          <li><a data-toggle="tab" href="#objectives" id="link-resources"><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text">Objectives</p></a></li> -->
         </ul>
       </div>
       <br>
@@ -26,8 +27,241 @@
 
 
     <div id="main">
-
       <div class="row">
+        <div class="tab-content">
+
+
+
+
+          <!-- HOME -->
+          <div class="move-it tab-pane active" id="home">
+            <div class="lg-card">
+              <div class="lg-card-content">
+                  <div class="text-center welcome-desc">
+                    <%= image_tag current_user.photo, class: "img-circle" %>
+                    <h1>Welcome, <%= current_user.first_name %>.</h1>
+                    <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+                    <br>
+                    <h4>Your new contact info is all set up.</h4>
+                    <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+                    <br>
+                    <h4>(080) 4444 - 4444</h4>
+
+                    <hr>
+
+                    <h2>Let's get started</h2>
+                    <!-- new classes here -->
+                    <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+                    <br>
+                    <div class="welcome-screen-buttons text-center">
+                      <button class="btn btn-pink">Fill out data</button>
+                      <button class="btn btn-pink">Tasks to complete</button>
+                      <button class="btn btn-pink">other stuff</button>
+                    </div>
+
+                    <hr>
+
+                    <h2>Where to go and who to contact</h2>
+                    <!-- new classes here -->
+                    <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+                    <br>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- YOU -->
+          <div class="move-it tab-pane" id="you">
+            <div class="lg-card">
+              <div class="lg-card-content">
+                  <div class="text-center welcome-desc">
+                    <%= image_tag current_user.photo, class: "img-circle" %>
+                    <h1>Hello, <%= current_user.first_name %>.</h1>
+                    <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+                    <br>
+                    <h4>Your new contact info is all set up.</h4>
+                    <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+                    <br>
+                    <h4>(080) 4444 - 4444</h4>
+
+                    <hr>
+
+                    </div>
+
+                    <h2>Your Points</h2>
+                    <br>
+                    <div class="progress-wrapper">
+                      <div class="col-xs-12">
+                        <div class="progress">
+                            <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
+                            <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+
+
+          <!-- THE TEAM -->
+          <div class="move-it tab-pane" id="team">
+            <div class="lg-card">
+              <div class="lg-card-content">
+                  <div class="team-desc">
+                    <h1>The Team</h1>
+                    <hr>
+                    <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+                    <br>
+                    <h4>Your new contact info is all set up.</h4>
+                    <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+                    <br>
+                    <h4>(080) 4444 - 4444</h4>
+
+                    <hr>
+
+                    <h2>Let's get started</h2>
+                    <!-- new classes here -->
+                    <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+                    <br>
+                    <div class="welcome-screen-buttons text-center">
+                      <button class="btn btn-pink">Fill out data</button>
+                      <button class="btn btn-pink">Tasks to complete</button>
+                      <button class="btn btn-pink">other stuff</button>
+                    </div>
+
+                    <hr>
+
+                    <h2>Where to go and who to contact</h2>
+                    <!-- new classes here -->
+                    <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+                    <br>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <% if @user.mentor %>
+          <div class="col-xs-12 move-it col-md-6 col-md-offset-3" id="mentor">
+            <div class="card">
+            <i class="fa fa-times close" aria-hidden="true"></i>
+              <h3>Meet the mentor</h3>
+              <div class="mentor">
+                <div class="mentor-photo">
+                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
+                </div>
+                <div class="mentor-text">
+                  <h4>
+                      <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
+                  </h4>
+                  <h5>
+                      <%= @user.mentor.team.name %>
+                  </h5>
+                </div>
+              </div>
+              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @user.mentor %>
+          <div class="col-xs-12 col-md-6 col-md-offset-3 tab-pane" id="team">
+            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
+            <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
+              <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <% @user.team.users.each_with_index do |user, index| %>
+                <div class="item <%= "active" if index == 0 %>" align="center">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> members</h4>
+                        </div>
+                      <div class="modal-body">
+                        <center>
+                          <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                          <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
+                          <h4 class="media-heading"><%= user.position %></h4>
+                        </center>
+                        <hr>
+                        <div>
+                        <p class="text-left"><strong>Bio: </strong></p>
+                          <%= user.bio %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="move-it tab-pane" id="objectives">
+          <div class="lg-card">
+            <!-- <i class="fa fa-times close" aria-hidden="true"></i> -->
+            <h1>
+              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
+                <div class='fa fa-plus'></div> New Objective
+              </a>
+            </h1>
+
+            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
+            <div class="lg-card-content">
+                <h1>Your Objectives</h1>
+                <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
+                <br>
+                <button type="submit" name="all" onclick="toggleAll()">All</button>
+                <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
+                <!-- BUTTONS FILTER -->
+                <table class="ui single line table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% current_user.objectives.each do |o| %>
+                      <tr class="objective-list">
+                        <td><%= o.name %></td>
+                        <td><%= Time.now %></td>
+                        <td><%= o.status %></td>
+                      </tr>
+                    <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+
+
+
+      <!-- </div> --> <!-- container -->
+
+
 
         <!-- # Mentor -->
         <% if @user.mentor %>
