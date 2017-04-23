@@ -4,12 +4,12 @@
         <ul>
           <!-- <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Profile</p></li></a> -->
           <!-- loop for links?  -->
-          <a href="#"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Mentor</p></li></a>
-          <a href="#"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Team</p></li></a>
-          <a href="#" id="resources"><li><i class="fa fa-list-ul" aria-hidden="true"></i><p class="link-text"> Resources</p></li></a>
+          <a href="#mentor"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">Mentor</p></li></a>
+          <a href="#team"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">Team</p></li></a>
+          <a href="#" id="resources"><li><i class="fa fa-list-ul i-box" aria-hidden="true"></i><p class="link-text">Resources</p></li></a>
 
-          <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
-          <a href="#" id="link-3"><li><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text"> Link 3</p></li></a>
+          <a href="#" id="test"><li><i class="fa fa-user-o i-box" aria-hidden="true"></i><p class="link-text">TEST</p></li></a>
+          <a href="#objectives" id="link-resources"><li><i class="fa fa-thumb-tack i-box" aria-hidden="true"></i><p class="link-text">Objectives</p></li></a>
         </ul>
       </div>
       <br>
@@ -29,10 +29,80 @@
 
       <div class="row">
 
-        <div class="move-it">
+        <!-- # Mentor -->
+        <% if @user.mentor %>
+          <div class="col-xs-12 move-it col-md-6 col-md-offset-3" id="mentor">
+            <div class="card">
+            <i class="fa fa-times close" aria-hidden="true"></i>
+              <h3>Meet the mentor</h3>
+              <div class="mentor">
+                <div class="mentor-photo">
+                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
+                </div>
+                <div class="mentor-text">
+                  <h4>
+                      <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
+                  </h4>
+                  <h5>
+                      <%= @user.mentor.team.name %>
+                  </h5>
+                </div>
+              </div>
+              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @user.mentor %>
+          <div class="col-xs-12 col-md-6 col-md-offset-3" id="team">
+            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
+            <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
+              <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <% @user.team.users.each_with_index do |user, index| %>
+                <div class="item <%= "active" if index == 0 %>" align="center">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> members</h4>
+                        </div>
+                      <div class="modal-body">
+                        <center>
+                          <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                          <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
+                          <h4 class="media-heading"><%= user.position %></h4>
+                        </center>
+                        <hr>
+                        <div>
+                        <p class="text-left"><strong>Bio: </strong></p>
+                          <%= user.bio %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="move-it" id="objectives">
           <div class="lg-card">
             <!-- <i class="fa fa-times close" aria-hidden="true"></i> -->
-            <button class="btn btn-close close"><p>+ New Objective</p></button>
+            <h1>
+              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
+                <div class='fa fa-plus'></div> New Objective
+              </a>
+            </h1>
+
+            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
             <div class="lg-card-content">
                 <h1>Your Objectives</h1>
                 <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
@@ -62,6 +132,18 @@
             </div>
           </div>
         </div>
+
+
+        <div class="move-it">
+          <div class="lg-card">
+            <i class="fa fa-times close" aria-hidden="true"></i>
+            <div class="lg-card-content">
+            <script type='text/javascript' language='JavaScript' src='https://secure.jp1.echosign.com/public/embeddedWidget?wid=CBFCIBAA3AAABLblqZhAKiuInYoZUHPH0UTalbRGjPYGklZDrfnuICiaGz3e1RfPnQZEDcF0V8bavE6Vg5Hk*'></script>
+              <!-- <iframe src="https://secure.jp1.echosign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhAKiuInYoZUHPH0UTalbRGjPYGklZDrfnuICiaGz3e1RfPnQZEDcF0V8bavE6Vg5Hk*&hosted=false" width="100%" height="100%" frameborder="0" style="border: 0; overflow: hidden; min-height: 500px; min-width: 600px;"></iframe> -->
+            </div>
+          </div>
+        </div>
+
 
       <% if current_user.sign_in_count == 100 %>
         <div class="move-it">
@@ -180,76 +262,22 @@
                 </label>
               </div>
             </div>
-
           </div>
-
-          <% if @user.mentor %>
-          <!-- <div class="row"> -->
-            <div class="col-xs-12 move-it col-md-6 col-md-offset-3">
-              <div class="card">
-              <i class="fa fa-times close" aria-hidden="true"></i>
-                <h3>Meet the mentor</h3>
-                <div class="mentor">
-                  <div class="mentor-photo">
-                      <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                  </div>
-                  <div class="mentor-text">
-                    <h4>
-                        <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                    </h4>
-                    <h5>
-                        <%= @user.mentor.team.name %>
-                    </h5>
-                  </div>
-                </div>
-                <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
-              </div>
-            </div>
-          <!-- </div> -->
-          <% end %>
-
-          <% if @user.mentor %>
-            <div class="col-xs-12 col-md-6 col-md-offset-3">
-              <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
-              <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
-                <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <% @user.team.users.each_with_index do |user, index| %>
-                  <div class="item <%= "active" if index == 0 %>" align="center">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                          <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> members</h4>
-                          </div>
-                        <div class="modal-body">
-                          <center>
-                            <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
-                            <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
-                            <h4 class="media-heading"><%= user.position %></h4>
-                          </center>
-                          <hr>
-                          <div>
-                          <p class="text-left"><strong>Bio: </strong></p>
-                            <%= user.bio %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-              </div>
-            </div>
-          <% end %>
       </div>
     </div>
-</div>
+  </div>
+<!-- </div> -->
+
+    <!-- Modal for new objective -->
+    <!-- <div class="wrapper"> -->
+     <div class="modal fade" id="newObjModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog custom" role="document">
+        <div class="modal-content">
+          <%#= render 'shared/newobj'%>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
 
 
 
@@ -321,24 +349,24 @@
     });
 
     // Create lg card
-    $('#link-3').click(function(el) {
-      var $content = $(
-        "<div class='lg-card'>" +
-            "<i class='fa fa-times close' aria-hidden='true'></i>" +
-              "<div class='lg-card-content'>" +
-                "<h1>Your Objectives</h1>" +
-                "<% current_user.objectives do |o| %>" +
-                  "<%= o.name %>" +
-                "<% end %>" +
-              "</div>" +
-          "</div>").hide().addClass('transReset');
-      $("#main").prepend($content);
-      $content.show(300, function() { $(this).removeClass('transReset') });
+    // $('#link-3').click(function(el) {
+    //   var $content = $(
+    //     "<div class='lg-card'>" +
+    //         "<i class='fa fa-times close' aria-hidden='true'></i>" +
+    //           "<div class='lg-card-content'>" +
+    //             "<h1>Your Objectives</h1>" +
+    //             "<% current_user.objectives do |o| %>" +
+    //               "<%= o.name %>" +
+    //             "<% end %>" +
+    //           "</div>" +
+    //       "</div>").hide().addClass('transReset');
+    //   $("#main").prepend($content);
+    //   $content.show(300, function() { $(this).removeClass('transReset') });
 
-      $('.close').on( "click", function() {
-        $(this).parent().slideUp(400);
-      });
-    });
+    //   $('.close').on( "click", function() {
+    //     $(this).parent().slideUp(400);
+    //   });
+    // });
 
 
     $('.close, .light-AND').on( "click", function() {

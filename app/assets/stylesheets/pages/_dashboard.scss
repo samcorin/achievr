@@ -1,13 +1,36 @@
+// #resources ~ i {
+//   max-width: 24px !important;
+// }
+
+.i-box {
+  text-align: center;
+}
 .sub-desc {
   width: 70%;
   opacity: 0.6;
 }
 
-.btn-close {
+.btn-obj {
   background-color: $brand-color !important;
-  font-size: 20px !important;
-  padding: 15px 20px;
-
+  // font-size: 20px !important;
+  // padding: 15px 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  &:hover {
+    color: #DCDCDC;
+  }
+}
+a.btn-obj {
+  padding: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+  }
 }
 
 .sign-out {
@@ -43,6 +66,7 @@
   // width: 250px;
   // min-width: 250px;
   background-color: $brand-color;
+  text-transform: uppercase;
   .user-front {
     left: 10px;
     text-align: center;
@@ -60,7 +84,7 @@
     transition: width 0.4s ease;
   }
   i {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
@@ -87,9 +111,9 @@
       }
     }
   }
-  #mini-siderbar {
-    visibility: visible;
-  }
+  // #mini-sidebar {
+  //   visibility: visible;
+  // }
 }
 
 .user-points {
@@ -122,6 +146,10 @@
     .link-text {
       margin-left: 20px;
       display: inline;
+      text-align: left;
+    }
+    li {
+      text-align: center;
     }
   }
 }

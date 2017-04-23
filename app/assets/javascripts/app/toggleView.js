@@ -12,6 +12,7 @@ function toggleAll() {
     crossOrigin: true,
     dataType: "json",
     type: "GET",
+    // pass params
     // data: name param
     url: url + "/get_objectives",
     success: function(response) {

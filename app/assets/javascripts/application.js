@@ -1,5 +1,6 @@
 //= require webpack-bundle
 //= require sweetalert2
+//= require moment
 //= require jquery
 //= require jquery_ujs
 //= require remarkable-bootstrap-notify
