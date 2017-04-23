@@ -1,9 +1,6 @@
 // *= require sweetalert2
 // *= require animate.css
 
-// Graphical variables
-@import "config/variables";
-@import "config/bootstrap_variables";
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -11,6 +8,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "vendor/index";
+
+// Graphical variables
+@import "config/variables";
+@import "config/bootstrap_variables";
 
 // Your CSS
 @import "layout/index";
