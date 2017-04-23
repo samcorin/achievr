@@ -269,7 +269,7 @@
     //   if ($('.personal-info').prop("checked")) {
     //     var data = { user_id: <%= current_user.id %>, points: 5 };
 
-    //     update_points();
+    //     updatePoints();
     //     current_user_points += 5;
     //   }
     // })
@@ -278,7 +278,7 @@
     //   if ($('.payroll-info').prop("checked")) {
     //     var data = { user_id: <%= current_user.id %>, points: 5 };
 
-    //     update_points();
+    //     updatePoints();
     //     current_user_points += 5;
     //   }
     // })
@@ -290,7 +290,7 @@
 
 
 
-// function update_points(data) {
+// function updatePoints(data) {
 //       $.ajax({
 //         crossOrigin: true,
 //         type: "POST",
@@ -309,18 +309,55 @@
 
 
 
-    var progress_checker = {
-      // temp obj fffs
-      {}
-      init: function() {
-        current_user_points: <%= current_user.points %>;
+    var progressChecker = {
+
+      init: function(userId, points) {
+        current_user_id: userId;
+        current_user_points: points;
+        progressChecker.update();
       },
 
-      update_points: function(data) {
+      // getters and setters
+      getPoints: function() {
+        return current_user_points;
+      },
+
+      addPoints: function(points) {
+        current_user_points += points;
+        progressChecker.update();
+
+        return progressChecker.updatePoints(points);
+      },
+
+      resetPoints: function() {
+        current_user_points = 0;
+        progressChecker.update();
+
         $.ajax({
           crossOrigin: true,
           type: "POST",
-          data: data,
+          // data: {user_id: progressChecker.current_user_id },
+          url: "<%= request.base_url %>/reset_points",
+          success: function(response) {
+            // Dimitri
+            console.log(response)
+          }
+        });
+      },
+
+      update: function() {
+        progressChecker.update_page_score();
+        progressChecker.update_progress_bar();
+      },
+
+      updatePoints: function(points) {
+        // experimental
+        // console.log(arguments.callee.caller.name);
+
+        $.ajax({
+          crossOrigin: true,
+          type: "POST",
+          data: {user_id: progressChecker.current_user_id, points: points },
           url: "<%= request.base_url %>/add_points",
           success: function(response) {
             console.log(response)
@@ -328,44 +365,54 @@
         });
       },
 
-      // init?
-      update_points(data);
-      current_user_points += 10;
-
-
-      $(".user-points-updatable").text(current_user_points);
-
-      $(".progress-bar").css({"width": current_user_points + "%"});
-      $("#user-progress-bar").css({"width": current_user_points + "%"});
+      update_page_score: function() {
+        console.log("inside update: " + current_user_points);
+        $(".user-points-updatable").text(current_user_points);
+        $(".progress-bar").css({"width": current_user_points + "%"});
+        $("#user-progress-bar").css({"width": current_user_points + "%"});
+      },
 
       update_progress_bar: function() {
+        console.log("inside update progress bar")
+        console.log(current_user_points)
+        // clear
+        // Dimitri, why?
+        if (progressChecker.getPoints() >= 24) {
+          console.log('less than 24')
+          $('.one').replaceWith('<div class="one no-color">');
+          $('.two').replaceWith('<div class="two no-color">');
+          $('.three').replaceWith('<div class="three no-color">');
+          $('.first-star-done').replaceWith('<%= image_tag("icons/009-star.png", class: "first-star") %>');
+        }
 
+        // if ($('.progress-bar')[0].style.width >= '25%') {
+        if (progressChecker.getPoints() >= 25) {
+          $('.one').replaceWith('<div class="one success-color">');
+          // $('.one').clone().insertBefore('.one').addClass('animated pulse').delay(200).removeClass('animated pulse');
+        }
+        // need to add default circle  again..
+        if (progressChecker.getPoints() >= 50) {
+          $('.two').replaceWith('<div class="two success-color">');
+        }
+        if (progressChecker.getPoints() >= 75) {
+          $('.three').replaceWith('<div class="three success-color">');
+        }
+        if (progressChecker.getPoints() >= 100) {
+          console.log('Greater than 99?')
+          $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
+          $('.first-star-done').addClass('animated rubberBand');
+        }
       }
-      if ($('.progress-bar')[0].style.width >= '25%') {
-        $('.one').replaceWith('<div class="one success-color">');
-        // fireworks
-      }
-      if ($('.progress-bar')[0].style.width >= '50%') {
-        $('.two').replaceWith('<div class="two success-color">');
-        // fireworks
-      }
-      if ($('.progress-bar')[0].style.width >= '75%') {
-        $('.three').replaceWith('<div class="three success-color">');
-        // fireworks
-      }
-      // this changes after .one changes????
-      if ($('.progress-bar')[0].style.width >= '99%') {
-        console.log('Greater than 99?')
-        $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
-        $('.first-star-done').addClass('animated rubberBand');
-      }
-    }
 
-    myFeature.init
-    // Run first time, keeps page updated
-    progress_checker();
+    };
 
+    progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
+    // after
+    console.log("OUTSIDE")
+    console.log(current_user_points)
+
+    // modularise
     // TRIGGER
       $("#welcome-video").click(function(){
         setTimeout(function() {
@@ -523,10 +570,11 @@
       }, function () {
         swal.resetDefaults()
       }).then(function() {
-
+        // Q for Dimitri: do i need to pass the id every time?
         var data = { user_id: <%= current_user.id %>, points: 10 };
 
-        progress_checker(data);
+        // progressChecker(data);
+        progressChecker.updatePoints(data);
 
       });
     });

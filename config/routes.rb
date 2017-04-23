@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root "dashboards#show" #, subdomain: 'app'
     post '/add_points', to: 'users#update'
+    post '/reset_points', to: 'users#reset'
   end
 
   root "pages#home"
