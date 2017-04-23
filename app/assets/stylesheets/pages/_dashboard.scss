@@ -64,6 +64,13 @@ li.active {
   border-bottom-left-radius: none !important;
 }
 
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav-tabs > li > a:hover {
+  text-decoration: none;
+  background-color: #E8E7EE;
+}
+
 // -----------------------------------------
 .tab-content, .tab-pane {
   clear:both;
@@ -87,6 +94,10 @@ li.active {
   strong {
     color: $green;
   }
+}
+
+#you-content {
+  margin-top: 100px;
 }
 
 // -----------------------------------------
