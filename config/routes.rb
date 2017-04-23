@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root "dashboards#show" #, subdomain: 'app'
     post '/add_points', to: 'users#update'
     post '/reset_points', to: 'users#reset'
+    get '/get_objectives', to: 'users#get_objectives'
+
   end
 
   root "pages#home"

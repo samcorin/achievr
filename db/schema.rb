@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421051807) do
+ActiveRecord::Schema.define(version: 20170423045441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20170421051807) do
     t.text     "product"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "objectives", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "due_date",   default: '2017-04-23 05:00:46'
+    t.integer  "user_id"
+    t.boolean  "completed",  default: false
+    t.string   "status",     default: "Not Started"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.index ["user_id"], name: "index_objectives_on_user_id", using: :btree
   end
 
   create_table "places", force: :cascade do |t|
@@ -99,7 +110,7 @@ ActiveRecord::Schema.define(version: 20170421051807) do
     t.string   "position"
     t.integer  "team_id"
     t.integer  "mentor_id"
-    t.booen  "admin",                  default: false, null: false
+    t.boolean  "admin",                  default: false, null: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -118,6 +129,7 @@ ActiveRecord::Schema.define(version: 20170421051807) do
   end
 
   add_foreign_key "badges", "users"
+  add_foreign_key "objectives", "users"
   add_foreign_key "places", "companies"
   add_foreign_key "resources", "teams"
   add_foreign_key "teams", "companies"
