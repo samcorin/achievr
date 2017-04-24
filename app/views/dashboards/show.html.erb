@@ -5,7 +5,7 @@
           <!-- <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Profile</p></li></a> -->
           <!-- loop for links?  -->
           <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-home" aria-hidden="true"></i><p class="link-text">Home</p></a></li>
-          <li><a data-toggle="tab" href="#you"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">You</p></a></li>
+          <li><a data-toggle="tab" href="#you"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text" id="you-flash">You</p></a></li>
           <li><a data-toggle="tab" href="#team"><i class="fa fa-users" aria-hidden="true"></i><p class="link-text">Team</p></a></li>
           <li><a data-toggle="tab" href="#" id="resources"><i class="fa fa-list-ul" aria-hidden="true"></i><p class="link-text">Resources</p></a></li>
 
@@ -29,6 +29,7 @@
     <div id="main">
       <div class="row">
 
+        <!-- Unsure about this -->
         <% if current_user.sign_in_count == 0 %>
           <div class="move-it">
             <div class="lg-card" id="welcome-video">
@@ -47,38 +48,48 @@
             <div class="lg-card">
               <div class="lg-card-content" id="welcome-content">
               <div class="bg-image text-center"><h1>Company. Co.</h1></div>
-                  <div class="text-center welcome-desc">
+
+                  <div class="text-center welcome-desc live-content">
                     <%#= image_tag current_user.photo, class: "img-circle" %>
                     <h1>Welcome, <%= current_user.first_name %>.</h1>
                     <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
                     <br>
-
+                    <div class="welcome-screen-buttons text-center">
+                      <a href="#step1" id="toStepOne"><button class="btn btn-pink">Continue</button></a>
+                    </div>
+                    <br>
                     <hr>
 
-                    <!-- INsert FIRST ANIMATION SLIDE IN -->
+                    <div id="step1">
+                      <div class="live-content">
+                        <h2>Let's get started</h2>
+                        <!-- new classes here -->
+                        <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+                        <br>
 
-
-                    <h2>Let's get started</h2>
-                    <!-- new classes here -->
-                    <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
-                    <br>
-
-                    <!-- replace with ..... -->
-                    <div class="welcome-screen-buttons text-center" id="step1">
-                      <button class="btn btn-pink" id="step1-button">other stuff</button>
+                        <!-- replace with ..... -->
+                        <div class="welcome-screen-buttons text-center">
+                          <button class="btn btn-pink" id="step1-button">other stuff</button>
+                        </div>
+                      </div>
                     </div>
 
                     <hr>
+                    <div class="live-content">
+                      <h2>Where to go and who to contact</h2>
+                      <br>
+                      <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
 
-                    <h2>Where to go and who to contact</h2>
-                    <br>
-                    <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
+                      <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+                      <br>
 
-                    <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
-                    <br>
+                      <div class="welcome-screen-buttons text-center">
+                        <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
+                      </div>
+                    </div>
                     <hr>
 
-                </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -523,9 +534,6 @@
         welcomeNotification();
       });
 
-      // click on resources, clear screen? huge card? modal?
-      // iterate through the resources
-
       // MODULARISE MAN
     //   $('#resources').click(function(el) {
     //   var $content = $(
@@ -544,13 +552,15 @@
     //   });
     // });
 
+    $('#toStepOne').click(function(){
+      console.log($(this).attr('href'));
+      $('html, body').animate({
+          scrollTop: $( $(this).attr('href') ).offset().top
+      }, 500);
+      return false;
+    });
 
 
-    // STEP 1
-    // <h4>Your new contact info is all set up.</h4>
-    // <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-    // <br>
-    // <h4>(080) 4444 - 4444</h4>
     var teamEmails = [];
 
     <% @team.each do |member| %>
@@ -562,13 +572,13 @@
       var $stepOneContent = $(
         "<div class='lg-card'>" +
           "<div class='lg-card-content'>" +
-            "<h4>Your new contact info is all set up.</h4>" +
+            "<h3>Your new contact info is all set up.</h3>" +
             "<strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>" +
             "<br>" +
           "<h4>(080) 4444 - 4444</h4>" +
           "<br>" +
-          "<h2>How about sending your team a welcome message?</h2>" +
-          "<a href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_top'>Send Mail</a>" +
+          "<h4>How about sending your team a welcome message?</h4>" +
+          "<a id='intro-mail'href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_top' class='animated pulse'>Send Mail</a>" +
         "</div>").hide().addClass('transReset');
       $('#step1').replaceWith($stepOneContent);
 
@@ -577,15 +587,43 @@
       // $("#main").prepend($content);
       $stepOneContent.show(300, function() { $(this).removeClass('transReset') });
 
-      $('.close').on( "click", function() {
-        $(this).parent().slideUp(400);
-      });
+      // $('.close').on( "click", function() {
+      //   $(this).parent().slideUp(400);
+      // });
     });
 
-
-    $('.close, .light-AND').on( "click", function() {
-      $(this).parent().parent().slideUp(400);
+    // $('.close, .light-AND').on( "click", function() {
+    //   $(this).parent().parent().slideUp(400);
+    // });
+    $('a[href*="home"]').click(function(event) {
+      $('#main').scrollTop(0);
     });
+
+    $('a[href*="you"]').click(function(event) {
+      $('#main').scrollTop(0);
+    });
+
+    $('a[href*="team"]').click(function(event) {
+      $('#main').scrollTop(0);
+    });
+
+    $('#meet-mentor').click(function() {
+      $('a').parent().delay(500).removeClass('active');
+      $('a[href*="you"]').parent().trigger('mouseenter').addClass('active');
+      $('a[href*="you"]').parent().trigger('click');
+      $('#main').scrollTop(0);
+      // $('.nav-tabs > .active li').delay(1000).find('a').trigger('click');
+      // $('body').scrollTop(0);
+
+      // $('a[href*="you"]')[0].delay(1000).trigger('click');
+
+
+      // click
+      $('#you').trigger('click', function() {
+
+      })
+    })
+
 
     // Points events
     // <%# if @user.points > 50 %>

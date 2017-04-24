@@ -93,6 +93,11 @@ li.active {
 }
 
 // -----------------------------------------
+.lg-card-content {
+  width: 700px;
+}
+
+
 .tab-content, .tab-pane {
   clear:both;
 }
@@ -118,13 +123,28 @@ li.active {
   }
 }
 
-.welcome-desc {
-  // margin-top: 50px;
-  width: 600px;
-  font-size: 16px;
+#intro-mail {
+  font-size: 25px;
+  color: $pink;
+}
+
+.live-content {
+  padding: 30px;
+  font-size: 18px;
   opacity: 0.8;
   strong {
     color: $green;
+  }
+}
+
+.welcome-desc {
+  h1 {
+    margin-bottom: 30px;
+  }
+  p {
+    margin: auto;
+    text-align: center;
+    width: 600px;
   }
 }
 
