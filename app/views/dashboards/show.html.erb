@@ -67,7 +67,7 @@
                       <div class="live-content">
                         <h2>Let's get started</h2>
                         <!-- new classes here -->
-                        <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+                        <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Your <strong>Achievr</strong> dashboard contains all the information you will need to get started and to support you during the first few months.</p>
                         <br>
 
                         <!-- replace with ..... -->
@@ -79,11 +79,11 @@
 
                     <hr>
                     <div class="live-content">
-                      <h2>Where to go and who to contact</h2>
+                      <h2>Where to Go and Who to Contact</h2>
                       <br>
-                      <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
-
-                      <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+                      <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> office at the following address:<br>
+                      20-3 Ebisu 4-chome, Shibuya, Tokyo 150-6032<br>
+                      When you’ll arrived at the front desk, call the number 12 and ask for Mike. I’ll come pick you up.</p>
                       <br>
 
                       <div class="welcome-screen-buttons text-center">
