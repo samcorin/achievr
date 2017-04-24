@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170423132636) do
 
   create_table "objectives", force: :cascade do |t|
     t.string   "name"
-    t.datetime "due_date",   default: '2017-04-23 05:00:46'
+    t.datetime "due_date",   default: '2017-04-24 03:12:07'
     t.integer  "user_id"
     t.boolean  "completed",  default: false
     t.string   "status",     default: "Not Started"
