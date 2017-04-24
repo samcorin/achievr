@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
-  get 'objectives/new'
-
-  get 'objectives/create'
-
   ActiveAdmin.routes(self)
 
   authenticated :user do
     root "dashboards#show" #, subdomain: 'app'
+
     post '/add_points', to: 'users#update'
     post '/reset_points', to: 'users#reset'
-    get '/get_objectives', to: 'users#get_objectives'
 
+    # Show user badges on page
+    # get '/show_badges', to: 'badges#create'
+    resources :badges, only: [:index, :create]
+
+    get '/get_objectives', to: 'users#get_objectives'
     get 'objectives/new', to: 'objectives#new'
     post 'objectives', to: 'objectives#create'
 
