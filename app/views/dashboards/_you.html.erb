@@ -1,19 +1,13 @@
 <div class="tab-pane" id="you">
-            <div class="lg-card">
-              <!-- <div class="lg-card-content"> -->
-              <div class="card-nav-wrapper">
-                <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#first" class="text-center">General info</a></li>
-                    <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
-                  <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
-                </ul>
-              </div>
-
-
-
-
-
-
+  <div class="lg-card">
+    <!-- <div class="lg-card-content"> -->
+    <div class="card-nav-wrapper">
+      <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a data-toggle="tab" href="#first" class="text-center">General info</a></li>
+          <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
+        <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
+      </ul>
+    </div>
 
 <div class="tab-content" id="you-content">
   <div id="first" class="tab-pane active">
@@ -29,6 +23,10 @@
         <h4>(080) 4444 - 4444</h4>
 
         <hr>
+
+        <div class="days-passed">
+          Days passed: <%= days_passed %>
+        </div>
 
         </div>
 
@@ -79,9 +77,9 @@
   <div id="third" class="tab-pane">
     <div class="lg-card-content">
       <div class="text-center welcome-desc">
-        <h1>Your points etc....</h1>
-        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-
+        <div class="question">
+          <em><%= eq_module1  %></em>
+        </div>
       </div>
     </div>
 

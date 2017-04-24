@@ -1,9 +1,12 @@
 <div class="tab-pane active" id="home">
   <div class="lg-card">
     <div class="lg-card-content" id="welcome-content">
-    <div class="bg-image text-center">
-      <h1>XYZ Co.</h1>
-    </div>
+      <% if current_user.sign_in_count == 0 %>
+        <%= render 'welcome' %>
+      <% end %>
+      <div class="bg-image text-center">
+        <h1>XYZ Co.</h1>
+      </div>
       <div class="text-center live-content">
 
       <div class="content-container">
