@@ -318,6 +318,11 @@
 
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
+      $('#play-video').click(function(event) {
+        // .addClass('hidden')
+        $('.welcome-screen-buttons > a').hide();
+        $('#toStepOne').removeClass('hidden');
+      });
 
       // $(document).ready(function() {
       //   // Open a URL in a lightbox
