@@ -3,32 +3,24 @@
     <div class="lg-card-content" id="welcome-content">
     <div class="bg-image text-center">
     <!-- <h1>Company. Co.</h1> -->
-      <h1>
-        <span style='color: blue'>G</span>
-        <span style='color: red'>o</span>
-        <span style='color: yellow'>o</span>
-        <span style='color: blue'>g</span>
-        <span style='color: green'>l</span>
-        <span style='color: red'>e</span>
-      </h1>
+      <h1>XYZ Co.</h1>
     </div>
 
         <div class="text-center welcome-desc live-content">
-          <%#= image_tag current_user.photo, class: "img-circle" %>
           <div class="completed-badge toStepOne">
-<!--             <%# if current_user.badges.find_by_title("toStepOne") %>
-              <%# image_tag("icons/001-quality.png") %>
-            <%# end %> -->
             <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
           </div>
+          <%= image_tag current_user.photo, class: "img-circle" %>
 
           <h1>Welcome, <%= current_user.first_name %>.</h1>
           <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
           <br>
           <div class="welcome-screen-buttons text-center">
-            <!-- On video finish - toStepOne -->
-            <!-- href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity -->
-            <a  id="toStepOne"><button class="btn btn-pink">Watch video</button></a>
+
+            <a id="play-video" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity><button class="btn btn-pink">Play Video</button></a>
+            <!-- instance , $('#toStepOne').removeClass('hidden');  -->
+            <!-- show on video close -->
+            <button id="toStepOne" class="btn btn-pink hidden">Continue</button>
           </div>
           <br>
           <hr>
@@ -50,7 +42,7 @@
             <div class="live-content">
               <h2>Let's get started</h2>
               <!-- new classes here -->
-              <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+              <p >Congratulations on your new <%= current_user.position %> position at <strong><%= current_user.team.company.name %></strong>.  Our goal is to make your transition a smooth one.</p>
               <br>
 
               <!-- replace with ..... -->
