@@ -1,9 +1,9 @@
 //= require webpack-bundle
 //= require sweetalert2
 //= require moment
-//= require lity
 //= require jquery
 //= require jquery_ujs
+//= require lity
 //= require remarkable-bootstrap-notify
 //= require bootstrap-sprockets
 //= require_tree .
