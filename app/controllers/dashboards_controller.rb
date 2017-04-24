@@ -5,6 +5,8 @@ class DashboardsController < ApplicationController
     @resoureces = current_user.team.resources
     @objectives = current_user.objectives
 
+    @add_badges = Badge.all
+
     @team = User.all.where.not(id: current_user.id)
   end
 end

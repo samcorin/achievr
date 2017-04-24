@@ -19,10 +19,6 @@
       </div> -->
     </div>
 
-
-
-
-
     <div id="main">
       <div class="row">
 
@@ -546,8 +542,10 @@
   <li><a data-toggle="tab" href="#objectives" id="link-resources"><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text">Objectives</p></a></li> -->
 
   <script>
-
-      progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
+      console.log('in script')
+      // $(document).ready(function() {
+        progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
+      // })
 
       // On video close
       $("#welcome-video").click(function(){
@@ -616,17 +614,17 @@
     // $('.close, .light-AND').on( "click", function() {
     //   $(this).parent().parent().slideUp(400);
     // });
-    $('a[href*="home"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="home"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
-    $('a[href*="you"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="you"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
-    $('a[href*="team"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="team"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
     $('#meet-mentor').click(function() {
       $('a').parent().delay(500).removeClass('active');
