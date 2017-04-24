@@ -1,0 +1,36 @@
+<div class="tab-pane" id="team">
+  <div class="lg-card">
+    <div class="lg-card-content">
+        <div class="team-desc">
+          <h1>The Team</h1>
+          <hr>
+          <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+          <br>
+          <h4>Your new contact info is all set up.</h4>
+          <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+          <br>
+          <h4>(080) 4444 - 4444</h4>
+
+          <hr>
+
+          <h2>Let's get started</h2>
+          <!-- new classes here -->
+          <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
+          <br>
+          <div class="welcome-screen-buttons text-center">
+            <button class="btn btn-pink">Fill out data</button>
+            <button class="btn btn-pink">Tasks to complete</button>
+            <button class="btn btn-pink">other stuff</button>
+          </div>
+
+          <hr>
+
+          <h2>Where to go and who to contact</h2>
+          <!-- new classes here -->
+          <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+          <br>
+
+      </div>
+    </div>
+  </div>
+</div>

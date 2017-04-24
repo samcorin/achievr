@@ -23,7 +23,7 @@
       <div class="row">
 
         <!-- Unsure about this -->
-        <% if current_user.sign_in_count == 0 %>
+        <% if current_user.sign_in_count == 100 %>
           <div class="move-it">
             <div class="lg-card" id="welcome-video">
               <i class="fa fa-times close" aria-hidden="true"></i>
@@ -36,258 +36,17 @@
 
         <div class="tab-content">
 
+
           <!-- HOME -->
-          <div class="tab-pane active" id="home">
-            <div class="lg-card">
-              <div class="lg-card-content" id="welcome-content">
-              <div class="bg-image text-center">
-              <!-- <h1>Company. Co.</h1> -->
-                <h1>
-                  <span style='color: blue'>G</span>
-                  <span style='color: red'>o</span>
-                  <span style='color: yellow'>o</span>
-                  <span style='color: blue'>g</span>
-                  <span style='color: green'>l</span>
-                  <span style='color: red'>e</span>
-                </h1>
-              </div>
-
-                  <div class="text-center welcome-desc live-content">
-                    <%#= image_tag current_user.photo, class: "img-circle" %>
-                    <div class="completed-badge toStepOne">
-          <!--             <%# if current_user.badges.find_by_title("toStepOne") %>
-                        <%# image_tag("icons/001-quality.png") %>
-                      <%# end %> -->
-                      <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
-                    </div>
-
-                    <h1>Welcome, <%= current_user.first_name %>.</h1>
-                    <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-                    <br>
-                    <div class="welcome-screen-buttons text-center">
-                      <!-- On video finish - toStepOne -->
-                      <a href="" id="toStepOne"><button class="btn btn-pink">Watch video</button></a>
-                    </div>
-                    <br>
-                    <hr>
-
-                    <!-- Optional, how to do I keep track  -->
-                    <div id="step1">
-                      <div class="live-content">
-                        <h2>Let's get started</h2>
-                        <!-- new classes here -->
-                        <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
-                        <br>
-
-                        <!-- replace with ..... -->
-                        <div class="welcome-screen-buttons text-center">
-                          <button class="btn btn-pink" id="step1-button">other stuff</button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <hr>
-                    <div class="live-content">
-
-                    <!-- How do I keep track of what elements to show on the page? -->
-                    <!--   <div class="completed-badge step1-button">
-                        <%# if current_user.badges.find_by_title("step1-button") %>
-                          <%#= image_tag("icons/001-quality.png") %>
-                        <%# end %>
-                      </div> -->
-                      <h2>Where to go and who to contact</h2>
-                      <br>
-                      <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
-
-                      <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
-                      <br>
-
-                      <div class="welcome-screen-buttons text-center">
-                        <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
-                      </div>
-                    </div>
-                    <hr>
-
-                  </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'home' %>
 
 
           <!-- YOU -->
-          <div class="tab-pane" id="you">
-            <div class="lg-card">
-              <!-- <div class="lg-card-content"> -->
-              <div class="card-nav-wrapper">
-                <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#first" class="text-center">General info</a></li>
-                    <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
-                  <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
-                </ul>
-              </div>
-
-                <div class="tab-content" id="you-content">
-                  <div id="first" class="tab-pane active">
-
-                    <div class="lg-card-content">
-                      <div class="text-center welcome-desc">
-                        <h1>First tab</h1>
-                        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-                        <br>
-                        <h4>Your new contact info is all set up.</h4>
-                        <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-                        <br>
-                        <h4>(080) 4444 - 4444</h4>
-
-                        <hr>
-
-                        </div>
-
-                        <h2>Your Points</h2>
-                        <br>
-                        <div class="progress-wrapper">
-                          <div class="col-xs-12">
-                            <div class="progress">
-                                <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div> <!-- first tab -->
-
-                  <div id="second" class="tab-pane">
-
-                    <div class="lg-card-content">
-                      <div class="text-center welcome-desc">
-                        <h1>Your Mentor</h1>
-                        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-                        <!-- # Mentor -->
-                        <% if @user.mentor %>
-
-                              <h3>Meet the mentor</h3>
-                              <div class="mentor">
-                                <div class="mentor-photo">
-                                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                                </div>
-                                <div class="mentor-text">
-                                  <h4>
-                                    <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                                  </h4>
-                                  <h5>
-                                    <%= @user.mentor.team.name %>
-                                  </h5>
-                                </div>
-                              </div>
-                              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
-                        <% end %>
-
-                      </div>
-                    </div>
-                  </div> <!-- Second tab -->
-
-
-                  <div id="third" class="tab-pane">
-                    <div class="lg-card-content">
-                      <div class="text-center welcome-desc">
-                        <h1>Your points etc....</h1>
-                        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-
-                      </div>
-                    </div>
-
-                        <hr>
-
-                        <!-- Objectives -->
-                          <div class="objectives-wrapper">
-                            <h1>
-                              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
-                                <div class='fa fa-plus'></div> New Objective
-                              </a>
-                            </h1>
-
-                            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
-                            <div class="lg-card-content">
-                              <h1>Your Objectives</h1>
-                              <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
-                              <br>
-                              <button type="submit" name="all" onclick="toggleAll()">All</button>
-                              <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
-                              <!-- BUTTONS FILTER -->
-                              <table class="ui single line table">
-                                <thead>
-                                  <tr>
-                                    <th>Name</th>
-                                    <th>Due Date</th>
-                                    <th>Status</th>
-                                    <th colspan="3"></th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <% current_user.objectives.each do |o| %>
-                                    <tr class="objective-list">
-                                      <td><%= o.name %></td>
-                                      <td><%= Time.now %></td>
-                                      <td><%= o.status %></td>
-                                    </tr>
-                                  <% end %>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-
-
-                      <!-- </div>
-                    </div> -->
-
-
-
-                  </div> <!-- Third tab -->
-
-
-                </div> <!-- YOU -->
-              </div>
-            </div>
-
+          <%= render 'you' %>
 
 
           <!-- THE TEAM -->
-          <div class="tab-pane" id="team">
-            <div class="lg-card">
-              <div class="lg-card-content">
-                  <div class="team-desc">
-                    <h1>The Team</h1>
-                    <hr>
-                    <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-                    <br>
-                    <h4>Your new contact info is all set up.</h4>
-                    <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-                    <br>
-                    <h4>(080) 4444 - 4444</h4>
-
-                    <hr>
-
-                    <h2>Let's get started</h2>
-                    <!-- new classes here -->
-                    <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
-                    <br>
-                    <div class="welcome-screen-buttons text-center">
-                      <button class="btn btn-pink">Fill out data</button>
-                      <button class="btn btn-pink">Tasks to complete</button>
-                      <button class="btn btn-pink">other stuff</button>
-                    </div>
-
-                    <hr>
-
-                    <h2>Where to go and who to contact</h2>
-                    <!-- new classes here -->
-                    <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
-                    <br>
-
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'team' %>
 
 
         <% if @user.mentor %>
@@ -561,6 +320,22 @@
 
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
+
+      // $(document).ready(function() {
+      //   // Open a URL in a lightbox
+      //   // var lightbox = lity('//www.youtube.com/watch?v=XSGBVzeBUbk');
+
+      //   // Bind as an event handler
+      //   $('#toStepOne').on('click', '[data-lightbox]', lity('//www.youtube.com/watch?v=XSGBVzeBUbk'));
+
+      // instance.close().then(function() {
+      //     console.log('Lightbox closed');
+      // });
+
+      // });
+
+      // <a id="liyy-test" href="https://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity>iFrame Youtube</a>
+
       // On video close
       $("#welcome-video").click(function(){
         welcomeNotification();
@@ -578,7 +353,7 @@
           url: url + "<%= badges_path %>",
           // url: url + "/badges_path",
           success: function(response) {
-            console.log(response);
+            // console.log(response);
           }
         });
       })
@@ -645,6 +420,8 @@
     // $('.close, .light-AND').on( "click", function() {
     //   $(this).parent().parent().slideUp(400);
     // });
+
+
     // $('a[href*="home"]').click(function(event) {
     //   $('#main').scrollTop(0);
     // });

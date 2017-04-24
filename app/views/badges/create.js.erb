@@ -1,3 +1,6 @@
 var badge_id = "#badge-<%= @badge.title %>";
 
-$(badge_id).toggleClass("hidden");
+$(badge_id).hide().toggleClass("hidden").fadeIn();
+
+<!-- .addClass("animate pulse").delay(1000).removeClass("animate pulse") -->
+<!-- .fadeToggle( "slow", "linear" ); -->

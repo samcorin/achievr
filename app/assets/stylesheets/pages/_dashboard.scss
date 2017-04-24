@@ -97,7 +97,7 @@ li.active {
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0.5;
+  opacity: 0.3;
   height: 100px;
   width: 100px;
 }
@@ -141,7 +141,7 @@ li.active {
   position: relative;
   padding: 30px;
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 1;
   strong {
     color: $green;
   }
