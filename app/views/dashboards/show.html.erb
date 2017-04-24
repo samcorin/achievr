@@ -542,17 +542,29 @@
   <li><a data-toggle="tab" href="#objectives" id="link-resources"><i class="fa fa-thumb-tack" aria-hidden="true"></i><p class="link-text">Objectives</p></a></li> -->
 
   <script>
-      console.log('in script')
-      // $(document).ready(function() {
-        progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
-      // })
+
+      progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
       // On video close
       $("#welcome-video").click(function(){
         welcomeNotification();
       });
 
-
+      $('#toStepOne').click(function() {
+        // dynamic
+        $.ajax({
+          crossOrigin: true,
+          type: "POST",
+          data: { title: 'toStepOne' },
+          // url: "<%#= request.base_url %>/reset_points",
+          // url: url + "/add_badges",
+          url: url + "/badges_path",
+          success: function(response) {
+            // Dimitri
+            console.log(response);
+          }
+        });
+      })
 
 
       // MODULARISE MAN
@@ -573,13 +585,13 @@
     //   });
     // });
 
-    $('#toStepOne').click(function(){
-      console.log($(this).attr('href'));
-      $('html, body').animate({
-          scrollTop: $( $(this).attr('href') ).offset().top
-      }, 500);
-      return false;
-    });
+    // $('#toStepOne').click(function(){
+    //   console.log($(this).attr('href'));
+    //   $('html, body').animate({
+    //       scrollTop: $( $(this).attr('href') ).offset().top
+    //   }, 500);
+    //   return false;
+    // });
 
 
     var teamEmails = [];
