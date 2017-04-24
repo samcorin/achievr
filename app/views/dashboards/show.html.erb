@@ -36,7 +36,6 @@
 
         <div class="tab-content">
 
-
           <!-- HOME -->
           <%= render 'home' %>
 
@@ -47,7 +46,6 @@
 
           <!-- THE TEAM -->
           <%= render 'team' %>
-
 
         <% if @user.mentor %>
           <div class="col-xs-12 col-md-6 col-md-offset-3 tab-pane" id="team">
@@ -421,18 +419,17 @@
     //   $(this).parent().parent().slideUp(400);
     // });
 
+    $('a[href*="home"]').click(function(event) {
+      $('#main').scrollTop(0);
+    });
 
-    // $('a[href*="home"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
+    $('a[href*="you"]').click(function(event) {
+      $('#main').scrollTop(0);
+    });
 
-    // $('a[href*="you"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
-
-    // $('a[href*="team"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
+    $('a[href*="team"]').click(function(event) {
+      $('#main').scrollTop(0);
+    });
 
     $('#meet-mentor').click(function() {
       $('a').parent().delay(500).removeClass('active');

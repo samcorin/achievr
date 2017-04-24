@@ -25,6 +25,18 @@ team = Team.create!(
   company: company
 )
 
+team2 = Team.create!(
+  name: 'Engineering Team',
+  company: company
+)
+
+leadership = Team.create!(
+  name: 'Leadership Team',
+  company: company
+)
+
+
+
 puts 'Creating users...'
 # TODO: more employees that belong to the same team
 
@@ -58,7 +70,7 @@ hide = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
+  team: team2
 )
 
 dim = User.create!(
@@ -69,8 +81,55 @@ dim = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/dim_e8ykqe.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
+  team: team2
 )
+
+
+paul = User.create!(
+  first_name: 'Paul',
+  last_name: 'Gaumer',
+  points: 0,
+  email: 'paul@indeed.com',
+  password: '123123',
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/paul_l3sten.jpg",
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  team: team2
+)
+
+
+sylvain = User.create!(
+  first_name: 'Sylvain',
+  last_name: 'Pierre',
+  points: 0,
+  email: 'sylvain@indeed.com',
+  password: '123123',
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012934/sylvain_flyqtb.png",
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  team: team2
+)
+
+boris = User.create!(
+  first_name: 'Boris',
+  last_name: 'Paillard',
+  points: 0,
+  email: 'boris@indeed.com',
+  password: '123123',
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/boris_q1q3qv.jpg",
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  team: team2
+)
+
+sebastien = User.create!(
+  first_name: 'Sebastien',
+  last_name: 'Saunier',
+  points: 0,
+  email: 'sebastien@indeed.com',
+  password: '123123',
+  photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/saunier_zwrxwb.jpg",
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  team: team2
+)
+
 
 sam.mentor = dim
 sam.save!
@@ -83,6 +142,20 @@ hide.save!
 
 dim.mentor = sam
 dim.save!
+
+paul.mentor = boris
+dim.save!
+
+sylvain.mentor = boris
+dim.save!
+
+sebastien.mentor = boris
+dim.save!
+
+boris.mentor = sebastien
+dim.save!
+
+
 
 puts "Creating resources..."
 
