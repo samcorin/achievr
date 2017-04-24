@@ -202,6 +202,9 @@ GEM
     rails-assets-bootstrap (3.3.7)
       rails-assets-jquery (>= 1.9.1, < 4)
     rails-assets-jquery (3.2.1)
+    rails-assets-lity (2.2.2)
+      rails-assets-jquery (>= 1.7)
+    rails-assets-moment (2.18.1)
     rails-assets-remarkable-bootstrap-notify (3.1.3)
       rails-assets-bootstrap (>= 2.0.0)
       rails-assets-jquery (>= 1.10.2)
@@ -298,6 +301,8 @@ DEPENDENCIES
   puma
   rails (= 5.0.2)
   rails-assets-animate.css!
+  rails-assets-lity!
+  rails-assets-moment!
   rails-assets-remarkable-bootstrap-notify!
   rails-assets-sweetalert2!
   react_on_rails (~> 6)

@@ -1,0 +1,24 @@
+<!-- <div class="wrapper login-wrapper" style="background-color: #3D2C63">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3"> -->
+        <%= simple_form_for(@objective) do |f| %>
+          <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">New Objective</h2>
+            </div>
+            <div class="card-content">
+              <div class="form-group">
+                  <%= f.input :email, required: false, autofocus: true, placeholder: "Enter email", class: "input-no-border"%>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <%= f.button :submit, "Add", class: "btn-pink" %>
+            </div>
+          </div>
+        <% end %>
+<!--       </div>
+    </div>
+  </div>
+</div>
+ -->

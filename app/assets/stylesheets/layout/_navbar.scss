@@ -5,7 +5,7 @@
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -26,10 +26,10 @@
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
-  flex: 0 0 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // flex: 0 0 50%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 .progress {
@@ -41,7 +41,7 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Navbar standard link */
@@ -134,4 +134,12 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.progress-wrapper {
+  width: 80%;
+}
+
+.progress-bar, .progress {
+  border-radius: 15px;
 }

@@ -3,7 +3,7 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
+$base-font: "Open Sans", "sans-serif";
 $header-font: 'Montserrat', 'sans-serif';
 
 // Local fonts (uncomment following lines)
@@ -34,3 +34,7 @@ $orange: #E67E22;
 $green:  #0CAEAE;
 $gray: #000000;
 $light-purple: #F7F7FF;
+
+.points {
+  color: $green;
+}

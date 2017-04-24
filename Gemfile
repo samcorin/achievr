@@ -27,6 +27,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css'
   gem 'rails-assets-sweetalert2'
   gem 'rails-assets-remarkable-bootstrap-notify'
+  gem 'rails-assets-moment'
+  gem 'rails-assets-lity'
 end
 
 gem 'devise_invitable'

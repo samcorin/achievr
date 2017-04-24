@@ -1,3 +1,207 @@
+// Overriding bootstrap
+.card-nav-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.row {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #E8E7EE;
+  border: 0 !important;
+}
+
+.nav-tabs {
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+.active li, a.active, li, li ~ a, .nav-tabs{
+  border-radius: 0 !important;
+  color: $brand-color;
+  border: 0 !important;
+}
+
+.nav li {
+  padding: 20px auto;
+  margin-bottom: 0 !important;
+}
+
+.nav > li > a {
+  padding: 20px 15px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.img-circle {
+  width: 100px;
+  height: 100px;
+}
+
+a {
+  border: none !important;
+}
+
+li.active {
+  border: none !important;
+}
+
+.nav li {
+  margin: 0 !important;
+}
+
+.nav, .nav-tabs, ul .nav-tabs > li > a {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  border-top-left-radius: none !important;
+  border-top-right-radius: none !important;
+  border-bottom-right-radius: none !important;
+  border-bottom-left-radius: none !important;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav-tabs > li > a:hover {
+  text-decoration: none;
+  background-color: #E8E7EE;
+}
+
+// round border for first tab
+#you .nav-tabs > li.active > a:first-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  background-color: #7361e4;
+  border: 0 !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 0 !important;
+}
+
+// round border for last tab
+#you .nav-tabs > li.active > a:last-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  background-color: #7361e4;
+  border: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 5px !important;
+}
+
+// color of #you tabs
+#you .nav-tabs > li.active > a, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+  color: #ffffff;
+}
+
+// -----------------------------------------
+.lg-card-content {
+  width: 700px;
+}
+
+
+.tab-content, .tab-pane {
+  clear:both;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), image-url("welcome-bg.jpeg") no-repeat center center fixed;
+  // background-image: image-url("welcome-bg.jpeg");
+  background-repeat:no-repeat;
+  background-position:center center;
+  clear: both;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  h1 {
+    color: #ffffff;
+    font-size: 100px !important;
+    margin-top: 200px;
+  }
+}
+
+#intro-mail {
+  font-size: 25px;
+  color: $pink;
+}
+
+.live-content {
+  padding: 30px;
+  font-size: 18px;
+  opacity: 0.8;
+  strong {
+    color: $green;
+  }
+}
+
+.welcome-desc {
+  h1 {
+    margin-bottom: 30px;
+  }
+  p {
+    margin: auto;
+    text-align: center;
+    width: 600px;
+  }
+}
+
+.team-desc {
+  margin-top: 50px;
+  width: 800px;
+  font-size: 16px;
+  opacity: 0.8;
+  strong {
+    color: $green;
+  }
+}
+
+#welcome-content {
+  margin-top: 520px;
+  // margin-top: 70px;
+}
+
+#you-content {
+  margin-top: 70px;
+}
+
+// -----------------------------------------
+
+.objectives-wrapper {
+  position: relative;
+  width: 800px;
+}
+
+.sub-desc {
+  width: 70%;
+  opacity: 0.6;
+}
+
+.btn-obj {
+  background-color: $brand-color !important;
+  // font-size: 20px !important;
+  // padding: 15px 20px;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  &:hover {
+    color: #DCDCDC;
+  }
+}
+a.btn-obj {
+  padding: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
 .sign-out {
   margin-left: 1px;
 }
@@ -22,17 +226,20 @@
   z-index: 1;
   white-space: nowrap;
   overflow: hidden;
+  display: inline;
   color: rgba(255,255,255,0.6); // Needs a variable
   // padding: 40px;
   height: inherit;
-  width: 55px;
-  transition: width 0.3s;
+  width: 60px;
+  transition: width 0.4s ease;
   // width: 250px;
   // min-width: 250px;
   background-color: $brand-color;
+  text-transform: uppercase;
   .user-front {
     left: 10px;
     text-align: center;
+    // text-align: left !important;
   }
   img {
     margin: 15px auto;
@@ -42,11 +249,11 @@
   }
   &:hover  {
     // left: 200px;
-    width: 120px;
-    transition: width 0.3s;
+    width: 150px;
+    transition: width 0.4s ease;
   }
   i {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
@@ -56,6 +263,8 @@
   }
   .card {
     margin: 0 !important;
+    border-radius: 0;
+    margin-bottom: 5px;
   }
   .lg-card {
     margin: 0 !important;
@@ -71,10 +280,13 @@
       }
     }
   }
-  #mini-siderbar {
-    visibility: visible;
-  }
 }
+
+
+
+
+
+
 
 .user-points {
   font-size: 16px;
@@ -83,12 +295,11 @@
 
 .sidebar-links {
   position: absolute;
-  left: 12px;
-  margin-top: 150px;
+  margin-top: 100px;
   justify-content: space-around;
   flex-direction: column;
-  text-align: center;
-  clear: both;
+  // text-align: center;
+  // clear: both;
   ul {
     padding: 0;
     margin: 0;
@@ -104,8 +315,12 @@
     list-style-type: none;
     margin-bottom: 30px;
     .link-text {
-      margin-left: 15px;
+      margin-left: 20px;
       display: inline;
+      text-align: left;
+    }
+    li {
+      text-align: center;
     }
   }
 }
@@ -204,4 +419,78 @@ input[type=checkbox]:checked + .strikethrough {
     .carousel-control {
         top: 20%;
     }
+}
+
+
+
+
+
+
+// Progress experiments
+.one, .two, .three {
+  position:absolute;
+  margin-top:-10px;
+  z-index:1;
+  height:40px;
+  width:40px;
+  border-radius:25px;
+}
+
+.one{
+  left:20%;
+}
+.two{
+  left:45%;
+}
+.three{
+  left:70%;
+}
+.four {
+  // background-image: asset-data-url("icons/009-star.png");
+  left:95%;
+  position:absolute;
+  margin-top:-10px;
+  z-index:1;
+  height:45px;
+  width:45px;
+  border-radius:25px;
+  color: #BEBEBE;
+  img {
+    height:45px;
+    width:45px;
+  }
+}
+
+.first-star-done{
+    margin-top: -17px !important;
+    height: 65px !important;
+    width: 65px !important;
+    left: -9px;
+    position: relative;
+    opacity: 1;
+}
+
+// .first-star-done img {
+//   margin-top:-20px;
+//   height:60px;
+//   width:60px;
+// }
+
+.primary-color{
+  background-color:#4989bd;
+}
+.success-color{
+  background-color:#5cb85c;
+}
+.danger-color{
+  background-color:#d9534f;
+}
+.warning-color{
+  background-color:#f0ad4e;
+}
+.info-color{
+  background-color:#5bc0de;
+}
+.no-color{
+  background-color:inherit;
 }
