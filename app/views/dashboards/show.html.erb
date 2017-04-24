@@ -2,22 +2,20 @@
     <div id="sidebar">
       <div class="sidebar-links">
         <ul class="nav nav-tabs nav-stacked">
-          <!-- <a href="#" id="test"><li><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text">Profile</p></li></a> -->
-          <!-- loop for links?  -->
           <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-home" aria-hidden="true"></i><p class="link-text">Home</p></a></li>
           <li><a data-toggle="tab" href="#you"><i class="fa fa-user-o" aria-hidden="true"></i><p class="link-text" id="you-flash">You</p></a></li>
           <li><a data-toggle="tab" href="#team"><i class="fa fa-users" aria-hidden="true"></i><p class="link-text">Team</p></a></li>
           <li><a data-toggle="tab" href="#" id="resources"><i class="fa fa-list-ul" aria-hidden="true"></i><p class="link-text">Resources</p></a></li>
         </ul>
       </div>
-      <br>
+    </div>
+
       <!-- <div class="days-passed">
         Days passed: <%#= days_passed %>
       </div> -->
       <!-- <div class="question">
         <em><%#= eq_module1  %></em>
       </div> -->
-    </div>
 
     <div id="main">
       <div class="row">
@@ -46,6 +44,9 @@
 
           <!-- THE TEAM -->
           <%= render 'team' %>
+
+
+
 
         <% if @user.mentor %>
           <div class="col-xs-12 col-md-6 col-md-offset-3 tab-pane" id="team">
@@ -139,133 +140,10 @@
           </div>
         </div>
 
-      <!-- leaderboard -->
-      <div class="move-it">
-        <div class="lg-card">
-          <i class="fa fa-times close" aria-hidden="true"></i>
-          <div class="lg-card-content">
 
-            <table class="ui single line table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Points</th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @users.each do |user| %>
-                  <tr>
-                      <td>
-                          <%= user.first_name %> <%= user.last_name %>
-                      </td>
-                      <td><%= user.email %></td>
-                    <td><%= user.points %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
-          <!-- DOC LIST -->
-
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <div class="card">
-              <i class="fa fa-times close" aria-hidden="true"></i>
-
-              <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                <label class="btn active">
-                  <input type="checkbox" name='personal-info' class="personal-info"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank"><span class="strikethrough">Fill out your personal information</span></a>
-                </label>
-              </div>
-
-              <!-- Item 2 -->
-              <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                <label class="btn active">
-                  <input type="checkbox" name='payroll-info' class="payroll-info"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span class="strikethrough"><a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</span></a>
-                </label>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <div class="card">
-            <i class="fa fa-times close" aria-hidden="true"></i>
-              <h2>HR forms #2</h2>
-              <input type="checkbox" id="box-AND-1"/>
-              <input type="checkbox" id="box-AND-2"/>
-              <input type="checkbox" id="box-AND-3"/>
-              <label class="box" for="box-AND-1"></label>
-              <label class="box" for="box-AND-2"></label>
-              <label class="box" for="box-AND-3"></label>
-              <div class="light light-AND">OK</div>
-              <div class="doc-continue">Finish</div>
-          </div>
-        </div>
-
-
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-
-            <div class="card">
-              <i class="fa fa-times close" aria-hidden="true"></i>
-
-              <h3>HR Docs</h3>
-
-              <div class="checkbox">
-                <label>
-                  <h4>
-                    <input type="checkbox" value="first_checkbox">
-                    <a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank" class="strikethrough">Fill the personal information sheet</a>
-                  </h4>
-                </label>
-              </div>
-
-              <div class="checkbox">
-                <label>
-                  <h4>
-                    <input type="checkbox" value="first_checkbox">
-                    <a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</a>
-                  </h4>
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <h4>
-                    <input type="checkbox" value="first_checkbox">
-                    <a href="https://hr.wustl.edu/forms/Documents/UHC%20Claim%20Form.pdf" target="_blank" class="strikethrough">Fill the health insurance information sheet</a>
-                  </h4>
-                </label>
-              </div>
-            </div>
-          </div>
       </div>
     </div>
   </div>
-<!-- </div> -->
-
-    <!-- Modal for new objective -->
-    <!-- <div class="wrapper"> -->
-     <div class="modal fade" id="newObjModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-      <div class="modal-dialog custom" role="document">
-        <div class="modal-content">
-          <%#= render 'shared/newobj'%>
-        </div>
-      </div>
-    </div>
-  <!-- </div> -->
 
 
 
@@ -304,6 +182,9 @@
   </div>
 </div>
 
+
+
+
 </div>
 
 
@@ -319,10 +200,11 @@
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
       $('#play-video').click(function(event) {
-        // .addClass('hidden')
         $('.welcome-screen-buttons > a').hide();
         $('#toStepOne').removeClass('hidden');
       });
+
+
 
       // $(document).ready(function() {
       //   // Open a URL in a lightbox
@@ -346,15 +228,21 @@
 
       // change this
 
-      $('#toStepOne, #step1-button, #intro-mail').click(function(e) {
+      $('#toStepOne, #step1, #meet-mentor').click(function(e) {
         e.preventDefault();
+
+        if ($(this)[0].id == "step1") {
+          $('#email-team').removeClass('hidden');
+          $('#step1-pre').hide().remove();
+          $('#step1').removeClass('hidden');
+
+        }
+
         $.ajax({
           crossOrigin: true,
           type: "POST",
           data: { title: $(this)[0].id },
-          // url: url + "/add_badges",
           url: url + "<%= badges_path %>",
-          // url: url + "/badges_path",
           success: function(response) {
             // console.log(response);
           }
@@ -396,34 +284,6 @@
     <% end %>
     teamEmails.join(",");
 
-    // use class hidden
-    $('#step1-button').click(function(el) {
-      var $stepOneContent = $(
-        "<div class='lg-card'>" +
-          "<div class='lg-card-content'>" +
-            "<div class='completed-badge step1-button'></div>" +
-            "<h3>Your new contact info is all set up.</h3>" +
-            "<strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>" +
-            "<br>" +
-          "<h4>(080) 4444 - 4444</h4>" +
-          "<br>" +
-          "<h4>How about sending your team a welcome message?</h4>" +
-          "<a id='intro-mail'href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_blank' class='animated pulse'>Send Mail</a>" +
-        "</div>").hide().addClass('transReset');
-      $('#step1').replaceWith($stepOneContent);
-
-      // $("#main").prepend($content);
-      $stepOneContent.show(300, function() { $(this).removeClass('transReset') });
-
-      // $('.close').on( "click", function() {
-      //   $(this).parent().slideUp(400);
-      // });
-    });
-
-    // $('.close, .light-AND').on( "click", function() {
-    //   $(this).parent().parent().slideUp(400);
-    // });
-
     $('a[href*="home"]').click(function(event) {
       $('#main').scrollTop(0);
     });
@@ -436,22 +296,17 @@
       $('#main').scrollTop(0);
     });
 
-    $('#meet-mentor').click(function() {
-      $('a').parent().delay(500).removeClass('active');
-      $('a[href*="you"]').parent().trigger('mouseenter').addClass('active');
-      $('a[href*="you"]').parent().trigger('click');
-      $('#main').scrollTop(0);
-      // $('.nav-tabs > .active li').delay(1000).find('a').trigger('click');
-      // $('body').scrollTop(0);
+    // $('#meet-mentor').click(function() {
+    //   $('a').parent().delay(500).removeClass('active');
+    //   $('a[href*="you"]').parent().trigger('mouseenter').addClass('active');
+    //   $('a[href*="you"]').parent().trigger('click');
+    //   $('#main').scrollTop(0);
 
-      // $('a[href*="you"]')[0].delay(1000).trigger('click');
+    //   // click
+    //   $('#you').trigger('click', function() {
 
-
-      // click
-      $('#you').trigger('click', function() {
-
-      })
-    })
+    //   })
+    // })
 
 
     // Points events

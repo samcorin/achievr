@@ -2,79 +2,89 @@
   <div class="lg-card">
     <div class="lg-card-content" id="welcome-content">
     <div class="bg-image text-center">
-    <!-- <h1>Company. Co.</h1> -->
       <h1>XYZ Co.</h1>
     </div>
+      <div class="text-center live-content">
 
-        <div class="text-center welcome-desc live-content">
-          <div class="completed-badge toStepOne">
-            <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+      <div class="content-container">
+        <div class="completed-badge toStepOne">
+          <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+        </div>
+        <%= image_tag current_user.photo, class: "img-circle" %>
+
+        <h1>Welcome, <%= current_user.first_name %>.</h1>
+        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+        <br>
+        <div class="welcome-screen-buttons text-center">
+
+          <a id="play-video" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity><button class="btn btn-pink">Play Video</button></a>
+          <!-- instance , $('#toStepOne').removeClass('hidden');  -->
+          <!-- show on video close -->
+          <button id="toStepOne" class="btn btn-pink">Continue</button>
+        </div>
+        <br>
+        <hr>
+      </div>
+
+
+
+
+        <!-- Optional, how to do I keep track ***HIDDEN*** -->
+        <div class="content-container hidden" id="email-team">
+          <div class="completed-badge step1">
+            <%= image_tag("icons/001-quality.png", class: toggle_badge("step1"), id: "badge-step1") %>
           </div>
-          <%= image_tag current_user.photo, class: "img-circle" %>
 
-          <h1>Welcome, <%= current_user.first_name %>.</h1>
-          <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+          <h3>Your new contact info is all set up.</h3>
+          <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
           <br>
-          <div class="welcome-screen-buttons text-center">
-
-            <a id="play-video" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity><button class="btn btn-pink">Play Video</button></a>
-            <!-- instance , $('#toStepOne').removeClass('hidden');  -->
-            <!-- show on video close -->
-            <button id="toStepOne" class="btn btn-pink hidden">Continue</button>
-          </div>
+          <h4>(080) 4444 - 4444</h4>
           <br>
-          <hr>
+          <h4>How about sending your team a welcome message?</h4>
+          <a id='intro-mail' href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_blank' class='animated pulse'>Send Mail</a>
+        </div>
 
-          <!-- Optional, how to do I keep track  -->
-          <div id="step1">
-<!--             "<div class='lg-card'>" +
-"<div class='lg-card-content'>" +
-  "<div class='completed-badge step1-button'></div>" +
-  "<h3>Your new contact info is all set up.</h3>" +
-  "<strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>" +
-  "<br>" +
-"<h4>(080) 4444 - 4444</h4>" +
-"<br>" +
-"<h4>How about sending your team a welcome message?</h4>" +
-"<a id='intro-mail'href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_blank' class='animated pulse'>Send Mail</a>" +
-"</div>" -->
+        <div id="step1-pre">
+          <div class="content-container">
+            <h2>Let's get started</h2>
 
-            <div class="live-content">
-              <h2>Let's get started</h2>
-              <!-- new classes here -->
-              <p >Congratulations on your new <%= current_user.position %> position at <strong><%= current_user.team.company.name %></strong>.  Our goal is to make your transition a smooth one.</p>
-              <br>
-
-              <!-- replace with ..... -->
-              <div class="welcome-screen-buttons text-center">
-                <button class="btn btn-pink" id="step1-button">Let's get started</button>
-              </div>
-            </div>
-          </div>
-
-          <hr>
-          <div class="live-content">
-
-          <!-- How do I keep track of what elements to show on the page? -->
-          <!--   <div class="completed-badge step1-button">
-              <%# if current_user.badges.find_by_title("step1-button") %>
-                <%#= image_tag("icons/001-quality.png") %>
-              <%# end %>
-            </div> -->
-            <h2>Where to go and who to contact</h2>
-            <br>
-            <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
-
-            <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+            <p >Congratulations on your new <%= current_user.position %> position at <strong><%= current_user.team.company.name %></strong>.  Our goal is to make your transition a smooth one.</p>
             <br>
 
             <div class="welcome-screen-buttons text-center">
-              <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
+              <button class="btn btn-pink" id="step1">Let's get started</button>
             </div>
           </div>
-          <hr>
-
         </div>
+
+        <hr>
+
+        <div class="content-container">
+          <div class="completed-badge meet-mentor">
+            <%= image_tag("icons/001-quality.png", class: toggle_badge("meet-mentor"), id: "badge-meet-mentor") %>
+          </div>
+          <h2>Where to go and who to contact</h2>
+          <br>
+          <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
+
+          <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+          <br>
+
+          <div class="welcome-screen-buttons text-center">
+            <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="content-container">
+          <%= render 'hr' %>
+        </div>
+
+
+        <hr>
+
+      </div>
     </div>
   </div>
 </div>

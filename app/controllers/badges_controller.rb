@@ -7,7 +7,6 @@ class BadgesController < ApplicationController
   end
 
   def create
-    # no duplicatses
     title = params[:title]
 
     unless current_user.badges.find_by_title(title)
@@ -16,11 +15,8 @@ class BadgesController < ApplicationController
       @badge.save
 
       respond_to do |format|
-        # Don't render.
         format.js
-        # { render :nothing => true } #app/views/badges/create.js.erb
       end
-
     end
   end
 end
