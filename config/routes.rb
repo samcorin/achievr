@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  # get 'badges/index'
-
-  # get 'badges/new'
-
-  # get 'badges/create'
-
   ActiveAdmin.routes(self)
 
   authenticated :user do
@@ -15,7 +9,7 @@ Rails.application.routes.draw do
 
     # Show user badges on page
     # get '/show_badges', to: 'badges#create'
-    resources :badges, only: [:create]
+    resources :badges, only: [:index, :create]
 
     get '/get_objectives', to: 'users#get_objectives'
     get 'objectives/new', to: 'objectives#new'

@@ -93,6 +93,15 @@ li.active {
 }
 
 // -----------------------------------------
+.completed-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  height: 100px;
+  width: 100px;
+}
+
 .lg-card-content {
   width: 700px;
 }
@@ -129,6 +138,7 @@ li.active {
 }
 
 .live-content {
+  position: relative;
   padding: 30px;
   font-size: 18px;
   opacity: 0.8;

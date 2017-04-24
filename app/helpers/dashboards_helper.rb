@@ -23,4 +23,8 @@ module DashboardsHelper
     questions.sample
   end
 
+  def toggle_badge(title)
+    current_user.badges.find_by_title(title) ? "" : "hidden"
+  end
+
 end
