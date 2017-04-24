@@ -1,6 +1,11 @@
 // beta Test quiz
 // convert to video quiz
 // add parameters, reuse this format
+// vars:
+// - progress steps
+// - title x progress steps
+// - text x progress steps
+//
 function threeQuestions() {
   swal.setDefaults({
     input: 'text',
