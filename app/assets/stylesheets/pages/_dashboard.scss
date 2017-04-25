@@ -418,6 +418,13 @@ input[type=checkbox]:checked + .strikethrough {
 .tool {
   max-width: 230px;
   height: 350px;
+  h3 {
+    margin-top: 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .content-container-tools {
