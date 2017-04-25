@@ -455,8 +455,20 @@ input[type=checkbox]:checked + .strikethrough {
   left: calc(50% - 405px);
 }
 
-
 .navbar-links {
   position: relative;
   left: -40px;
+}
+
+#where {
+  text-align: left;
+  p {
+    text-align: left;
+  }
+}
+
+.content-container-where {
+  width: 810px;
+  position: relative;
+  left: calc(50% - 405px);
 }
