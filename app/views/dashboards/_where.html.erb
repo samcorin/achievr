@@ -1,0 +1,16 @@
+<hr>
+      <div class="content-container">
+        <div class="completed-badge meet-mentor">
+          <%= image_tag("icons/001-quality.png", class: toggle_badge("meet-mentor"), id: "badge-meet-mentor") %>
+        </div>
+        <h2>Where to go and who to contact</h2>
+        <br>
+        <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
+
+        <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
+        <br>
+
+        <div class="welcome-screen-buttons text-center">
+          <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
+        </div>
+      </div>
