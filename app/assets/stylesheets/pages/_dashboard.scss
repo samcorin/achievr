@@ -432,3 +432,16 @@ input[type=checkbox]:checked + .strikethrough {
   position: relative;
   left: calc(50% - 405px);
 }
+
+#where {
+  text-align: left;
+  p {
+    text-align: left;
+  }
+}
+
+.content-container-where {
+  width: 810px;
+  position: relative;
+  left: calc(50% - 405px);
+}
