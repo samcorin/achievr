@@ -1,74 +1,29 @@
-<div class="tab-pane" id="team">
-  <div class="lg-card">
-    <div class="lg-card-content">
-        <div class="team-desc">
-          <h1>The Team</h1>
-          <hr>
-          <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-          <br>
-          <h4>Your new contact info is all set up.</h4>
-          <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-          <br>
-          <h4>(080) 4444 - 4444</h4>
+<div id="team">
+  <h1>The Team</h1>
+  <div class="padded">
+    <div class="row">
+      <% @team.each do |member| %>
+        <div class="col-xs-6 team-member" id="show-<%= member.email %>">
+          <div class="user-profile-small">
+            <img src="<%= member.photo %>" alt="<%= member.first_name %>" class="img-circle">
 
-          <hr>
-
-          <h2>Let's get started</h2>
-          <!-- new classes here -->
-          <p >Congratulations on your new <%= current_user.position %> position at <%= current_user.team.company.name %>.  Our goal is to make your transition a smooth one. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates nulla neque quas corporis, amet. Unde natus quia consectetur id fugit.</p>
-          <br>
-          <div class="welcome-screen-buttons text-center">
-            <button class="btn btn-pink">Fill out data</button>
-            <button class="btn btn-pink">Tasks to complete</button>
-            <button class="btn btn-pink">other stuff</button>
-          </div>
-
-          <hr>
-
-          <h2>Where to go and who to contact</h2>
-          <!-- new classes here -->
-          <p>These are the people you can get in touch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
-          <br>
-      </div>
-      <% if @user.mentor %>
-          <div class="col-xs-12 col-md-6 col-md-offset-3 tab-pane" id="team">
-            <div id="myCarousel" class="carousel slide" style="margin: 0px auto;">
-            <ol class="carousel-indicators hidden-xs hidden-sm" style="padding-bottom: 20px;">
-              <li data-target="#carcousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carcousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carcousel-example-generic" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <% @user.team.users.each_with_index do |user, index| %>
-                <div class="item <%= "active" if index == 0 %>" align="center">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                        <h4 class="modal-title" id="myModalLabel"><%= user.team.name %> members</h4>
-                        </div>
-                      <div class="modal-body">
-                        <center>
-                          <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
-                          <h3 class="media-heading"><%= user.first_name %> <%= user.last_name %></h3>
-                          <h4 class="media-heading"><%= user.position %></h4>
-                        </center>
-                        <hr>
-                        <div>
-                        <p class="text-left"><strong>Bio: </strong></p>
-                          <%= user.bio %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            <div class="user-profile-text">
+              <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+              <div class="email">
+                <strong><%= member.email %></strong>
+              </div>
+              <div class="description">
+                  I use to design websites and applications
+                  for the web.
+              </div>
             </div>
           </div>
-        <% end %>
+        </div>
+
+          <div class="card hidden" id="hide-<%= member.email %>">
+            hello
+          </div>
+      <% end %>
     </div>
   </div>
 </div>

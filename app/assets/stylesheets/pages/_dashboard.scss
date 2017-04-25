@@ -56,7 +56,11 @@
   color: $pink;
 }
 
-
+.content-container-team {
+  width: 840px;
+  position: relative;
+  left: calc(50% - 420px);
+}
 
 .live-content {
   position: relative;
@@ -276,7 +280,7 @@ a.btn-obj {
 .lg-card {
   position: relative;
   margin: 0 auto;
-  width: 900px;
+  width: 1000px;
   height: 100%;
   background-color: #ffffff;
   border-radius: 5px;
