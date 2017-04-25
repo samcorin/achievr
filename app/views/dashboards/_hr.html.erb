@@ -1,27 +1,33 @@
-<h1>HR Docs</h1>
-<div class="checkbox">
-  <label>
-    <h4>
-      <input type="checkbox" value="first_checkbox">
-      <a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank" class="strikethrough">Fill the personal information sheet</a>
-    </h4>
-  </label>
-</div>
+<div class="content-container">
+  <div class="completed-badge hrDocs">
+    <%= image_tag("icons/001-quality.png", class: toggle_badge("hrDocs"), id: "badge-hrDocs") %>
+  </div>
 
-<div class="checkbox">
-  <label>
-    <h4>
-      <input type="checkbox" value="first_checkbox">
-      <a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</a>
-    </h4>
-  </label>
-</div>
-<div class="checkbox">
-  <label>
-    <h4>
-      <input type="checkbox" value="first_checkbox">
-      <a href="https://hr.wustl.edu/forms/Documents/UHC%20Claim%20Form.pdf" target="_blank" class="strikethrough">Fill the health insurance information sheet</a>
-    </h4>
-  </label>
-</div>
+  <h1>HR Docs</h1>
+  <div class="checkbox">
+    <label>
+      <h4>
+        <input type="checkbox" value="first_checkbox">
+        <a href="http://www.northwestern.edu/hr/policies-forms/forms/personal-information/PersonalDataForm.pdf" target="_blank" class="strikethrough">Fill the personal information sheet</a>
+      </h4>
+    </label>
+  </div>
 
+  <div class="checkbox">
+    <label>
+      <h4>
+        <input type="checkbox" value="first_checkbox">
+        <a href="https://rpservices.net/Pdf/DirectDepositPayrollADP.pdf" target="_blank" class="strikethrough">Fill the payroll information sheet</a>
+      </h4>
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <h4>
+        <input type="checkbox" value="first_checkbox">
+        <a href="https://hr.wustl.edu/forms/Documents/UHC%20Claim%20Form.pdf" target="_blank" class="strikethrough">Fill the health insurance information sheet</a>
+      </h4>
+    </label>
+  </div>
+  <button id="hrDocs"></button>
+</div>

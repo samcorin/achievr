@@ -1,11 +1,19 @@
 <div class="tab-pane active" id="home">
+  <!-- <div class="lg-card">
+    <div class="lg-card-content">
+      <div class="bg-image text-center m-bottom-15">
+        <h1>Your first day.</h1>
+      </div>
+    </div>
+  </div> -->
+
   <div class="lg-card">
     <div class="lg-card-content" id="welcome-content">
       <% if current_user.sign_in_count == 0 %>
         <%= render 'welcome' %>
       <% end %>
       <div class="bg-image text-center">
-        <h1>XYZ Co.</h1>
+        <h1>Your first day.</h1>
       </div>
       <div class="text-center live-content">
 
@@ -16,6 +24,7 @@
         <%= image_tag current_user.photo, class: "img-circle" %>
 
         <h1>Welcome, <%= current_user.first_name %>.</h1>
+        <button id="Notification">Notification</button>
         <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
         <br>
         <div class="welcome-screen-buttons text-center">
