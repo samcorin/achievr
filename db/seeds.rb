@@ -144,16 +144,16 @@ dim.mentor = sam
 dim.save!
 
 paul.mentor = boris
-dim.save!
+paul.save!
 
 sylvain.mentor = boris
-dim.save!
+sylvain.save!
 
 sebastien.mentor = boris
-dim.save!
+sebastien.save!
 
 boris.mentor = sebastien
-dim.save!
+boris.save!
 
 
 
