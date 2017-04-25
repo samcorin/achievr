@@ -3,143 +3,135 @@
     <!-- <div class="lg-card-content"> -->
     <div class="card-nav-wrapper">
       <ul class="nav nav-tabs nav-justified">
-          <li class="active"><a data-toggle="tab" href="#first" class="text-center">Your info</a></li>
-          <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
-        <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
+        <li class="active"><a data-toggle="tab" href="#first" class="text-center">Your info</a></li>
+        <li class=""><a data-toggle="tab" href="#second" class="text-center">Your mentor</a></li>
+        <li class=""><a data-toggle="tab" href="#third" class="text-center">Your objectives</a></li>
       </ul>
     </div>
 
-<div class="tab-content" id="you-content">
-  <div id="first" class="tab-pane active">
-    <div class="lg-card-content">
-      <div class="welcome-desc user-infos">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <%= image_tag @user.photo, class: "img-circle center-block" %>
-              <h2 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h2>
-              <p><%= @user.email %></p>
-              <p>Team: <%= @user.team.name %></p>
-              <p>Position: <%= @user.position %></p>
-              <div class="days-passed">
-                Days passed: <%= days_passed %> on the <%= @user.team.company.name %>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-8">
-              <h3>Bio: </h3>
-              <p><%= @user.bio %></p>
-              <h3>Career: </h3>
-              <p><%= @user.bio %></p>
-            </div>
-          </div>
-        </div>
-        <div class="progress-block">
-          <h2 class="text-center">Your Points</h2>
-          <br>
-          <div class="progress-wrapper center-block">
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="progress">
-                  <div class="one no-color"></div>
-                  <div class="two no-color"></div>
-                  <div class="three no-color"></div>
-                  <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                  <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+    <div class="tab-content" id="you-content">
+      <div id="first" class="tab-pane active">
+        <div class="lg-card-content">
+          <div class="welcome-desc user-infos">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <%= image_tag @user.photo, class: "img-circle center-block" %>
+                  <h2 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h2>
+                  <p><%= @user.email %></p>
+                  <p>Team: <%= @user.team.name %></p>
+                  <p>Position: <%= @user.position %></p>
+                  <div class="days-passed">
+                    Days passed: <%= days_passed %> on the <%= @user.team.company.name %>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <h3>Bio: </h3>
+                  <p><%= @user.bio %></p>
+                  <h3>Career: </h3>
+                  <p><%= @user.bio %></p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- first tab -->
-
-  <div id="second" class="tab-pane">
-    <div class="lg-card-content">
-      <div class="text-center welcome-desc">
-        <h1>Your Mentor</h1>
-        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-        <!-- # Mentor -->
-        <% if @user.mentor %>
-
-              <h3>Meet the mentor</h3>
-              <div class="mentor">
-                <div class="mentor-photo">
-                    <%= image_tag @user.mentor.photo, class: 'img-circle img-responsive' %>
-                </div>
-                <div class="mentor-text">
-                  <h4>
-                    <%= @user.mentor.first_name %> <%= @user.mentor.last_name %>
-                  </h4>
-                  <h5>
-                    <%= @user.mentor.team.name %>
-                  </h5>
-                </div>
-              </div>
-              <div class="btn btn-primary" href="#aboutModal" data-toggle="modal" data-target="#myModal">Click to more info</div>
-        <% end %>
-
-      </div>
-    </div>
-  </div> <!-- Second tab -->
-
-
-  <div id="third" class="tab-pane">
-    <div class="lg-card-content">
-      <div class="text-center welcome-desc">
-        <div class="question">
-          <em><%= eq_module1  %></em>
-        </div>
-      </div>
-    </div>
-
-        <hr>
-
-        <!-- Objectives -->
-          <div class="objectives-wrapper">
-            <h1>
-              <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
-                <div class='fa fa-plus'></div> New Objective
-              </a>
-            </h1>
-
-            <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
-            <div class="lg-card-content">
-              <h1>Your Objectives</h1>
-              <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
+            <div class="progress-block">
+              <h2 class="text-center">Your Points</h2>
               <br>
-              <button type="submit" name="all" onclick="toggleAll()">All</button>
-              <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
-              <!-- BUTTONS FILTER -->
-              <table class="ui single line table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th colspan="3"></th>
+              <div class="progress-wrapper center-block">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="progress">
+                      <div class="one no-color"></div>
+                      <div class="two no-color"></div>
+                      <div class="three no-color"></div>
+                      <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
+                      <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- first tab end-->
+
+      <div id="second" class="tab-pane">
+        <div class="lg-card-content">
+          <div class="welcome-desc user-infos">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <%= image_tag @user.mentor.photo, class: "img-circle center-block" %>
+                  <h2 class="text-center"><%= @user.mentor.first_name %> <%= @user.mentor.last_name %></h2>
+                  <p><%= @user.mentor.email %></p>
+                  <p>Team: <%= @user.mentor.team.name %></p>
+                  <p>Position: <%= @user.mentor.position %></p>
+                  <div class="days-passed">
+                    Days passed: <%= days_passed %> on the <%= @user.mentor.team.company.name %>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <h3>Bio: </h3>
+                  <p><%= @user.mentor.bio %></p>
+                  <h3>Career: </h3>
+                  <p><%= @user.mentor.bio %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Second tab end-->
+
+      <div id="third" class="tab-pane">
+        <div class="lg-card-content">
+          <div class="text-center welcome-desc">
+            <div class="question">
+              <em><%= eq_module1  %></em>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Objectives -->
+        <div class="objectives-wrapper">
+          <h1>
+            <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
+              <div class='fa fa-plus'></div> New Objective
+            </a>
+          </h1>
+
+          <!-- <button class="btn btn-obj"><p>+ New Objective</p></button> -->
+          <div class="lg-card-content">
+            <h1>Your Objectives</h1>
+            <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
+            <br>
+            <button type="submit" name="all" onclick="toggleAll()">All</button>
+            <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
+            <!-- BUTTONS FILTER -->
+            <table class="ui single line table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Due Date</th>
+                  <th>Status</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% current_user.objectives.each do |o| %>
+                  <tr class="objective-list">
+                    <td><%= o.name %></td>
+                    <td><%= Time.now %></td>
+                    <td><%= o.status %></td>
                   </tr>
-                </thead>
-                <tbody>
-                  <% current_user.objectives.each do |o| %>
-                    <tr class="objective-list">
-                      <td><%= o.name %></td>
-                      <td><%= Time.now %></td>
-                      <td><%= o.status %></td>
-                    </tr>
-                  <% end %>
+                <% end %>
               </tbody>
             </table>
           </div>
         </div>
-  </div>
-</div>
-
-
-
-
-
-
+      </div>
+      <!-- Third tab end-->
+    </div>
 
   </div>
 </div>
