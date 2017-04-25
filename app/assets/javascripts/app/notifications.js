@@ -1,6 +1,7 @@
 
 function do_notify(string) {
   console.log('here')
+
   // window.addEventListener('load', function () {
   // At first, let's check if we have permission for notification
   // If not, let's ask for it
@@ -22,8 +23,12 @@ function do_notify(string) {
 
         // Thanks to the tag, we should only see the "Hi! 9" notification
         // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
-        var n = new Notification(string);
-        setTimeout(n.close.bind(n), 4000);
+
+        // setTimeout(function() {
+          var n = new Notification(string, { body: "You'll receive information about your role."});
+        // }, 600)
+
+        setTimeout(n.close.bind(n), 5000);
         // if (i++ == 9) {
 
           // window.clearInterval(interval);
@@ -47,8 +52,10 @@ function do_notify(string) {
 
             // Thanks to the tag, we should only see the "Hi! 9" notification
             // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
-            var n = new Notification(string);
-            setTimeout(n.close.bind(n), 4000);
+            // setTimeout(function() {
+              var n = new Notification(string, { body: "You'll receive information about your role."});
+            // }, 600)
+            setTimeout(n.close.bind(n), 5000);
 
         }
 

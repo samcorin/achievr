@@ -3,7 +3,7 @@
 //= require moment
 //= require jquery
 //= require jquery_ujs
-//= require lity
+//= require OwlCarousel2
 //= require remarkable-bootstrap-notify
 //= require bootstrap-sprockets
 //= require_tree .

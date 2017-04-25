@@ -5,7 +5,7 @@
         <h1>The Team</h1>
         <div class="row">
           <div class="show-boxes">
-            <% @team.each do |member| %>
+            <% @team.users.each do |member| %>
               <div class="col-xs-6 team-member" id="show-<%= member.email %>">
                 <div class="card s-card team-card">
                   <div class="user-profile-small">

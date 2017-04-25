@@ -75,7 +75,7 @@ strong {
   opacity: 1;
   p {
     margin: auto;
-    text-align: center;
+    // text-align: center;
     // width: 700px;
   }
   h1 {
@@ -261,9 +261,6 @@ a.btn-obj {
 
 /* MAIN CONTENT */
 
-.row {
-
-}
 
 #main {
   z-index: 2;
@@ -271,7 +268,7 @@ a.btn-obj {
   height: inherit;
   padding: 40px;
   width: 100%;
-  background-color: #E8E7EE;
+  background-color: #F6F9FC;
   overflow-y: auto;
   .card {
     margin: 15px auto;
@@ -280,6 +277,7 @@ a.btn-obj {
 
 
 .lg-card {
+  box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
   position: relative;
   margin: 0 auto;
   width: 1000px;
@@ -305,7 +303,20 @@ a.btn-obj {
 input[type=checkbox]:checked + .strikethrough {
   text-decoration: line-through;
   color: grey;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+#done-1 {
+  margin-top: 0;
+  width: 80px;
+  height: 80px;
+}
+
+#done-2 {
+  text-align: center;
+  margin-top: 0;
+  width: 80px;
+  height: 80px;
 }
 
 
@@ -424,11 +435,28 @@ input[type=checkbox]:checked + .strikethrough {
   img {
     width: 100%;
     height: auto;
+    padding: 30px 0;
+  }
+  .tool-link {
+    position: absolute;
+    bottom: 30px;
+    font-size: 90%;
+    i {
+      font-size: inherit;
+    }
   }
 }
+
+
 
 .content-container-tools {
   width: 810px;
   position: relative;
   left: calc(50% - 405px);
+}
+
+
+.navbar-links {
+  position: relative;
+  left: -40px;
 }
