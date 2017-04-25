@@ -43,34 +43,37 @@
 
 
       <hr>
-      <div class="content-container content-container-team">
-          <div class="lg-card-content content-container-team">
+      <div class="content-container ">
+          <div class="lg-card-content">
             <h1>The Team</h1>
             <p>Being new at a company and now knowing anybody can be intimidating. Find our more more about your teammates <a href="#team"><strong>here</strong></a>. In the mean time, this is who you'll be working with at our office. </p>
             <br>
-            <div class="row">
-              <% @team.users.each do |member| %>
-                <div class="col-xs-6 team-member" id="show-<%= member.email %>">
-                  <div class="user-profile-small">
-                    <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
+            <div class="lg-card-content">
+              <div class="row">
+                <% @team.users.each do |member| %>
+                  <div class="col-xs-6 team-member" id="show-<%= member.email %>">
+                    <div class="user-profile-small">
+                      <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
 
-                    <div class="user-profile-text">
-                      <div class="username"><%= member.first_name %> <%= member.last_name %></div>
-                      <div class="email">
-                        <strong><%= member.email %></strong>
+                      <div class="user-profile-text">
+                        <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+                        <div class="email">
+                          <strong><%= member.email %></strong>
+                        </div>
+                        <div class="contact-ph">Office: (312) 344-8802</div>
+                        <!-- <div class="description">
+                            I use to design websites and applications
+                            for the web.
+                        </div> -->
                       </div>
-                      <div class="contact-ph">Office: (312) 344-8802</div>
-                      <!-- <div class="description">
-                          I use to design websites and applications
-                          for the web.
-                      </div> -->
                     </div>
                   </div>
-                </div>
-                <div class="card hidden" id="hide-<%= member.email %>">
-                  hello
-                </div>
-              <% end %>
+                  <div class="card hidden" id="hide-<%= member.email %>">
+                    hello
+                  </div>
+                <% end %>
+              </div>
+
             </div>
           </div>
       </div>
