@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @objectives = current_user.objectives
 
     # not completed
-    @objectives = current_user.objectives.where(status: ["Not Started", "In Progress"])
+    # @objectives = current_user.objectives.where(status: ["Not Started", "In Progress"])
 
     # if request.xhr?
     #   render :json => {

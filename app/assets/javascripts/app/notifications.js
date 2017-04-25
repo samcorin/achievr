@@ -1,4 +1,7 @@
-window.addEventListener('load', function () {
+
+function do_notify(string) {
+  console.log('here')
+  // window.addEventListener('load', function () {
   // At first, let's check if we have permission for notification
   // If not, let's ask for it
   if (window.Notification && Notification.permission !== "granted") {
@@ -10,8 +13,6 @@ window.addEventListener('load', function () {
   }
 
   // var button = document.getElementsById('Notification')[0];
-
-  $('#Notification').on('click', function () {
     // If the user agreed to get notified
     // Let's try to send ten notifications
     if (window.Notification && Notification.permission === "granted") {
@@ -20,11 +21,12 @@ window.addEventListener('load', function () {
       // var interval = window.setInterval(function () {
 
         // Thanks to the tag, we should only see the "Hi! 9" notification
-        var n = new Notification("Hi! " + i, {tag: 'soManyNotification'});
-
+        // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
+        var n = new Notification(string);
+        setTimeout(n.close.bind(n), 4000);
         // if (i++ == 9) {
 
-          window.clearInterval(interval);
+          // window.clearInterval(interval);
 
         // }
 
@@ -44,15 +46,9 @@ window.addEventListener('load', function () {
           // var interval = window.setInterval(function () {
 
             // Thanks to the tag, we should only see the "Hi! 9" notification
-            var n = new Notification("Hi! " + i, {tag: 'soManyNotification'});
-
-            // if (i++ == 9) {
-
-              window.clearInterval(interval);
-
-            // }
-
-          // }, 500);
+            // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
+            var n = new Notification(string);
+            setTimeout(n.close.bind(n), 4000);
 
         }
 
@@ -68,5 +64,4 @@ window.addEventListener('load', function () {
       // We can fallback to a regular modal alert
       alert("Hi!");
     }
-  });
-});
+};

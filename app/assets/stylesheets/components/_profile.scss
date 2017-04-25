@@ -1,0 +1,56 @@
+.user-profile-small {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  clear:both;
+  // width: 320px;
+  padding: 10px;
+  // margin: auto;
+  // width: 25em;
+  // background: #fff;
+  // border-radius: .3em;
+  img {
+    flex-grow: 1;
+    max-width: 100px;
+    padding: 10px;
+  }
+  .user-profile-text {
+    flex-grow: 2;
+    padding: 10px;
+  }
+
+  .username {
+    font-size: 26px;
+    font-family: $name-font !important;
+    font-weight: bold;
+  }
+
+  .email {
+    font-size: 16px;
+  }
+  .contact-ph {
+    font-size: 14px;
+  }
+  .description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+}
+
+.team-card {
+  padding: 10px;
+  width: initial;
+}
+
+#team > .tab-pane, #team > .tab-pane:active {
+
+}
+
+// .content-container-team {
+//   width: 840px;
+//   position: relative;
+//   left: calc(50% - 420px);
+// }

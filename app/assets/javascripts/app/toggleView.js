@@ -31,14 +31,16 @@ function toggleAll() {
       //   //   html: items.join( "" )
       //   // }).appendTo( "body" );
       // });
-      $('#objective-list').remove();
+
+      $('.objective-list').remove();
 
       $.each(response, function(obj) {
         $('tbody').append( "<tr class='objective-list'></tr>" );
-        $('#objective-list').append('<td>' + response[obj].name + '</td>');
-        $('#objective-list').append('<td>' + response[obj].due_date + '</td>');
-        $('#objective-list').append('<td>' + response[obj].status + '</td>');
+        $('.objective-list:last-child').append('<td>' + response[obj].name + '</td>');
+        $('.objective-list:last-child').append('<td>' + response[obj].due_date + '</td>');
+        $('.objective-list:last-child').append('<td>' + response[obj].status + '</td>');
       });
+
     }
   });
 }

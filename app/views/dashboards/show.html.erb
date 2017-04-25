@@ -1,50 +1,16 @@
 <div class="dashboard-wrapper">
-
-    <div id="main">
-      <div class="row">
-        <div class="tab-content">
-          <!-- HOME -->
-          <%= render 'home' %>
-          <!-- YOU -->
-          <%= render 'you' %>
-          <!-- THE TEAM -->
+  <div id="main">
+    <div class="row">
+      <div class="tab-content">
+        <!-- HOME -->
+        <%= render 'home' %>
+        <!-- YOU -->
+        <%= render 'you' %>
+        <!-- THE TEAM -->
+        <!-- <div class="lg-card"> -->
           <%= render 'team' %>
-          <!-- resources? -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal window for mentor -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-          <h4 class="modal-title" id="myModalLabel">More About <%= @user.mentor.first_name %></h4>
-        </div>
-        <div class="modal-body">
-          <center>
-          <img src="<%= @user.mentor.photo %>" name="aboutme" width="140" height="140" border="0" class="img-circle">
-          <h3 class="media-heading"><%= @user.mentor.first_name %> <%= @user.mentor.last_name %><small> <%= @user.mentor.team.name %></small></h3>
-          <span><strong>Skills: </strong></span>
-              <span class="label label-warning">HTML5/CSS</span>
-              <span class="label label-info">Adobe CS 5.5</span>
-              <span class="label label-info">Microsoft Office</span>
-              <span class="label label-success">Windows XP, Vista, 7</span>
-          </center>
-          <hr>
-          <center>
-          <p class="text-left"><strong>Bio: </strong><br>
-              <%= @user.mentor.bio %></p>
-          <br>
-          </center>
-        </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
-          </center>
-        </div>
+        <!-- </div> -->
+        <!-- resources? -->
       </div>
     </div>
   </div>
@@ -89,6 +55,10 @@
           $('#email-team').removeClass('hidden');
           $('#step1-pre').hide().remove();
           $('#step1').removeClass('hidden');
+        }
+
+        if ($(this)[0].id == "toStepOne") {
+          do_notify("All done!");
         }
 
         $.ajax({
@@ -152,6 +122,26 @@
     $("#test").click(function(el) {
       threeQuestions();
     });
+
+
+
+
+    // Team
+    $('.team-member').on('click', function() {
+      console.log($(this)[0].id)
+
+      $('#show-' + $(this)[0].id).hide().remove();
+      $('#hide-' + $(this)[0].id).removeClass('hidden');
+
+      //     $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
+      // e.preventDefault();
+
+      // if ($(this)[0].id == "step1") {
+      //   $('#step1').removeClass('hidden');
+
+    })
+
+
 
   </script>
     <!--   // Points events

@@ -9,34 +9,63 @@
 
   <div class="lg-card">
     <div class="lg-card-content" id="welcome-content">
-      <% if current_user.sign_in_count == 0 %>
-        <%= render 'welcome' %>
-      <% end %>
       <div class="bg-image text-center">
-        <h1>Your first day.</h1>
+        <h1>Before starting.</h1>
       </div>
       <div class="text-center live-content">
 
-      <div class="content-container">
+        <div class="content-container">
+        <!-- <br> -->
+
         <div class="completed-badge toStepOne">
           <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
         </div>
         <%= image_tag current_user.photo, class: "img-circle" %>
 
         <h1>Welcome, <%= current_user.first_name %>.</h1>
-        <button id="Notification">Notification</button>
 
-        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+        <p>You're not in the office yet, but there are a few things you can do in the mean time. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+        <br>
+        <p>Want to stay up to date? Enable notifications.</p>
         <br>
         <div class="welcome-screen-buttons text-center">
-
-          <a id="play-video" href="//www.youtube.com/watch?v=XSGBVzeBUbk" data-lity><button class="btn btn-pink">Play Video</button></a>
-          <!-- instance , $('#toStepOne').removeClass('hidden');  -->
-          <!-- show on video close -->
-          <button id="toStepOne" class="btn btn-pink">Continue</button>
+          <button id="toStepOne" class="btn btn-pink">Ok</button>
         </div>
         <br>
       </div>
+
+
+      <hr>
+      <div class="content-container content-container-team">
+          <div class="lg-card-content content-container-team">
+            <h1>The Team</h1>
+            <div class="row">
+              <% @team.each do |member| %>
+                <div class="col-xs-6 team-member" id="show-<%= member.email %>">
+                  <div class="user-profile-small">
+                    <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
+
+                    <div class="user-profile-text">
+                      <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+                      <div class="email">
+                        <strong><%= member.email %></strong>
+                      </div>
+                      <div class="contact-ph">Office: (312) 344-8802</div>
+                      <!-- <div class="description">
+                          I use to design websites and applications
+                          for the web.
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="card hidden" id="hide-<%= member.email %>">
+                  hello
+                </div>
+              <% end %>
+            </div>
+          </div>
+      </div>
+
 
       <hr>
       <div class="content-container hidden" id="email-team">
@@ -66,14 +95,13 @@
 
       <%= render 'where' %>
 
-      <hr>
-      <div class="content-container">
-        <%= render 'hr' %>
-      </div>
+      <!-- HR -->
+      <%= render 'hr' %>
 
-      <hr>
+      <!-- TOOLS -->
+      <%= render 'tools' %>
 
-      </div>
+    </div> <!-- END live content -->
 
 
 
