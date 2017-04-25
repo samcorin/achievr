@@ -1,16 +1,24 @@
 <hr>
-      <div class="content-container">
-        <div class="completed-badge meet-mentor">
-          <%= image_tag("icons/001-quality.png", class: toggle_badge("meet-mentor"), id: "badge-meet-mentor") %>
-        </div>
-        <h2>Where to go and who to contact</h2>
-        <br>
-        <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong><%= current_user.team.company.name %>'s</strong> address (to add later) </p>
+<div class="content-container">
+  <div class="completed-badge meet-mentor">
+    <%= image_tag("icons/001-quality.png", class: toggle_badge("meet-mentor"), id: "badge-meet-mentor") %>
+  </div>
+  <h2>Where to Go and Who to Contact</h2>
+  <br>
 
-        <p>These are the people you can get in tuch with for help.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab ea placeat animi, omnis fugit numquam, nesciunt. Quidem, a, nobis?</p>
-        <br>
+    <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>.<br> 
+    Please come to <strong><%= current_user.team.company.name %>'s</strong> address: <br>
+    <a href="https://www.google.co.jp/maps/place/indeed+Tokyo/@35.6421125,139.7112027,17z/data=!3m1!4b1!4m5!3m4!1s0x60188b15d9955555:0xf1fa1b426b6bb6c7!8m2!3d35.6421082!4d139.7133967?hl=en" target="_blank">20-3 Ebisu 4-chome, Shibuya, Tokyo 150-6032</a></p><br>
+  
+    <p>When you arrive at the reception on the 22nd floor, please call Jenny Chen. She'll give you a tour of the office and show you your desk.</p>
+  
+  <h2>Who to Contact</h2>
+  <br>
 
-        <div class="welcome-screen-buttons text-center">
-          <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
-        </div>
-      </div>
+    <p>If you have any questions before your first day, please feel free to contact either Jenny Chen (HR Manager) or Mike (your Manager):</p>
+    <br>
+
+  <div class="welcome-screen-buttons text-center">
+    <button class="btn btn-pink" id="meet-mentor">Meet your mentor</button>
+  </div>
+</div>
