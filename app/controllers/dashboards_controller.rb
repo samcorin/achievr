@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
 
     @badges = current_user.badges
 
-    @team = User.all.where.not(id: current_user.id)
+    # @team = User.all.where.not(id: current_user.id)
     @team = current_user.team
   end
 end
