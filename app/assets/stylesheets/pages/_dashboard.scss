@@ -400,35 +400,28 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 .first-star-done{
-    margin-top: -17px !important;
-    height: 65px !important;
-    width: 65px !important;
-    left: -9px;
-    position: relative;
-    opacity: 1;
+  margin-top: -17px !important;
+  height: 65px !important;
+  width: 65px !important;
+  left: -9px;
+  position: relative;
+  opacity: 1;
 }
 
-// .first-star-done img {
-//   margin-top:-20px;
-//   height:60px;
-//   width:60px;
-// }
+#tools {
+  text-align: left;
+  p {
+    text-align: left;
+  }
+}
 
-.primary-color{
-  background-color:#4989bd;
+.tool {
+  max-width: 230px;
+  height: 350px;
 }
-.success-color{
-  background-color:#5cb85c;
-}
-.danger-color{
-  background-color:#d9534f;
-}
-.warning-color{
-  background-color:#f0ad4e;
-}
-.info-color{
-  background-color:#5bc0de;
-}
-.no-color{
-  background-color:inherit;
+
+.content-container-tools {
+  width: 810px;
+  position: relative;
+  left: calc(50% - 405px);
 }
