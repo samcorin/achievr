@@ -1,10 +1,3 @@
-<!--
-<%# if @company %>
-  <h1 class="text-center">Welcome to <%#= @company.name %></h1>
-<%# else %>
-  <h1>Welcome to XYZ.</h1>
-<%# end %> -->
-
 <div class="center-block welcome-video" id="player"></div>
 
 <script>
@@ -21,7 +14,7 @@
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       height: '550',
-      width: '840',
+      width: '740',
       videoId: 'CT8v87Su4e0',
       playerVars: {rel: 0},
       events: {

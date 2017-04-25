@@ -10,88 +10,6 @@
   margin-bottom: -15px;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  background-color: #E8E7EE;
-  border: 0 !important;
-}
-
-.nav-tabs {
-  border-radius: 0 !important;
-  border: 0 !important;
-}
-
-.active li, a.active, li, li ~ a, .nav-tabs{
-  border-radius: 0 !important;
-  color: $brand-color;
-  border: 0 !important;
-}
-
-.nav li {
-  padding: 20px auto;
-  margin-bottom: 0 !important;
-}
-
-.nav > li > a {
-  padding: 20px 15px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-}
-
-.img-circle {
-  width: 100px;
-  height: 100px;
-}
-
-a {
-  border: none !important;
-}
-
-li.active {
-  border: none !important;
-}
-
-.nav li {
-  margin: 0 !important;
-}
-
-.nav, .nav-tabs, ul .nav-tabs > li > a {
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  border-top-left-radius: none !important;
-  border-top-right-radius: none !important;
-  border-bottom-right-radius: none !important;
-  border-bottom-left-radius: none !important;
-}
-
-.nav > li > a:hover,
-.nav > li > a:focus,
-.nav-tabs > li > a:hover {
-  text-decoration: none;
-  background-color: #E8E7EE;
-}
-
-// round border for first tab
-#you .nav-tabs > li.active > a:first-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
-  background-color: #7361e4;
-  border: 0 !important;
-  border-top-left-radius: 5px !important;
-  border-top-right-radius: 0 !important;
-}
-
-// round border for last tab
-#you .nav-tabs > li.active > a:last-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
-  background-color: #7361e4;
-  border: 0 !important;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 5px !important;
-}
-
-// color of #you tabs
-#you .nav-tabs > li.active > a, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
-  color: #ffffff;
-}
-
 // -----------------------------------------
 .completed-badge {
   position: absolute;
@@ -106,7 +24,6 @@ li.active {
   width: 700px;
 }
 
-
 .tab-content, .tab-pane {
   clear:both;
 }
@@ -117,18 +34,20 @@ li.active {
   left: 0;
   width: 100%;
   height: 500px;
-  background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), image-url("welcome-bg.jpeg") no-repeat center center fixed;
-  // background-image: image-url("welcome-bg.jpeg");
+  // background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), image-url("welcome-bg.jpeg") no-repeat center center fixed;
+  // background-position:center center;
+  background: image-url("pattern1.svg");
   background-repeat:no-repeat;
-  background-position:center center;
+  background-position:right bottom;
   clear: both;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
   h1 {
     color: #ffffff;
-    font-size: 100px !important;
+    font-size: 90px !important;
     margin-top: 200px;
+    font-weight: bold;
   }
 }
 
@@ -297,12 +216,6 @@ a.btn-obj {
   }
 }
 
-
-
-
-
-
-
 .user-points {
   font-size: 16px;
   opacity: 0.7;
@@ -313,8 +226,7 @@ a.btn-obj {
   margin-top: 100px;
   justify-content: space-around;
   flex-direction: column;
-  // text-align: center;
-  // clear: both;
+
   ul {
     padding: 0;
     margin: 0;

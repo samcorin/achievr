@@ -15,7 +15,6 @@ window.addEventListener('load', function () {
     // If the user agreed to get notified
     // Let's try to send ten notifications
     if (window.Notification && Notification.permission === "granted") {
-      // var i = 0;
       // Using an interval cause some browsers (including Firefox) are blocking notifications if there are too much in a certain time.
 
       // var interval = window.setInterval(function () {
