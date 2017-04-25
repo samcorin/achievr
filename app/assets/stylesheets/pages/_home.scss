@@ -51,6 +51,13 @@ section{
   padding-bottom: 20px;
 }
 
+.banner h2 {
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 0px 1px #46346B;
+}
+
+
 
  .section--primary{
     background: $color-primary;
@@ -93,6 +100,16 @@ footer{
       }
     }
   }
+}
+
+
+.cta {
+background-color: #46346B;
+height: 100px;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
 }
 
 #footer-link {
