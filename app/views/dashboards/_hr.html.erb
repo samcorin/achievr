@@ -30,5 +30,12 @@
       </h4>
     </label>
   </div>
-  <button id="hrDocs"></button>
+  <% if current_user.has_the_badge?("hrDocs") %>
+    <%= image_tag "maps-and-flags.svg", class: toggle_badge("hrDocs"), id: "done-2" %>
+  <% else %>
+    <div class="welcome-screen-buttons text-center hr-button">
+      <button id="hrDocs" class="btn btn-pink">Done!</button>
+    </div>
+  <% end %>
+
 </div>

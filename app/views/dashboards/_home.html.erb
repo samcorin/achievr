@@ -12,25 +12,32 @@
       <div class="bg-image text-center">
         <h1>Before starting.</h1>
       </div>
-      <div class="text-center live-content">
+      <div class="live-content">
 
-        <div class="content-container">
+        <div class="content-container text-center">
         <!-- <br> -->
 
         <div class="completed-badge toStepOne">
           <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
         </div>
+
         <%= image_tag current_user.photo, class: "img-circle" %>
 
         <h1>Welcome, <%= current_user.first_name %>.</h1>
 
-        <p>You're not in the office yet, but there are a few things you can do in the mean time. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
+        <p>You're not in the office yet, but in the mean time you can <a href="#"><strong>Update your infrotmation</strong></a> and find information about the company </p>
         <br>
         <p>Want to stay up to date? Enable notifications.</p>
         <br>
-        <div class="welcome-screen-buttons text-center">
-          <button id="toStepOne" class="btn btn-pink">Ok</button>
-        </div>
+
+        <% if current_user.has_the_badge?("toStepOne") %>
+          <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
+        <% else %>
+          <div class="welcome-screen-buttons text-center">
+            <button id="toStepOne" class="btn btn-pink">Ok</button>
+          </div>
+        <% end %>
+
         <br>
       </div>
 
@@ -39,8 +46,10 @@
       <div class="content-container content-container-team">
           <div class="lg-card-content content-container-team">
             <h1>The Team</h1>
+            <p>Being new at a company and now knowing anybody can be intimidating. Find our more more about your teammates <a href="#team"><strong>here</strong></a>. In the mean time, this is who you'll be working with at our office. </p>
+            <br>
             <div class="row">
-              <% @team.each do |member| %>
+              <% @team.users.each do |member| %>
                 <div class="col-xs-6 team-member" id="show-<%= member.email %>">
                   <div class="user-profile-small">
                     <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
@@ -79,7 +88,8 @@
         <h4>(080) 4444 - 4444</h4>
         <br>
         <h4>How about sending your team a welcome message?</h4>
-        <a id='intro-mail' href='mailto:" + teamEmails.join(",") + "?Subject=Nice%20to%20meet%20you' target='_blank' class='animated pulse'>Send Mail</a>
+        <a href="mailto:<%= (@team.users.pluck(:email) - [current_user.email]).join(",") + '?Subject=Nice%20to%20meet%20you' %>" target="_blank" class="animated pulse">email me</a>
+        <!-- <a id='intro-mail' href='mailto:' + joinedEmails + '?Subject=Nice%20to%20meet%20you' target='_blank' class='animated pulse'>Send Mail</a> -->
       </div>
 
       <div id="step1-pre">
@@ -105,7 +115,7 @@
 
 
 
-      <section id="checklist">
+      <!-- <section id="checklist">
         <aside class="intro note">
           <h3 id="checklist-progress">Checklist progress<a class="anchor" href="#checklist-progress"></a></h3>
           <p>As you complete each item and check it off, the state of each checkbox is stored within your browser's cache. You can refer back to this page at any time to see what has been completed so far.</p>
@@ -175,7 +185,7 @@
             <p>Once a team member no longer needs access to your Stripe account, be certain to remove them.</p>
           </dd>
         </dl>
-      </section>
+      </section> -->
 
 
 

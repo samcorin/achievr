@@ -59,6 +59,11 @@
 
         if ($(this)[0].id == "toStepOne") {
           do_notify("All done!");
+          $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %>');
+        }
+
+        if ($(this)[0].id == "hrDocs") {
+          $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
         }
 
         $.ajax({
@@ -98,15 +103,6 @@
     //   }, 500);
     //   return false;
     // });
-
-
-    var teamEmails = [];
-
-    <% @team.each do |member| %>
-      teamEmails.push("<%= member.email %>");
-    <% end %>
-    teamEmails.join(",");
-
     $('a[href*="home"]').click(function(event) {
       $('#main').scrollTop(0);
     });
