@@ -3,7 +3,7 @@
     <!-- <div class="lg-card-content"> -->
     <div class="card-nav-wrapper">
       <ul class="nav nav-tabs nav-justified">
-          <li class="active"><a data-toggle="tab" href="#first" class="text-center">General info</a></li>
+          <li class="active"><a data-toggle="tab" href="#first" class="text-center">Your info</a></li>
           <li class=""><a data-toggle="tab" href="#second" class="text-center">Mentor</a></li>
         <li class=""><a data-toggle="tab" href="#third" class="text-center">Menu 2</a></li>
       </ul>
@@ -11,40 +11,50 @@
 
 <div class="tab-content" id="you-content">
   <div id="first" class="tab-pane active">
-
     <div class="lg-card-content">
-      <div class="text-center welcome-desc">
-        <h1>First tab</h1>
-        <p>Achiever is a place where eveything related to your work is stored. You can <a href="#"><strong>update personal infrotmation</strong></a>, <a href="#"><strong>find information about the company </strong></a> and more.</p>
-        <br>
-        <h4>Your new contact info is all set up.</h4>
-        <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-        <br>
-        <h4>(080) 4444 - 4444</h4>
-
-        <hr>
-
-        <div class="days-passed">
-          Days passed: <%= days_passed %>
+      <div class="welcome-desc user-infos">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <%= image_tag @user.photo, class: "img-circle center-block" %>
+              <h2 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h2>
+              <p><%= @user.email %></p>
+              <p>Team: <%= @user.team.name %></p>
+              <p>Position: <%= @user.position %></p>
+              <div class="days-passed">
+                Days passed: <%= days_passed %> on the <%= @user.team.company.name %>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+              <h3>Bio: </h3>
+              <p><%= @user.bio %></p>
+              <h3>Career: </h3>
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
         </div>
-
-        </div>
-
-        <h2>Your Points</h2>
-        <br>
-        <div class="progress-wrapper">
-          <div class="col-xs-12">
-            <div class="progress">
-                <div class="one no-color"></div><div class="two no-color"></div><div class="three no-color"></div><div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+        <div class="progress-block">
+          <h2 class="text-center">Your Points</h2>
+          <br>
+          <div class="progress-wrapper center-block">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="progress">
+                  <div class="one no-color"></div>
+                  <div class="two no-color"></div>
+                  <div class="three no-color"></div>
+                  <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
+                  <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div> <!-- first tab -->
 
   <div id="second" class="tab-pane">
-
     <div class="lg-card-content">
       <div class="text-center welcome-desc">
         <h1>Your Mentor</h1>
