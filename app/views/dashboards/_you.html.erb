@@ -12,7 +12,7 @@
 <div class="tab-content" id="you-content">
   <div id="first" class="tab-pane active">
     <div class="lg-card-content">
-      <div class="welcome-desc">
+      <div class="welcome-desc user-infos">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-4">
@@ -33,17 +33,19 @@
             </div>
           </div>
         </div>
-        <h2 class="text-center">Your Points</h2>
-        <br>
-        <div class="progress-wrapper center-block">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="progress">
-                <div class="one no-color"></div>
-                <div class="two no-color"></div>
-                <div class="three no-color"></div>
-                <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+        <div class="progress-block">
+          <h2 class="text-center">Your Points</h2>
+          <br>
+          <div class="progress-wrapper center-block">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="progress">
+                  <div class="one no-color"></div>
+                  <div class="two no-color"></div>
+                  <div class="three no-color"></div>
+                  <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
+                  <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+                </div>
               </div>
             </div>
           </div>
