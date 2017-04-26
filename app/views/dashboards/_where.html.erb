@@ -3,7 +3,7 @@
   <div class="completed-badge meet-mentor">
     <%= image_tag("icons/001-quality.png", class: toggle_badge("meet-mentor"), id: "badge-meet-mentor") %>
   </div>
-  <h2>Where to Go and Who to Contact</h2>
+  <h2>Where to go</h2>
   <br>
 
   <p>Your first day is <strong><%= current_user.start_date.to_formatted_s(:long_ordinal) %></strong>. Please come to <strong>
@@ -14,12 +14,13 @@
   <p>When you arrive at the reception on the 22nd floor, please call Jenny Chen. She'll give you a tour of the office and show you your desk.</p>
   <br>
 
-  <h2>Who to Contact</h2>
+  <h2>Who to contact</h2>
   <br>
 
   <p>If you have any questions before your first day, please feel free to contact either Jenny Chen (HR Manager) or Mike (your Manager):</p>
   <br>
-  <div class="content-container-team">
+</div>
+  <div class="content-container-where">
     <div class="row">
       <div class="col-xs-12 col-sm-6 team-member">
         <div class="card s-card team-card">
@@ -52,4 +53,3 @@
       </div>
     </div>
   </div>
-</div>

@@ -70,7 +70,8 @@
               <% @team.users.each do |member| %>
                 <div class="col-xs-12 col-sm-6 team-member">
                   <div class="user-profile-small">
-                    <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
+                  <%= image_tag member.photo, class: "img-circle" %>
+                    <!-- <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle"> -->
                     <div class="user-profile-text">
                       <div class="username"><%= member.first_name %> <%= member.last_name %></div>
                       <div class="email">
@@ -114,6 +115,7 @@
           </div>
 
           <br>
+          <h2>Introductions</h2>
           <p>By the way, your contact details are all set up.</p>
           <div class="home-contact-info">
             <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
@@ -121,7 +123,6 @@
             <p>(080) 555 - 5555</p>
           </div>
 
-          <p>Want to introduce yourself to the team?</p>
 
           <% if current_user.has_the_badge?("email-team") %>
             <div class="text-center m-top-15">
@@ -129,26 +130,34 @@
               <p class="done-text">Introduction sent!</p>
             </div>
           <% else %>
+            <p>Want to introduce yourself to the team?</p>
             <div class="text-center email-team">
               <a href="<%= @email2 %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
               <br>
               <p>Or you can wait until your first day.</p>
             </div>
           <% end %>
-
-        <br>
-
-
         </div>
-
+      </div>
+    </div>
 
       <!-- where to go -->
+      <hr>
+      <%= image_tag("svg/007-squares.svg", class: "distraction") %>
 
-      <!-- PERSONAL INFORMATION -->
-      <%= render 'personal_information' %>
+      <div class="lg-card-content">
+        <div class="live-content">
+          <!-- PERSONAL INFORMATION -->
+          <%= render 'personal_information' %>
+        </div>
+      </div>
 
-      <!-- WHERE TO GO -->
-      <%= render 'where' %>
+
+      <div class="lg-card-content">
+        <div class="live-content">
+          <!-- WHERE TO GO -->
+          <%= render 'where' %>
+
 
       <!-- HR -->
       <%= render 'hr' %>
