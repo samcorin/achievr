@@ -173,6 +173,85 @@ resource = Resource.create!(
   team: team
 )
 
+
+puts "Creating objectives"
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+
+
+
 # TODO: create Places
 
 puts 'Finished!'
