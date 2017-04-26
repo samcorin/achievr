@@ -68,7 +68,7 @@ strong {
 .content-container-team {
   width: 840px;
   position: relative;
-  left: calc(50% - 450px);
+  left: calc(50% - 420px);
 }
 
 .live-content {
@@ -88,7 +88,7 @@ strong {
 }
 
 .content-container {
-  padding: 30px;
+  padding: 15px;
   position: relative;
 }
 
@@ -104,7 +104,6 @@ strong {
 
 #welcome-content {
   margin-top: 520px;
-  // margin-top: 70px;
 }
 
 #you-content {
@@ -202,16 +201,21 @@ a.btn-obj {
 }
 
 @media (max-width: 700px) {
+  .tab-pane.active {
+    margin: 0;
+  }
   #main {
     padding: 0 !important;
+    width: 100vw;
   }
-  .card {
+  .card, .lg-card {
     margin: 0 !important;
     border-radius: 0;
     margin-bottom: 5px;
+    width: 100vw !important;
   }
-  .lg-card {
-    margin: 0 !important;
+  .live-content, .lg-card-content, #welcome-content {
+    width: 100%;
   }
   .dashboard-wrapper {
     display: flex;
@@ -363,7 +367,7 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 @media screen and (max-width: 700px){
-     .carousel-caption p {
+    .carousel-caption p {
         font-size: 13px;
     }
     .carousel-caption {
@@ -428,7 +432,12 @@ input[type=checkbox]:checked + .strikethrough {
   p {
     text-align: left;
   }
+  h1 {
+    margin: 0;
+  }
 }
+
+
 
 .tool {
   max-width: 230px;
@@ -458,6 +467,11 @@ input[type=checkbox]:checked + .strikethrough {
   position: relative;
   left: calc(50% - 405px);
 }
+.content-container-where {
+  width: 810px;
+  position: relative;
+  left: calc(50% - 405px);
+}
 
 .navbar-links {
   position: relative;
@@ -471,8 +485,4 @@ input[type=checkbox]:checked + .strikethrough {
   }
 }
 
-.content-container-where {
-  width: 810px;
-  position: relative;
-  left: calc(50% - 405px);
-}
+
