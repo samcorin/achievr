@@ -25,6 +25,9 @@
     font-size: 26px;
     font-family: $name-font !important;
     font-weight: bold;
+    p {
+      margin: 0;
+    }
   }
 
   .email {
@@ -45,6 +48,6 @@
   width: initial;
 }
 
-// #team > .tab-pane, #team > .tab-pane:active {
-// }
-
+#email-team {
+  margin-top: 15px;
+}

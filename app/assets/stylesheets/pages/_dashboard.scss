@@ -305,7 +305,7 @@ a.btn-obj {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
   h1 {
     font-size: 6rem;
   }
@@ -380,10 +380,10 @@ input[type=checkbox]:checked + .strikethrough {
         font-size: 13px;
     }
     .carousel-caption {
-    background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.55);
     }
     .carousel-control {
-        top: 20%;
+      top: 20%;
     }
 }
 
@@ -394,12 +394,12 @@ input[type=checkbox]:checked + .strikethrough {
 
 // Progress experiments
 .one, .two, .three {
-  position:absolute;
-  margin-top:-10px;
-  z-index:1;
-  height:40px;
-  width:40px;
-  border-radius:25px;
+  position: absolute;
+  margin-top: -10px;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
 }
 
 .one{
@@ -497,14 +497,7 @@ input[type=checkbox]:checked + .strikethrough {
 
 .content-container-team-home {
   margin: 50px auto;
-
-#pi  {
-  text-align: left;
-  p {
-    text-align: left;
-  }
 }
-
 
 .content-container-where {
   width: 810px;
@@ -542,9 +535,8 @@ input[type=checkbox]:checked + .strikethrough {
   text-align: left;
 }
 
-// .separator {
-//   width: 320px !important;
-//   height: auto;
-//   margin: 20px auto;
-//   background-color: $green;
-// }
+#badge-email-team {
+  margin: 15px auto;
+  width: 80px;
+  height: 80px;
+}

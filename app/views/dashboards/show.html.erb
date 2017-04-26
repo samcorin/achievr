@@ -24,6 +24,9 @@
       // });
 
       $('#email-team').click(function(e) {
+        e.preventDefault();
+        var share_link = $(this).prop('href');
+        window.open(share_link, '', 'scrollbars=1,height=500,width=500,left=500,top=100');
 
         $.ajax({
           crossOrigin: true,
