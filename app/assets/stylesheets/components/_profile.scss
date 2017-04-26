@@ -5,12 +5,7 @@
   align-items: center;
   text-align: left;
   clear:both;
-  // width: 320px;
   padding: 10px;
-  // margin: auto;
-  // width: 25em;
-  // background: #fff;
-  // border-radius: .3em;
   img {
     flex-grow: 1;
     max-width: 100px;
@@ -19,10 +14,11 @@
   .user-profile-text {
     flex-grow: 2;
     padding: 10px;
+    min-width: 234px;
   }
 
   .username {
-    font-size: 26px;
+    font-size: 23px;
     font-family: $name-font !important;
     font-weight: bold;
     p {
@@ -40,7 +36,6 @@
     margin-top: 10px;
     font-size: 14px;
   }
-
 }
 
 .team-card {

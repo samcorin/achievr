@@ -34,17 +34,17 @@
               </div>
             </div>
             <div class="progress-block">
-              <h2 class="text-center">Your Points</h2>
+              <h2 class="text-center">Your Progress</h2>
               <br>
               <div class="progress-wrapper center-block">
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="progress">
-                      <div class="one no-color"></div>
+                      <!-- <div class="one no-color"></div>
                       <div class="two no-color"></div>
                       <div class="three no-color"></div>
-                      <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div>
-                      <div class="progress-bar progress-bar-success" style="width: <%= current_user.points % 100 %>%"></div>
+                      <div class="four no-color"><%= image_tag("icons/009-star.png", class: "first-star") %></div> -->
+                      <div class="progress-bar progress-bar-success" style="width: <%= current_user.points %>%"></div>
                     </div>
                   </div>
                 </div>
@@ -91,16 +91,17 @@
             </div>
           </div>
         </div>
-        <hr>
+        <!-- <hr> -->
         <!-- Objectives -->
         <div class="objectives-wrapper">
           <div class="lg-card-content">
             <h1>Your Objectives</h1>
             <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
             <br>
-            <button type="submit" name="all" onclick="toggleAll()">All</button>
-            <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button>
+            <!-- <button type="submit" name="all" onclick="toggleAll()">All</button>
+            <button type="submit" name="completed" onclick="toggleCompleted()">Completed</button> -->
             <!-- BUTTONS FILTER -->
+            <div id="objectives"></div>
             <table class="ui single line table">
               <thead>
                 <tr>

@@ -1,29 +1,31 @@
 <div class="tab-pane" id="team">
   <div class="lg-card">
     <div class="lg-card-content">
-      <h1>The Team</h1>
-        <div class="content-container-team">
-        <div class="row">
-          <div class="show-boxes">
-            <% @team.users.each do |member| %>
-              <div class="col-xs-12 col-sm-6 team-member" id="show-<%= member.email %>">
-                <div class="card s-card team-card">
-                  <div class="user-profile-small">
-                    <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
-                    <div class="user-profile-text">
-                      <div class="username"><%= member.first_name %> <%= member.last_name %></div>
-                      <div class="email">
-                        <strong><%= member.email %></strong>
+
+      <h2>The Team</h2>
+      <p>Find our more about the people you'll be working with.</p>
+      <br>
+        <div class="content-container-team-detail">
+          <div class="row">
+            <div class="owl-carousel owl-theme" id="team-details">
+              <% @team.users.each do |member| %>
+                <div class="team-member" id="show-<%= member.email %>">
+                  <div class="card s-card team-card">
+                    <div class="user-profile-small">
+                    <%= image_tag member.photo %>
+                      <!-- <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle"> -->
+                      <div class="user-profile-text">
+                        <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+                        <div class="email">
+                          <strong><%= member.email %></strong>
+                        </div>
+                        <div class="contact-ph">Office: (312) 344-8802</div>
+                        <!-- <div class="description"><%#= member.bio %></div> -->
                       </div>
-                      <div class="contact-ph">Office: (312) 344-8802</div>
-                      <!-- <div class="description"><%#= member.bio %></div> -->
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card hidden" id="hide-<%= member.email %>">
-                hello
-              </div>
+              <!-- <div class="card hidden" id="hide-<%= member.email %>">hello</div> -->
             <% end %>
           </div>
         </div>

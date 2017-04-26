@@ -17,16 +17,43 @@
 
 <% content_for(:after_js) do %>
   <script>
+      // Scoring system
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      // $("#email-team > a").click(function(e) {
-      //   e.preventDefault();
-      // });
+      // Carousel
+      $('.owl-carousel').owlCarousel({
+        // autoWidth:true,
+        items:1,
+        center:true,
+        loop:true
+        // responsive:{
+        //     0:{
+        //         items:1
+        //     },
+        //     600:{
+        //         items:1
+        //     },
+        //     1000:{
+        //         items:2
+        //     }
+        // }
+      });
+
 
       $('#email-team').click(function(e) {
         e.preventDefault();
-        var share_link = $(this).prop('href');
-        window.open(share_link, '', 'scrollbars=1,height=500,width=500,left=500,top=100');
+
+        if ($(this)[0].id == "email-team") {
+          progressChecker.addPoints(20);
+          do_notify("All done!");
+          $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p>');
+        }
+
+        // Open new window for email
+        var mailto_link = $(this).prop('href');
+        var left = (screen.width/2)-(700/2);
+        var top = (screen.height/2)-(500/2);
+        window.open(mailto_link, 'Hello', 'scrollbars=1,height=500,width=700, top='+top+', left='+left);
 
         $.ajax({
           crossOrigin: true,
@@ -39,16 +66,12 @@
         });
       });
 
-      $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
+      $('#toStepOne, #step1, #meet-mentor, #hrDocs, #personal-information').click(function(e) {
         e.preventDefault();
 
-        if ($(this)[0].id == "step1") {
-          // $('#email-team').removeClass('hidden');
-          // $('#step1-pre').hide().remove();
-          // $('#step1').removeClass('hidden');
-        }
 
         if ($(this)[0].id == "toStepOne") {
+          progressChecker.addPoints(20);
           do_notify("All done!");
           $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
@@ -57,7 +80,13 @@
           $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
         }
         if ($(this)[0].id == "email-team") {
+          progressChecker.addPoints(20);
           $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
+        }
+
+        if ($(this)[0].id == "personal-information") {
+          progressChecker.addPoints(20);
+          $("#personal").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-personal-information" %><p class="done-text">You\'re almost done!</p></div>');
         }
 
         $.ajax({
@@ -70,26 +99,6 @@
           }
         });
       })
-
-    //   $('.close').on( "click", function() {
-    //     $(this).parent().slideUp(400);
-    //   });
-    // });
-
-    // $('#toStepOne').click(function(){
-    //   console.log($(this).attr('href'));
-    //   $('html, body').animate({
-    //       scrollTop: $( $(this).attr('href') ).offset().top
-    //   }, 500);
-    //   return false;
-    // });
-    // $('a[href*="home"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
-
-    // $('a[href*="you"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
 
     // $('a[href*="team"]').click(function(event) {
     //   $('#main').scrollTop(0);
