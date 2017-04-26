@@ -19,13 +19,13 @@
   <script>
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
+      $('#toStepOne, #step1, #meet-mentor, #hrDocs, #email-team').click(function(e) {
         e.preventDefault();
 
         if ($(this)[0].id == "step1") {
-          $('#email-team').removeClass('hidden');
-          $('#step1-pre').hide().remove();
-          $('#step1').removeClass('hidden');
+          // $('#email-team').removeClass('hidden');
+          // $('#step1-pre').hide().remove();
+          // $('#step1').removeClass('hidden');
         }
 
         if ($(this)[0].id == "toStepOne") {
@@ -72,9 +72,9 @@
       $('#main').scrollTop(0);
     });
 
-    $("#test").click(function(el) {
-      threeQuestions();
-    });
+    // $("#test").click(function(el) {
+    //   threeQuestions();
+    // });
 
     // Team
     $('.team-member').on('click', function() {

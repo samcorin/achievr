@@ -30,6 +30,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-size: 16px;
+  h1 {
+    margin-bottom: 0;
+  }
 }
 
 h1, h2, h3, h4 {

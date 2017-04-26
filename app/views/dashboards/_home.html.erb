@@ -13,9 +13,7 @@
         <h1>Before starting.</h1>
       </div>
       <div class="live-content">
-
         <div class="content-container text-center">
-        <!-- <br> -->
 
         <div class="completed-badge toStepOne">
           <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
@@ -25,18 +23,17 @@
 
         <h1>Welcome, <%= current_user.first_name %>.</h1>
 
-        <p>You're not in the office yet, but in the mean time you can <a href="#"><strong>Update your infrotmation</strong></a> and find information about the company </p>
+        <p>You're not in the office yet, but in the mean time there are a few things you can do to speed up the process of settling in.</p>
         <br>
 
         <% if current_user.has_the_badge?("toStepOne") %>
-          <p class="done-text">You're in the loop!</p>
-          <br>
           <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
+          <p>You're in the loop!</p>
+          <p class="done-text">You're in the loop!</p>
         <% else %>
           <p>Want to stay up to date? Enable notifications.</p>
-          <br>
           <div class="welcome-screen-buttons text-center">
-            <button id="toStepOne" class="btn btn-pink">Ok</button>
+            <button id="toStepOne" class="btn btn-pink">Sure</button>
           </div>
         <% end %>
 
@@ -47,15 +44,19 @@
       <hr>
       <div class="content-container">
         <h1>The Team</h1>
-        <p>Being new at a company and now knowing anybody can be intimidating. Find our more more about your teammates <a href="#team"><strong>here</strong></a>. In the mean time, this is who you'll be working with at our office. </p>
+        <!--
+        Not everybody likes surprises.
+
+         -->
+        <p>No surprises.</p><br>
+        <p>Here's everyone you'll be working with on your first day. You can learn more about everyone <a href="#team"><strong>here</strong></a>.</p>
         <br>
-        <div class="content-container-team-home">
+        <div class="content-container-team content-container-team-home">
           <div class="row">
             <% @team.users.each do |member| %>
               <div class="col-xs-12 col-sm-6 team-member">
                 <div class="user-profile-small">
                   <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
-
                   <div class="user-profile-text">
                     <div class="username"><%= member.first_name %> <%= member.last_name %></div>
                     <div class="email">
@@ -66,61 +67,53 @@
                         I use to design websites and applications
                         for the web.
                     </div> -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card hidden" id="hide-<%= member.email %>">
-                hello
-              </div>
-            <% end %>
+                <div class="card hidden" id="hide-<%= member.email %>">
+                  hello
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
 
-
-
-
-
-
-
-
-
-
-      <hr>
-      <div class="content-container hidden" id="email-team">
-        <div class="completed-badge step1">
-          <%= image_tag("icons/001-quality.png", class: toggle_badge("step1"), id: "badge-step1") %>
-        </div>
-
-        <h3>Your new contact info is all set up.</h3>
-        <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
         <br>
-        <h4>(080) 4444 - 4444</h4>
-        <br>
-        <h4>How about sending your team a welcome message?</h4>
-        <a href="mailto:<%= (@team.users.pluck(:email) - [current_user.email]).join(",") + '?Subject=Nice%20to%20meet%20you' %>" target="_blank" class="animated pulse">email me</a>
-      </div>
 
-      <div id="step1-pre">
         <div class="content-container">
-          <h2>Let's get started</h2>
-          <p >Congratulations on your new <%= current_user.position %> position at <strong><%= current_user.team.company.name %></strong>.  Our goal is to make your transition a smooth one.</p>
-          <br>
-          <div class="welcome-screen-buttons text-center">
-            <button class="btn btn-pink" id="step1">Let's get started</button>
+          <div class="completed-badge email-team">
+            <%= image_tag("icons/001-quality.png", class: toggle_badge("email-team"), id: "badge-email-team") %>
           </div>
+        <p>By the way, your contact details are all set up.</p>
+
+        <div class="home-contact-info">
+          <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+          <!-- insert actual phone number -->
+          <p>(080) 555 - 5555</p>
         </div>
+
+        <p>How about sending your team a warm introduction? Everyone's email's are included. We even gave you a sample message if you have can't think of anything to say.</p>
+
+        <div class="text-center">
+          <a href="<%= @email %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
+        </div>
+
+        <br>
+
+        <p>Or you can wait until your first day.</p>
+
       </div>
 
+      <!-- where to go -->
       <%= render 'where' %>
 
       <!-- HR -->
       <%= render 'hr' %>
 
-      <!-- TOOLS -->
+      <!-- Tools -->
       <%= render 'tools' %>
 
-    </div> <!-- END live content -->
+    </div>
 
 
 

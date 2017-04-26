@@ -25,7 +25,7 @@ strong {
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0.3;
+  opacity: 0.2;
   height: 100px;
   width: 100px;
 }
@@ -92,6 +92,9 @@ strong {
 .content-container {
   padding: 15px;
   position: relative;
+  p {
+    width: 90%;
+  }
 }
 
 .team-desc {
@@ -317,7 +320,7 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 #done-1 {
-  margin-top: 0;
+  margin: 15px auto;
   width: 80px;
   height: 80px;
 }
@@ -488,7 +491,33 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 .content-container-team-home {
+  margin: 50px auto;
   position: relative;
   width: 750px !important;
   left: calc(50% - 350px) !important;
+}
+
+.home-contact-info {
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  // width: 200px;
+  // left: calc(50% - 100px);
+  p {
+    margin-top: 10px;
+    font-weight: 200;
+  }
+}
+
+
+button #toStepOne {
+  margin-top: 15px;
+}
+
+#step1 {
+  margin-top: 15px;
+}
+
+.btn:focus {
+  background-color: $pink;
 }
