@@ -6,6 +6,10 @@
 }
 
 strong {
+  // color: $green;
+}
+
+.strong-green {
   color: $green;
 }
 
@@ -39,7 +43,7 @@ strong {
 }
 
 .bg-image {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -108,7 +112,7 @@ strong {
 }
 
 #welcome-content {
-  margin-top: 520px;
+  // margin-top: 520px;
 }
 
 #you-content {
@@ -298,8 +302,8 @@ a.btn-obj {
   background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 40px;
-  padding: 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content:space-around;
   h1 {
@@ -510,7 +514,7 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 
-button #toStepOne {
+#toStepOne {
   margin-top: 15px;
 }
 
@@ -521,3 +525,14 @@ button #toStepOne {
 .btn:focus {
   background-color: $pink;
 }
+
+.user-profile-text {
+  text-align: left;
+}
+
+// .separator {
+//   width: 320px !important;
+//   height: auto;
+//   margin: 20px auto;
+//   background-color: $green;
+// }

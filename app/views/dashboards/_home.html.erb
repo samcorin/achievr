@@ -8,65 +8,79 @@
   </div> -->
 
   <div class="lg-card">
-    <div class="lg-card-content" id="welcome-content">
       <div class="bg-image text-center">
-        <h1>Before starting.</h1>
+        <h1>First steps</h1>
       </div>
-      <div class="live-content">
-        <div class="content-container text-center">
+      <div class="lg-card-content" id="welcome-content">
+        <div class="live-content">
+          <div class="content-container text-center">
 
-        <div class="completed-badge toStepOne">
-          <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+            <div class="completed-badge toStepOne">
+              <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+            </div>
+
+            <%= image_tag current_user.photo, class: "img-circle" %>
+
+            <h1>Welcome, <%= current_user.first_name %>.</h1>
+
+            <p>You're not in the office yet, but in the mean time there are a few things you can do to speed up the process of settling in.</p>
+            <br>
+
+            <% if current_user.has_the_badge?("toStepOne") %>
+              <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
+              <p class="done-text">You're in the loop!</p>
+            <% else %>
+            <div class="welcome-screen-buttons text-center">
+              <p>Want to stay up to date? Enable notifications.</p>
+              <button id="toStepOne" class="btn btn-pink">Sure</button>
+            </div>
+          <% end %>
+
+          <br>
         </div>
 
-        <%= image_tag current_user.photo, class: "img-circle" %>
+        <!-- <hr> -->
 
-        <h1>Welcome, <%= current_user.first_name %>.</h1>
-
-        <p>You're not in the office yet, but in the mean time there are a few things you can do to speed up the process of settling in.</p>
-        <br>
-
-        <% if current_user.has_the_badge?("toStepOne") %>
-          <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
-          <p>You're in the loop!</p>
-          <p class="done-text">You're in the loop!</p>
-        <% else %>
-          <p>Want to stay up to date? Enable notifications.</p>
-          <div class="welcome-screen-buttons text-center">
-            <button id="toStepOne" class="btn btn-pink">Sure</button>
-          </div>
-        <% end %>
-
-        <br>
       </div>
+    </div>
 
 
-      <hr>
-      <div class="content-container">
-        <h1>The Team</h1>
-        <!--
-        Not everybody likes surprises.
 
-         -->
-        <p>No surprises.</p><br>
-        <p>Here's everyone you'll be working with on your first day. You can learn more about everyone <a href="#team"><strong>here</strong></a>.</p>
-        <br>
-        <div class="content-container-team content-container-team-home">
-          <div class="row">
-            <% @team.users.each do |member| %>
-              <div class="col-xs-12 col-sm-6 team-member">
-                <div class="user-profile-small">
-                  <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
-                  <div class="user-profile-text">
-                    <div class="username"><%= member.first_name %> <%= member.last_name %></div>
-                    <div class="email">
-                      <strong><%= member.email %></strong>
-                    </div>
-                    <div class="contact-ph">Office: (312) 344-8802</div>
-                    <!-- <div class="description">
-                        I use to design websites and applications
-                        for the web.
-                    </div> -->
+        <!-- <hr> -->
+
+        <%= image_tag("svg/012-team.svg", class: "distraction") %>
+
+        <!-- <div class="separator"></div> -->
+
+
+
+      <div class="lg-card-content">
+        <div class="live-content">
+          <div class="content-container">
+          <h2>The Team</h2>
+          <!--
+          Not everybody likes surprises.
+
+           -->
+          <p>No surprises.</p>
+          <p style="margin-top: 10px;">Here are some of the people you'll be working with.</p>
+          <br>
+          <div class="content-container-team content-container-team-home">
+            <div class="row">
+              <% @team.users.each do |member| %>
+                <div class="col-xs-12 col-sm-6 team-member">
+                  <div class="user-profile-small">
+                    <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
+                    <div class="user-profile-text">
+                      <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+                      <div class="email">
+                        <strong class="strong-green"><%= member.email %></strong>
+                      </div>
+                      <div class="contact-ph">Office: (312) 344-8802</div>
+                      <!-- <div class="description">
+                          I use to design websites and applications
+                          for the web.
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -76,9 +90,23 @@
               <% end %>
             </div>
           </div>
+          <br>
+          <p>You can learn more about everyone <a href="#team"><strong class="strong-green">HERE</strong></a>.</p>
+          <br>
+          <hr>
         </div>
+      </div>
+    </div>
 
-        <br>
+
+        <!-- <br> -->
+          <%= image_tag("svg/001-business.svg", class: "distraction") %>
+
+
+
+    <div class="lg-card-content">
+      <div class="live-content">
+
 
         <div class="content-container">
           <div class="completed-badge email-team">
@@ -87,16 +115,21 @@
         <p>By the way, your contact details are all set up.</p>
 
         <div class="home-contact-info">
-          <strong><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+          <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
           <!-- insert actual phone number -->
           <p>(080) 555 - 5555</p>
         </div>
 
         <p>How about sending your team a warm introduction? Everyone's email's are included. We even gave you a sample message if you have can't think of anything to say.</p>
 
-        <div class="text-center">
-          <a href="<%= @email %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
-        </div>
+        <% if current_user.has_the_badge?("email-team") %>
+            <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
+            <p class="done-text">Introduction sent!</p>
+        <% else %>
+          <div class="text-center email-team">
+            <a href="<%= @email %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
+          </div>
+        <% end %>
 
         <br>
 
@@ -204,6 +237,6 @@
         </div>
       </div> -->
 
+      </div>
     </div>
   </div>
-</div>

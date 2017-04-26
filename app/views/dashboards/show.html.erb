@@ -19,7 +19,24 @@
   <script>
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      $('#toStepOne, #step1, #meet-mentor, #hrDocs, #email-team').click(function(e) {
+      // $("#email-team > a").click(function(e) {
+      //   e.preventDefault();
+      // });
+
+      $('#email-team').click(function(e) {
+
+        $.ajax({
+          crossOrigin: true,
+          type: "POST",
+          data: { title: $(this)[0].id },
+          url: url + "<%= badges_path %>",
+          success: function(response) {
+            // console.log(response);
+          }
+        });
+      });
+
+      $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
         e.preventDefault();
 
         if ($(this)[0].id == "step1") {
@@ -30,11 +47,14 @@
 
         if ($(this)[0].id == "toStepOne") {
           do_notify("All done!");
-          $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %>');
+          $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
 
         if ($(this)[0].id == "hrDocs") {
           $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
+        }
+        if ($(this)[0].id == "email-team") {
+          $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
 
         $.ajax({
@@ -60,17 +80,17 @@
     //   }, 500);
     //   return false;
     // });
-    $('a[href*="home"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="home"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
-    $('a[href*="you"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="you"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
-    $('a[href*="team"]').click(function(event) {
-      $('#main').scrollTop(0);
-    });
+    // $('a[href*="team"]').click(function(event) {
+    //   $('#main').scrollTop(0);
+    // });
 
     // $("#test").click(function(el) {
     //   threeQuestions();

@@ -23,12 +23,17 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'active_admin_flat_skin'
 gem "react_on_rails", "~> 6"
 
+
+gem "coffee-rails"
+gem "gmaps4rails"
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css'
   gem 'rails-assets-sweetalert2'
   gem 'rails-assets-remarkable-bootstrap-notify'
   gem 'rails-assets-moment'
   gem 'rails-assets-OwlCarousel2'
+  gem "rails-assets-underscore"
 end
 
 gem 'devise_invitable'
