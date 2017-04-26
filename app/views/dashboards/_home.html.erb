@@ -49,10 +49,10 @@
         <h1>The Team</h1>
         <p>Being new at a company and now knowing anybody can be intimidating. Find our more more about your teammates <a href="#team"><strong>here</strong></a>. In the mean time, this is who you'll be working with at our office. </p>
         <br>
-        <div class="content-container-team">
+        <div class="content-container-team-home">
           <div class="row">
             <% @team.users.each do |member| %>
-              <div class="col-xs-12 col-xs-6 team-member" id="show-<%= member.email %>">
+              <div class="col-xs-12 col-sm-6 team-member">
                 <div class="user-profile-small">
                   <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle">
 
@@ -79,21 +79,7 @@
 
 
 
-      <div class="col-xs-6 team-member" id="show-1">
-        <div class="card s-card team-card">
-          <div class="user-profile-small">
-            <img src="http://i.pravatar.cc/100?img=46" alt="Jenny Chen" class="img-circle">
-            <div class="user-profile-text">
-              <div class="username"><p>Jenny Chen</p></div>
-              <div class="email">
-                <strong>jenny@indeed.com</strong>
-              </div>
-              <div class="contact-ph">Office: (312) 344-8802</div>
-              <!-- <div class="description"></div> -->
-            </div>
-          </div>
-        </div>
-      </div>
+
 
 
 
