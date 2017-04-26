@@ -94,7 +94,7 @@ li.active {
 }
 
 // round border for first tab
-#you .nav-tabs > li.active > a:first-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+#you .nav-tabs > li.active > a:first-child {
   background-color: $brand-color;
   border: 0 !important;
   border-top-left-radius: 5px !important;
@@ -102,11 +102,12 @@ li.active {
 }
 
 // round border for last tab
-#you .nav-tabs > li.active > a:last-child, #you .nav-tabs > li.active > a:hover, #you .nav-tabs > li.active > a:focus {
+a:last-child #you .nav-tabs > li.active {
   // background-color: #7361e4;
   border: 0 !important;
-  border-top-left-radius: 0 !important;
   border-top-right-radius: 5px !important;
+  border-top-left-radius: 0 !important;
+
 }
 
 // color of #you tabs

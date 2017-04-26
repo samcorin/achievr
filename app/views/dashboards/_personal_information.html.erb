@@ -11,16 +11,18 @@
     the same information again and again, please fill the below form.
   </p>
 
-  <div>
+  <div id="personal">
     <%= simple_form_for current_user, remote: true do |f| %>
-      <%= f.input :birthday, :start_year => 1900 %>
-      <%= f.input :address %>
-      <%= f.input :city, collection: cities %>
-      <%= f.input :prefecture, collection: prefectures %>
-      <%= f.input :postal_code, label: 'Postal Code' %>
-      <%= f.input :bank_account_number, label: 'Bank Account Number' %>
-      <%= f.input :social_security_number, label: 'Social Security Number' %>
-      <%= f.input :person_to_contact, label: 'Person to Contact in Case of Emergency' %>
+      <%= f.input :birthday, :start_year => 1900, placeholder: "1960", label: false %>
+      <%= f.input :address, placeholder: "Address", label: false %>
+      <div class="form-inline">
+        <%= f.input :city, collection: cities, placeholder: "Tokyo", label: false, class: "simple_form_select" %>
+        <%= f.input :prefecture, collection: prefectures, placeholder: "Prefecture", label: false, class: "simple_form_select" %>
+        <%= f.input :postal_code, label: 'Postal Code', placeholder: "Postal Code", label: false %>
+      </div>
+      <%= f.input :bank_account_number, label: 'Bank Account Number', placeholder: "Bank Account Number", label: false %>
+      <%= f.input :social_security_number, label: 'Social Security Number', placeholder: "Social Security Number", label: false %>
+      <%= f.input :person_to_contact, label: 'Person to Contact in Case of Emergency', placeholder: "Person to Contact in Case of Emergency", label: false %>
       <%= f.submit 'Submit', class: 'btn btn-pink center-block', id: "personal-information" %>
     <% end %>
   </div>
