@@ -7,10 +7,9 @@
         <!-- YOU -->
         <%= render 'you' %>
         <!-- THE TEAM -->
-        <!-- <div class="lg-card"> -->
-          <%= render 'team' %>
-        <!-- </div> -->
+        <%= render 'team' %>
         <!-- resources? -->
+
       </div>
     </div>
   </div>
@@ -19,34 +18,6 @@
 <% content_for(:after_js) do %>
   <script>
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
-
-      $('#play-video').click(function(event) {
-        $('.welcome-screen-buttons > a').hide();
-        $('#toStepOne').removeClass('hidden');
-      });
-
-
-
-      // $(document).ready(function() {
-      //   // Open a URL in a lightbox
-      //   // var lightbox = lity('//www.youtube.com/watch?v=XSGBVzeBUbk');
-
-      //   // Bind as an event handler
-      //   $('#toStepOne').on('click', '[data-lightbox]', lity('//www.youtube.com/watch?v=XSGBVzeBUbk'));
-
-      // instance.close().then(function() {
-      //     console.log('Lightbox closed');
-      // });
-
-      // });
-
-      // <a id="liyy-test" href="https://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity>iFrame Youtube</a>
-
-      // On video close
-      $("#welcome-video").click(function(){
-        welcomeNotification();
-      });
-
 
       $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
         e.preventDefault();
@@ -77,20 +48,6 @@
         });
       })
 
-
-      // MODULARISE MAN
-    //   $('#resources').click(function(el) {
-    //   var $content = $(
-    //       "<div class='lg-card'>" +
-    //         "<i class='fa fa-times close' aria-hidden='true'></i>" +
-    //           "<div class='lg-card-content'>" +
-    //             "<h1>Resources</h1>" +
-    //           "</div>" +
-    //         "</div>"
-    //       ).hide().addClass('transReset');
-    //   $("#main").prepend($content);
-    //   $content.show(300, function() { $(this).removeClass('transReset') });
-
     //   $('.close').on( "click", function() {
     //     $(this).parent().slideUp(400);
     //   });
@@ -119,22 +76,10 @@
       threeQuestions();
     });
 
-
-
-
     // Team
     $('.team-member').on('click', function() {
-      console.log($(this)[0].id)
-
       $('#show-' + $(this)[0].id).hide().remove();
       $('#hide-' + $(this)[0].id).removeClass('hidden');
-
-      //     $('#toStepOne, #step1, #meet-mentor, #hrDocs').click(function(e) {
-      // e.preventDefault();
-
-      // if ($(this)[0].id == "step1") {
-      //   $('#step1').removeClass('hidden');
-
     })
 
 

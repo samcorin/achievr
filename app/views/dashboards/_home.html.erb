@@ -27,12 +27,14 @@
 
         <p>You're not in the office yet, but in the mean time you can <a href="#"><strong>Update your infrotmation</strong></a> and find information about the company </p>
         <br>
-        <p>Want to stay up to date? Enable notifications.</p>
-        <br>
 
         <% if current_user.has_the_badge?("toStepOne") %>
+          <p class="done-text">You're in the loop!</p>
+          <br>
           <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
         <% else %>
+          <p>Want to stay up to date? Enable notifications.</p>
+          <br>
           <div class="welcome-screen-buttons text-center">
             <button id="toStepOne" class="btn btn-pink">Ok</button>
           </div>
@@ -43,7 +45,7 @@
 
 
       <hr>
-      <div class="content-container ">
+      <div class="content-container">
           <div class="lg-card-content">
             <h1>The Team</h1>
             <p>Being new at a company and now knowing anybody can be intimidating. Find our more more about your teammates <a href="#team"><strong>here</strong></a>. In the mean time, this is who you'll be working with at our office. </p>
