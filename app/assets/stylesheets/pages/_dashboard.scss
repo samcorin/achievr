@@ -1,9 +1,15 @@
 // Overriding bootstrap
+
+
 .done-text {
   font-weight: 200;
 }
 
 strong {
+  // color: $green;
+}
+
+.strong-green {
   color: $green;
 }
 
@@ -23,7 +29,7 @@ strong {
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0.3;
+  opacity: 0.2;
   height: 100px;
   width: 100px;
 }
@@ -37,7 +43,7 @@ strong {
 }
 
 .bg-image {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -68,7 +74,7 @@ strong {
 .content-container-team {
   width: 840px;
   position: relative;
-  left: calc(50% - 450px);
+  left: calc(50% - 420px);
 }
 
 .live-content {
@@ -88,8 +94,11 @@ strong {
 }
 
 .content-container {
-  padding: 30px;
+  padding: 15px;
   position: relative;
+  p {
+    width: 90%;
+  }
 }
 
 .team-desc {
@@ -103,8 +112,7 @@ strong {
 }
 
 #welcome-content {
-  margin-top: 520px;
-  // margin-top: 70px;
+  // margin-top: 520px;
 }
 
 #you-content {
@@ -202,16 +210,21 @@ a.btn-obj {
 }
 
 @media (max-width: 700px) {
+  .tab-pane.active {
+    margin: 0;
+  }
   #main {
     padding: 0 !important;
+    width: 100vw;
   }
-  .card {
+  .card, .lg-card {
     margin: 0 !important;
     border-radius: 0;
     margin-bottom: 5px;
+    width: 100vw !important;
   }
-  .lg-card {
-    margin: 0 !important;
+  .live-content, .lg-card-content, #welcome-content {
+    width: 100%;
   }
   .dashboard-wrapper {
     display: flex;
@@ -289,8 +302,8 @@ a.btn-obj {
   background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 40px;
-  padding: 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content:space-around;
   h1 {
@@ -311,7 +324,7 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 #done-1 {
-  margin-top: 0;
+  margin: 15px auto;
   width: 80px;
   height: 80px;
 }
@@ -363,7 +376,7 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 @media screen and (max-width: 700px){
-     .carousel-caption p {
+    .carousel-caption p {
         font-size: 13px;
     }
     .carousel-caption {
@@ -428,7 +441,12 @@ input[type=checkbox]:checked + .strikethrough {
   p {
     text-align: left;
   }
+  h1 {
+    margin: 0;
+  }
 }
+
+
 
 .tool {
   max-width: 230px;
@@ -458,6 +476,11 @@ input[type=checkbox]:checked + .strikethrough {
   position: relative;
   left: calc(50% - 405px);
 }
+.content-container-where {
+  width: 810px;
+  position: relative;
+  left: calc(50% - 405px);
+}
 
 .navbar-links {
   position: relative;
@@ -471,6 +494,10 @@ input[type=checkbox]:checked + .strikethrough {
   }
 }
 
+
+.content-container-team-home {
+  margin: 50px auto;
+
 #pi  {
   text-align: left;
   p {
@@ -482,5 +509,42 @@ input[type=checkbox]:checked + .strikethrough {
 .content-container-where {
   width: 810px;
   position: relative;
-  left: calc(50% - 405px);
+  width: 750px !important;
+  left: calc(50% - 350px) !important;
 }
+
+.home-contact-info {
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  // width: 200px;
+  // left: calc(50% - 100px);
+  p {
+    margin-top: 10px;
+    font-weight: 200;
+  }
+}
+
+
+#toStepOne {
+  margin-top: 15px;
+}
+
+#step1 {
+  margin-top: 15px;
+}
+
+.btn:focus {
+  background-color: $pink;
+}
+
+.user-profile-text {
+  text-align: left;
+}
+
+// .separator {
+//   width: 320px !important;
+//   height: auto;
+//   margin: 20px auto;
+//   background-color: $green;
+// }
