@@ -1,5 +1,6 @@
 class ObjectivesController < ApplicationController
   def new
+    binding.pry
     @objective = Objective.new
   end
 
@@ -15,6 +16,6 @@ class ObjectivesController < ApplicationController
   private
 
   def objective_params
-    params.require(:objective).permit(:name)
+    params.require(:objective).permit(:name, :due_date, :status)
   end
 end

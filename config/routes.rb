@@ -7,9 +7,13 @@ Rails.application.routes.draw do
     post '/add_points', to: 'users#update'
     post '/reset_points', to: 'users#reset'
 
+
+    post '/new_objective', to: 'objectives#create'
+
     # Show user badges on page
-    # get '/show_badges', to: 'badges#create'
     resources :badges, only: [:index, :create]
+
+    resources :objectives, only: [:index, :create]
 
     get '/get_objectives', to: 'users#get_objectives'
     get 'objectives/new', to: 'objectives#new'
