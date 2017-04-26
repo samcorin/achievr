@@ -1,6 +1,6 @@
 class ObjectivesController < ApplicationController
   def new
-    binding.pry
+    # binding.pry
     @objective = Objective.new
   end
 

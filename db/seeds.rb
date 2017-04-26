@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+all = User.all
+all.each do |user|
+  user.mentor = nil
+  user.save!
+end
+
+Badge.destroy_all
 User.destroy_all
 Resource.destroy_all
 Team.destroy_all

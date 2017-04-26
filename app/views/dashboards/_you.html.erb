@@ -94,38 +94,6 @@
         <hr>
         <!-- Objectives -->
         <div class="objectives-wrapper">
-          <h1>
-            <a class='btn-obj' href='<%#= new_task_path %>' data-toggle="modal" data-target="#newObjModal" data-backdrop="false">
-              <div class='fa fa-plus'></div> New Objective
-            </a>
-          </h1>
-
-
-
-
-          <form action="/new_objective" method="post" id="objective-form">
-            <div id="title-group" class="form-group">
-              <label for="title">Title</label>
-              <input type="text" class="form-control" name="title" placeholder="Buy milk">
-            </div>
-            <div id="date-group" class="form-group">
-              <label for="due_date">Date</label>
-              <input type="datetime" class="form-control" name="due_date" placeholder="1,20,2017">
-            </div>
-            <div id="status-group" class="form-group">
-              <label for="status">Status</label>
-              <input type="text" class="form-control" name="status" placeholder="Completed">
-            </div>
-            <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
-
-          </form>
-
-
-    </form>
-
-
-
-
           <div class="lg-card-content">
             <h1>Your Objectives</h1>
             <p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, consequuntur labore natus molestiae voluptatum dolor. Eos atque incidunt quis, veniam dolorem at architecto, doloremque delectus pariatur libero quos temporibus non!</p>
@@ -146,7 +114,7 @@
                 <% current_user.objectives.each do |o| %>
                   <tr class="objective-list">
                     <td><%= o.name %></td>
-                    <td><%= Time.now %></td>
+                    <td><%= o.due_date %></td>
                     <td><%= o.status %></td>
                   </tr>
                 <% end %>
