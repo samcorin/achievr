@@ -14,8 +14,8 @@
       <%= simple_form_for current_user, remote: true do |f| %>
         <%= f.input :birthday %>
         <%= f.input :address %>
-        <%= f.input :city %>
-        <%= f.input :prefecture %>
+        <%= f.input :city, collection: cities %>
+        <%= f.input :prefecture, collection: prefectures %>
         <%= f.input :postal_code %>
         <%= f.input :bank_account_number %>
         <%= f.input :social_security_number %>
