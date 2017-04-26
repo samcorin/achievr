@@ -1,9 +1,8 @@
 class DashboardsController < ApplicationController
   def show
     @users = User.all
-    @user = current_user
 
-    @resoureces = current_user.team.resources
+    @resources = current_user.team.resources
 
     @objectives = current_user.objectives
 

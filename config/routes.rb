@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root "dashboards#show" #, subdomain: 'app'
 
-    post '/add_points', to: 'users#update'
+    post '/add_points', to: 'users#add_points'
     post '/reset_points', to: 'users#reset'
 
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get '/get_objectives', to: 'users#get_objectives'
     get 'objectives/new', to: 'objectives#new'
     post 'objectives', to: 'objectives#create'
-
+    resources :users, only: [:update]
   end
 
   root "pages#home"

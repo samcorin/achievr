@@ -1,6 +1,6 @@
 module DashboardsHelper
   def days_passed
-    ( ( (Time.now - @user.created_at) / 1.day) + 1).round
+    ( ( (Time.now - current_user.created_at) / 1.day) + 1).round
   end
 
   def eq_module1
