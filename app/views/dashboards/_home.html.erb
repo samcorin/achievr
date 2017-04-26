@@ -21,9 +21,11 @@
 
             <%= image_tag current_user.photo, class: "img-circle" %>
 
-            <h1>Welcome, <%= current_user.first_name %>.</h1>
+            <h2>Welcome, <%= current_user.first_name %>.</h2>
 
-            <p>You're not in the office yet, but in the mean time there are a few things you can do to speed up the process of settling in.</p>
+            <p>
+              You're not in the office yet, but there are still things to do. As you progress, you'll collect more and more badges that <em>will</em> earn you cood free stuff.
+            </p>
             <br>
 
             <% if current_user.has_the_badge?("toStepOne") %>
@@ -37,6 +39,8 @@
           <% end %>
 
           <br>
+          <hr>
+
         </div>
 
         <!-- <hr> -->
@@ -58,12 +62,8 @@
         <div class="live-content">
           <div class="content-container">
           <h2>The Team</h2>
-          <!--
-          Not everybody likes surprises.
-
-           -->
           <p>No surprises.</p>
-          <p style="margin-top: 10px;">Here are some of the people you'll be working with.</p>
+          <p style="margin-top: 10px;">Just in case you feel nervous about meeting your future colleagues, here they are. You'll be working with them most days.</p>
           <br>
           <div class="content-container-team content-container-team-home">
             <div class="row">
@@ -91,7 +91,9 @@
             </div>
           </div>
           <br>
-          <p>You can learn more about everyone <a href="#team"><strong class="strong-green">HERE</strong></a>.</p>
+          <div class="tab-content text-center">
+            <p>You can learn more about everyone <a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
+          </div>
           <br>
           <hr>
         </div>
@@ -106,37 +108,38 @@
 
     <div class="lg-card-content">
       <div class="live-content">
-
-
         <div class="content-container">
           <div class="completed-badge email-team">
             <%= image_tag("icons/001-quality.png", class: toggle_badge("email-team"), id: "badge-email-team") %>
           </div>
-        <p>By the way, your contact details are all set up.</p>
 
-        <div class="home-contact-info">
-          <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
-          <!-- insert actual phone number -->
-          <p>(080) 555 - 5555</p>
-        </div>
-
-        <p>How about sending your team a warm introduction? Everyone's email's are included. We even gave you a sample message if you have can't think of anything to say.</p>
-
-        <% if current_user.has_the_badge?("email-team") %>
-            <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
-            <p class="done-text">Introduction sent!</p>
-        <% else %>
-          <div class="text-center email-team">
-            <a href="<%= @email %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
-            <br>
-            <p>Or you can wait until your first day.</p>
+          <br>
+          <p>By the way, your contact details are all set up.</p>
+          <div class="home-contact-info">
+            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+            <!-- insert actual phone number -->
+            <p>(080) 555 - 5555</p>
           </div>
-        <% end %>
+
+          <p>Want to introduce yourself to the team?</p>
+
+          <% if current_user.has_the_badge?("email-team") %>
+            <div class="text-center m-top-15">
+              <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
+              <p class="done-text">Introduction sent!</p>
+            </div>
+          <% else %>
+            <div class="text-center email-team">
+              <a href="<%= @email2 %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
+              <br>
+              <p>Or you can wait until your first day.</p>
+            </div>
+          <% end %>
 
         <br>
 
 
-      </div>
+        </div>
 
 
       <!-- where to go -->

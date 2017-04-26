@@ -25,8 +25,12 @@
 
       $('#email-team').click(function(e) {
         e.preventDefault();
-        var share_link = $(this).prop('href');
-        window.open(share_link, '', 'scrollbars=1,height=500,width=500,left=500,top=100');
+
+        // Open new window for email
+        var mailto_link = $(this).prop('href');
+        var left = (screen.width/2)-(700/2);
+        var top = (screen.height/2)-(500/2);
+        window.open(mailto_link, 'HELLOOOO', 'scrollbars=1,height=500,width=700, top='+top+', left='+left);
 
         $.ajax({
           crossOrigin: true,

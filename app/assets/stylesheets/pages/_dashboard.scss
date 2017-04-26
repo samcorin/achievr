@@ -1,12 +1,5 @@
-// Overriding bootstrap
-
-
 .done-text {
   font-weight: 200;
-}
-
-strong {
-  // color: $green;
 }
 
 .strong-green {
@@ -43,13 +36,10 @@ strong {
 }
 
 .bg-image {
-  // position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 550px;
-  // background: linear-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), image-url("welcome-bg.jpeg") no-repeat center center fixed;
-  // background-position:center center;
   background: image-url("pattern1.svg");
   background-repeat:no-repeat;
   background-position:right bottom;
@@ -61,7 +51,6 @@ strong {
     color: #ffffff;
     font-size: 90px !important;
     margin-top: 230px;
-    // position: calc(50% - 275px);
     font-weight: bold;
   }
 }
@@ -72,9 +61,8 @@ strong {
 }
 
 .content-container-team {
-  width: 840px;
-  position: relative;
   left: calc(50% - 420px);
+  margin-bottom: 60px;
 }
 
 .live-content {
@@ -85,8 +73,6 @@ strong {
   opacity: 1;
   p {
     margin: auto;
-    // text-align: center;
-    // width: 700px;
   }
   h1 {
     margin-bottom: 30px;
@@ -133,8 +119,6 @@ strong {
 
 .btn-obj {
   background-color: $brand-color !important;
-  // font-size: 20px !important;
-  // padding: 15px 20px;
   position: absolute;
   top: 45px;
   right: 15px;
@@ -166,10 +150,6 @@ a.btn-obj {
   overflow: hidden;
 }
 
-.move-it {
-
-}
-
 #mini-sidebar {
   visibility: hidden;
 }
@@ -180,18 +160,14 @@ a.btn-obj {
   overflow: hidden;
   display: inline;
   color: rgba(255,255,255,0.6); // Needs a variable
-  // padding: 40px;
   height: inherit;
   width: 60px;
   transition: width 0.4s ease;
-  // width: 250px;
-  // min-width: 250px;
   background-color: $brand-color;
   text-transform: uppercase;
   .user-front {
     left: 10px;
     text-align: center;
-    // text-align: left !important;
   }
   img {
     margin: 15px auto;
@@ -200,7 +176,6 @@ a.btn-obj {
     margin-top: 30px;
   }
   &:hover  {
-    // left: 200px;
     width: 150px;
     transition: width 0.4s ease;
   }
@@ -249,7 +224,6 @@ a.btn-obj {
   margin-top: 100px;
   justify-content: space-around;
   flex-direction: column;
-
   ul {
     padding: 0;
     margin: 0;
@@ -275,10 +249,7 @@ a.btn-obj {
   }
 }
 
-
 /* MAIN CONTENT */
-
-
 #main {
   z-index: 2;
   position: relative;
@@ -291,7 +262,6 @@ a.btn-obj {
     margin: 15px auto;
   }
 }
-
 
 .lg-card {
   box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
@@ -306,8 +276,8 @@ a.btn-obj {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  h1 {
-    font-size: 6rem;
+  h2 {
+    font-size: 4.5rem;
   }
   .close {
     position: absolute;
@@ -336,55 +306,61 @@ input[type=checkbox]:checked + .strikethrough {
   height: 80px;
 }
 
+#badge-email-team {
+  margin: 15px auto;
+  width: 80px;
+  height: 80px;
+}
+
 
 // for carousel of team cards
 .carousel-control {
-    position: absolute;
-    top: 40%;
-    left: 15px;
-    width: 40px;
-    height: 40px;
-    margin-top: -20px;
-    font-size: 60px;
-    font-weight: 100;
-    line-height: 30px;
-    color: #ffffff;
-    text-align: center;
-    background: #222222;
-    border: 3px solid #ffffff;
-    -webkit-border-radius: 23px;
-    -moz-border-radius: 23px;
-    border-radius: 23px;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #ffffff;
+  text-align: center;
+  background: #222222;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 .carousel-control.right {
-    right: 15px;
-    left: auto;
+  right: 15px;
+  left: auto;
 }
 .carousel-caption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 15px;
-    background: #333333;
-    background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
 }
 .carousel-caption p {
     margin-bottom: 0;
 }
 
 @media screen and (max-width: 700px){
-    .carousel-caption p {
-        font-size: 13px;
-    }
-    .carousel-caption {
-      background: rgba(0, 0, 0, 0.55);
-    }
-    .carousel-control {
-      top: 20%;
-    }
+  .carousel-caption p {
+      font-size: 13px;
+  }
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.55);
+  }
+  .carousel-control {
+    top: 20%;
+  }
 }
 
 
@@ -412,7 +388,6 @@ input[type=checkbox]:checked + .strikethrough {
   left:70%;
 }
 .four {
-  // background-image: asset-data-url("icons/009-star.png");
   left:95%;
   position:absolute;
   margin-top:-10px;
@@ -446,8 +421,6 @@ input[type=checkbox]:checked + .strikethrough {
   }
 }
 
-
-
 .tool {
   max-width: 230px;
   height: 350px;
@@ -468,8 +441,6 @@ input[type=checkbox]:checked + .strikethrough {
     }
   }
 }
-
-
 
 .content-container-tools {
   width: 810px;
@@ -494,7 +465,6 @@ input[type=checkbox]:checked + .strikethrough {
   }
 }
 
-
 .content-container-team-home {
   margin: 50px auto;
 }
@@ -510,8 +480,6 @@ input[type=checkbox]:checked + .strikethrough {
   padding: 50px;
   text-align: center;
   position: relative;
-  // width: 200px;
-  // left: calc(50% - 100px);
   p {
     margin-top: 10px;
     font-weight: 200;
@@ -533,10 +501,9 @@ input[type=checkbox]:checked + .strikethrough {
 
 .user-profile-text {
   text-align: left;
+  width: auto;
 }
 
-#badge-email-team {
-  margin: 15px auto;
-  width: 80px;
-  height: 80px;
+.m-top-15 {
+  margin-top: 15px;
 }
