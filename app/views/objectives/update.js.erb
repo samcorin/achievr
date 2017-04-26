@@ -1,3 +1,13 @@
 var objectiveId = "#objective-<%= @objective.id %>";
 var status = "<%= @objective.status %>";
-$(objectiveId).text(status);
+var classBtn = "<%=
+  case @objective.status
+  when "Not Started"
+    "btn btn-warning"
+  when "In Progress"
+    "btn btn-info"
+  when "Completed"
+    "btn btn-success"
+  end
+ %>";
+$(objectiveId).text(status).removeClass().addClass(classBtn);

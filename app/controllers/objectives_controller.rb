@@ -14,12 +14,12 @@ class ObjectivesController < ApplicationController
 
   def update
     @objective = Objective.find(params[:id])
-    case
-    when @objective.status == "Not Started"
+    case @objective.status
+    when "Not Started"
       @objective.status = "In Progress"
-    when @objective.status == "In Progress"
+    when "In Progress"
       @objective.status = "Completed"
-    when @objective.status == "Completed"
+    when "Completed"
       @objective.status = "Not Started"
     end
     @objective.save
