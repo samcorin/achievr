@@ -13,18 +13,16 @@ class ObjectivesController < ApplicationController
   end
 
   def update
-    objective = Objective.find(params[:id])
+    @objective = Objective.find(params[:id])
     case
-    when objective.status == "Not Started"
-      objective.status = "In Progress"
-    when objective.status == "In Progress"
-      objective.status = "Completed"
-    when objective.status == "Completed"
-      objective.status = "Not Started"
+    when @objective.status == "Not Started"
+      @objective.status = "In Progress"
+    when @objective.status == "In Progress"
+      @objective.status = "Completed"
+    when @objective.status == "Completed"
+      @objective.status = "Not Started"
     end
-    objective.save
-
-    redirect_to root_path
+    @objective.save
   end
 
   private

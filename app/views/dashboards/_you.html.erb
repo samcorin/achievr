@@ -116,7 +116,7 @@
                     <td><%= o.name %></td>
                     <td><%= o.due_date %></td>
                     <td>
-                      <%= link_to objective_path(o), class: 'btn btn-primary', method: :put do %>
+                      <%= link_to objective_path(o), class: 'btn btn-primary', id: "objective-#{o.id}", method: :put, remote: true do %>
                         <%= o.status %>
                       <% end %>
                     </td>
