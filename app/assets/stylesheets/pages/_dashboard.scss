@@ -494,8 +494,20 @@ input[type=checkbox]:checked + .strikethrough {
   }
 }
 
+
 .content-container-team-home {
   margin: 50px auto;
+
+#pi  {
+  text-align: left;
+  p {
+    text-align: left;
+  }
+}
+
+
+.content-container-where {
+  width: 810px;
   position: relative;
   width: 750px !important;
   left: calc(50% - 350px) !important;
