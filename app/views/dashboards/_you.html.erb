@@ -115,7 +115,11 @@
                   <tr class="objective-list">
                     <td><%= o.name %></td>
                     <td><%= o.due_date %></td>
-                    <td><%= o.status %></td>
+                    <td>
+                      <%= link_to objective_path(o), class: 'btn btn-primary', method: :put do %>
+                        <%= o.status %>
+                      <% end %>
+                    </td>
                   </tr>
                 <% end %>
               </tbody>

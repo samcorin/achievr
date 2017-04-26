@@ -12,6 +12,21 @@ class ObjectivesController < ApplicationController
     # redirect_to tasks_path
   end
 
+  def update
+    objective = Objective.find(params[:id])
+    case
+    when objective.status == "Not Started"
+      objective.status = "In Progress"
+    when objective.status == "In Progress"
+      objective.status = "Completed"
+    when objective.status == "Completed"
+      objective.status = "Not Started"
+    end
+    objective.save
+
+    redirect_to root_path
+  end
+
   private
 
   def objective_params
