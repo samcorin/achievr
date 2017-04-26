@@ -5,7 +5,6 @@ class ObjectivesController < ApplicationController
   end
 
   def create
-    binding.pry
     @objective = Objective.new(objective_params)
     @objective.user = current_user
     @objective.save
