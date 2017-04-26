@@ -1,6 +1,6 @@
 class ObjectivesController < ApplicationController
   def new
-    binding.pry
+    # binding.pry
     @objective = Objective.new
   end
 
@@ -10,6 +10,19 @@ class ObjectivesController < ApplicationController
     @objective.save
 
     # redirect_to tasks_path
+  end
+
+  def update
+    @objective = Objective.find(params[:id])
+    case
+    when @objective.status == "Not Started"
+      @objective.status = "In Progress"
+    when @objective.status == "In Progress"
+      @objective.status = "Completed"
+    when @objective.status == "Completed"
+      @objective.status = "Not Started"
+    end
+    @objective.save
   end
 
   private

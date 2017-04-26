@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+all = User.all
+all.each do |user|
+  user.mentor = nil
+  user.save!
+end
+
+Badge.destroy_all
 User.destroy_all
 Resource.destroy_all
 Team.destroy_all
@@ -165,6 +172,85 @@ resource = Resource.create!(
   url: 'https://www.slideshare.net/cemara288/basic-sales-training',
   team: team
 )
+
+
+puts "Creating objectives"
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: sam,
+)
+
+
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: nico,
+)
+
+
+Objective.create!(
+  name: 'Fill the personal information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Fill the payroll information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Fill the health insurance information sheet',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+Objective.create!(
+  name: 'Get the lunch appointment with your mentor',
+  due_date: '2017-05-10',
+  user: hide,
+)
+
+
+
 
 # TODO: create Places
 
