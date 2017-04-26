@@ -1,0 +1,27 @@
+<hr>
+  <div class="content-container">
+    <div class="completed-badge">
+      <%= image_tag("icons/001-quality.png", class: toggle_badge("personal-information"), id: "badge-personal-information") %>
+    </div>
+    
+    <h2>Personal Information</h2>
+      <p>
+        In order to avoid having you filling many documents and asking 
+        the same information again and again, please fill the below form.
+      </p>
+
+    <div class="form-group">
+      <%= simple_form_for current_user, remote: true do |f| %>
+        <%= f.input :birthday %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :prefecture %>
+        <%= f.input :postal_code %>
+        <%= f.input :bank_account_number %>
+        <%= f.input :social_security_number %>
+        <%= f.input :person_to_contact %>
+        <%= f.submit 'Submit', class: 'btn btn-pink', id: "personal-information" %>
+      <% end %>
+    </div>
+
+  </div>
