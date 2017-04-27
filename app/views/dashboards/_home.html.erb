@@ -96,7 +96,7 @@
           </div>
           <br>
           <div class="tab-content text-center">
-            <p><span class="light-text">You can find out more about the team </span><a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
+            <p><span class="light-text">You can learn more about the team </span><a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
           </div>
           <br>
           <hr>
@@ -119,9 +119,9 @@
 
           <br>
           <h2>Contact information</h2>
-          <p>By the way, your contact information is all ready. </p>
+          <p style="margin-top: 15px;">By the way, your contact information is all ready. These will be your new email and office phone. </p>
           <div class="home-contact-info">
-            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %>.com</strong>
             <!-- insert actual phone number -->
             <p>(080) 555 - 5555</p>
           </div>
@@ -180,9 +180,10 @@
           <hr>
           <div class="final-button-wrapper">
             <h2>Final touches</h2>
+            <br>
             <div class="text-center">
               <p>You've introduced yourself to the team and you have access to more information in the resources section. Feel free to contact one of us if you have any questions.</p>
-              <button id="final-button" class="btn btn-pink">Great!</button>
+              <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Great!</button>
               <!-- replace with anim -->
             <!-- </div> -->
           <!-- </div> -->

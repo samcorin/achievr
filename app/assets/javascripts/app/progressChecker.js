@@ -15,7 +15,7 @@ var progressChecker = (function() {
   var init = function(userId, points) {
     current_user_id: userId;
     current_user_points: points;
-    update();
+    // update();
     url = baseURL();
 
   };
@@ -69,7 +69,7 @@ var progressChecker = (function() {
   };
 
   function update_page_score() {
-    console.log("inside update: " + current_user_points);
+    // console.log("inside update: " + current_user_points);
     $(".user-points-updatable").text(current_user_points);
     $(".progress-bar").css({"width": current_user_points + "%"});
     $("#user-progress-bar").css({"width": current_user_points + "%"});

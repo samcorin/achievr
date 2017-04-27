@@ -9,14 +9,17 @@
 
 .progress-block-fixed {
   position: fixed;
+
+  // responsive fixed bar
+
   // $screen-width: 100vw;
   // $progress-offset: -273px;
   // $lg-card-width: 1000px;
-
-  left: -222px !important;
   // left: #{($progress-offset - calc($screen-width - $lg-card-width)) / 2}px !important;
 
-  top: 330px !important;
+  left: -222px !important;
+  // top: 330px !important;
+  top: calc(50%);
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   z-index: 999;
