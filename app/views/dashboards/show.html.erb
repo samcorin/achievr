@@ -78,7 +78,7 @@
         e.preventDefault();
 
         progressChecker.addPoints(25);
-        $(".email-team-replace").replaceWith('<div class="text-center" style="margin-top:15px;"><%= image_tag "maps-and-flags.svg", id: "done-2" %><p class="done-text">Introduction sent!</p></div>');
+        $(".email-team-replace").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "done-2" %><p class="done-text" style="margin-top:15px;">Introduction sent!</p></div>');
 
         // Open new window for email
         var mailto_link = $(this).prop('href');
@@ -137,10 +137,9 @@
 
       swal(
         'You\'re all set!',
-        'The hardest parts are over. Not so bad, huh?',
+        'The hardest part\'s over. Not so bad, huh?',
         'success'
       )
-      // or other animation.
 
     });
 
