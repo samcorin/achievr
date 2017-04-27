@@ -115,7 +115,7 @@
                 <% current_user.objectives.each do |o| %>
                   <tr class="objective-list">
                     <td><%= o.name %></td>
-                    <td><%= o.due_date %></td>
+                    <td><%= o.due_date.strftime('%A, %b %d') %></td>
                     <td>
                       <%= link_to objective_path(o), class: Objective.objective_class(o), id: "objective-#{o.id}", method: :put, remote: true do %>
                         <%= o.status %>

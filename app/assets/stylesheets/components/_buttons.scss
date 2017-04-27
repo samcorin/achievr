@@ -46,3 +46,33 @@ button {
   background-color: #ff2b61;
   color: #fff;
 }
+
+.btn-obj-not-started {
+  background-color: $orange;
+  opacity: 0.8;
+}
+
+.btn-obj-not-started:hover {
+  opacity: 1;
+  color: white;
+}
+
+.btn-obj-in-progress {
+  background-color: $blue;
+  opacity: 0.8;
+}
+
+.btn-obj-in-progress:hover {
+  opacity: 1;
+  color: white;
+}
+
+.btn-obj-completed {
+  background-color: $green;
+  opacity: 0.8;
+}
+
+.btn-obj-completed:hover {
+  opacity: 1;
+  color: white;
+}
