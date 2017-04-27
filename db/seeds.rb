@@ -55,8 +55,9 @@ sam = User.create!(
   email: 'sam@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/sam_jokcp6.jpg",
-  bio: 'Sam spends his days working with all the members of the Sales Team, making sure that everything go smoothly with the Integration Team and the Marketing Team. He has been working for 15 years in the industry, and has a strong background selling enterprise software.',
+  bio: "Sam spends his days working with all the members of the Sales Team, making sure that everything go smoothly with the Integration Team and the Marketing Team. He has been working for 15 years in the industry, and has a strong background selling enterprise software.",
   team: team
+  fun_fact: 'In his free time, Sam enjoys surfing the waves of Shonan.'
   position: 'Sales Manager'
   phone: 03-5000-8008
 )
@@ -68,8 +69,8 @@ nico = User.create!(
   email: 'nicolas@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/nico_r2kflm.jpg",
-  bio: 'Nicolas has a strong background as a direct B2B sales, selling SaaS to enterprise customers. His connections are mainly with medium sized companies. Before joining Smart BI, he was working for a startup providing digital marketing solutions.',
-  fun_fact: '',
+  bio: "Nicolas has a strong background as a direct B2B sales, selling SaaS to enterprise customers. His connections are mainly with medium sized companies. Before joining Smart BI, he was working for a startup providing digital marketing solutions.",
+  fun_fact: 'Nicolas used to play basketball national competion during high School.',
   team: team,
   position: 'Sales',
   phone: 03-5000-8007
@@ -82,8 +83,8 @@ hide = User.create!(
   email: 'hidehiro@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
-  bio: 'Hidehiro  has a strong sales acumen and proven track record selling enterprise software to tech companies. He is solid are reliable. Prior to joining Smart BI, Hidehiro used to work for an SIer selling a multitude of solutions.',
-  fun_fact: '',
+  bio: "Hidehiro  has a strong sales acumen and proven track record selling enterprise software to tech companies. He is solid are reliable. Prior to joining Smart BI, Hidehiro used to work for an SIer selling a multitude of solutions.",
+  fun_fact: 'Hidehiro loves car, and he is the proud owner of a Skyline GT-T R34',
   team: team,
   position: 'Sales',
   phone: 03-5000-8006
@@ -96,8 +97,8 @@ dim = User.create!(
   email: 'dimitri@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/dim_e8ykqe.jpg",
-  bio: 'Dimitri’s strength is to make complicated concepts simple. Besides his technical background, his interpersonal skills are helpful to team up with the Sales during negotiations. He has been working for 10 years, so he has a good knowledge of the product as well as the company.',
-  fun_fact: '',
+  bio: "Dimitri’s strength is to make complicated concepts simple. Besides his technical background, his interpersonal skills are helpful to team up with the Sales during negotiations. He has been working for 10 years, so he has a good knowledge of the product as well as the company.",
+  fun_fact: 'Dimitri has seen the sun rise on top of Mount Fuji.',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8005
@@ -111,8 +112,8 @@ paul = User.create!(
   email: 'paul@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/paul_l3sten.jpg",
-  bio: 'Paul moved from the Development Team to the Sales Team recently. His technical knowledge of Smart BI is a huge asset for the customers as well as for the team. He used to work for several years for another enterprise software company as a Lead Developer.',
-  fun_fact: '',
+  bio: "Paul moved from the Development Team to the Sales Team recently. His technical knowledge of Smart BI is a huge asset for the customers as well as for the team. He used to work for several years for another enterprise software company as a Lead Developer.",
+  fun_fact: 'Paul paid his university tuition fees by doing some web design gigs.',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8004
@@ -126,8 +127,8 @@ sylvain = User.create!(
   email: 'sylvain@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012934/sylvain_flyqtb.png",
-  bio: 'Sylvain is a seasoned Pre-Sales with a strong sales background. With both technical and sales skills, he’s making sure to manage the customer’s expectations. He used to be sales but decided quickly that he wanted to move to the technical side.',
-  fun_fact: '',
+  bio: "Sylvain is a seasoned Pre-Sales with a strong sales background. With both technical and sales skills, he’s making sure to manage the customer’s expectations. He used to be sales but decided quickly that he wanted to move to the technical side.",
+  fun_fact: 'Sylvain used to live in Vietnam for 10 years',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8003
@@ -140,8 +141,8 @@ boris = User.create!(
   email: 'boris@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/boris_q1q3qv.jpg",
-  bio: 'Boris keeps improving the different modules composing Smart BI. He also works on testing experimental modules from the development team. Previously Boris was a lead engineer at lwg.com, a non-profit teaching how to code to kids.',
-  fun_fact: '',
+  bio: "Boris keeps improving the different modules composing Smart BI. He also works on testing experimental modules from the development team. Previously Boris was a lead engineer at lwg.com, a non-profit teaching how to code to kids.",
+  fun_fact: 'You can find Boris relaxing at the onsen every week end.',
   team: team,
   position: 'Engineer',
   phone: 03-5000-8002
@@ -154,8 +155,8 @@ sebastien = User.create!(
   email: 'sebastien@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/saunier_zwrxwb.jpg",
-  bio: 'As Solution Architect for  for Smart BI, Sebastien is responsible for integration the different solutions to match the customers’ needs. Prior to joining Smart BI, Sebastien headed up the software team at another BI Software company.',
-  fun_fact: '',
+  bio: "As Solution Architect for  for Smart BI, Sebastien is responsible for integration the different solutions to match the customers’ needs. Prior to joining Smart BI, Sebastien headed up the software team at another BI Software company.",
+  fun_fact: 'In his free time, Sebastien is working on several software open source projects.',
   team: team,
   position: 'Solution Architect',
   phone: 03-5000-8001
