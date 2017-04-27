@@ -96,6 +96,13 @@
             <br>
             <hr>
           </div>
+
+          <br>
+          <div class="tab-content text-center">
+            <p><span class="light-text">You can learn more about the team </span><a href="#team" data-toggle="tab" id="link-to-team-in-home"><strong class="strong-green">HERE</strong></a>.</p>
+          </div>
+          <br>
+          <hr>
         </div>
       </div>
 
@@ -118,7 +125,6 @@
               <p><%= current_user.phone_number %></p>
             </div>
 
-
             <% if current_user.has_the_badge?("email-team") %>
               <div class="text-center">
                 <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "done-2" %>
@@ -133,6 +139,7 @@
                 <p>Or you can wait until your first day.</p>
               </div>
             <% end %>
+
           </div>
         </div>
       </div>

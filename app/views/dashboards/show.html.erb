@@ -149,6 +149,12 @@
       $('#show-' + $(this)[0].id).hide().remove();
       $('#hide-' + $(this)[0].id).removeClass('hidden');
     })
+
+    // for link in the home
+    $('#link-to-team-in-home').click(function(e) {
+      $('#nav-tab-home').removeClass("active");
+      $('#nav-tab-team').addClass("active");
+    })
   </script>
 <% end %>
 
