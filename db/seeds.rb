@@ -55,7 +55,7 @@ sam = User.create!(
   email: 'sam@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/sam_jokcp6.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  bio: 'Sam spends his days working with all the members of the Sales Team, making sure that everything go smoothly with the Integration Team and the Marketing Team. He has been working for 15 years in the industry, and has a strong background selling enterprise software.',
   team: team
   position: 'Sales Manager'
   phone: 03-5000-8008
@@ -68,9 +68,9 @@ nico = User.create!(
   email: 'nicolas@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/nico_r2kflm.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Sales'
+  bio: 'Nicolas has a strong background as a direct B2B sales, selling SaaS to enterprise customers. His connections are mainly with medium sized companies. Before joining Smart BI, he was working for a startup providing digital marketing solutions.',
+  team: team,
+  position: 'Sales',
   phone: 03-5000-8007
 )
 
@@ -81,8 +81,9 @@ hide = User.create!(
   email: 'hidehiro@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  position: 'Sales'
+  bio: 'Hidehiro  has a strong sales acumen and proven track record selling enterprise software to tech companies. He is solid are reliable. Prior to joining Smart BI, Hidehiro used to work for an SIer selling a multitude of solutions.',
+  team: team,
+  position: 'Sales',
   phone: 03-5000-8006
 )
 
@@ -93,9 +94,9 @@ dim = User.create!(
   email: 'dimitri@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/dim_e8ykqe.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Pre-Sales'
+  bio: 'Dimitri’s strength is to make complicated concepts simple. Besides his technical background, his interpersonal skills are helpful to team up with the Sales during negotiations. He has been working for 10 years, so he has a good knowledge of the product as well as the company.',
+  team: team,
+  position: 'Pre-Sales',
   phone: 03-5000-8005
 )
 
@@ -107,9 +108,9 @@ paul = User.create!(
   email: 'paul@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/paul_l3sten.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Pre-Sales'
+  bio: 'Paul moved from the Development Team to the Sales Team recently. His technical knowledge of Smart BI is a huge asset for the customers as well as for the team. He used to work for several years for another enterprise software company as a Lead Developer.',
+  team: team,
+  position: 'Pre-Sales',
   phone: 03-5000-8004
 )
 
@@ -121,9 +122,9 @@ sylvain = User.create!(
   email: 'sylvain@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012934/sylvain_flyqtb.png",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Pre-Sales'
+  bio: 'Sylvain is a seasoned Pre-Sales with a strong sales background. With both technical and sales skills, he’s making sure to manage the customer’s expectations. He used to be sales but decided quickly that he wanted to move to the technical side.',
+  team: team,
+  position: 'Pre-Sales',
   phone: 03-5000-8003
 )
 
@@ -134,9 +135,9 @@ boris = User.create!(
   email: 'boris@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/boris_q1q3qv.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Engineer'
+  bio: 'Boris keeps improving the different modules composing Smart BI. He also works on testing experimental modules from the development team. Previously Boris was a lead engineer at lwg.com, a non-profit teaching how to code to kids.',
+  team: team,
+  position: 'Engineer',
   phone: 03-5000-8002
 )
 
@@ -147,9 +148,9 @@ sebastien = User.create!(
   email: 'sebastien@smart-bi.com',
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/saunier_zwrxwb.jpg",
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  team: team
-  position: 'Solution Architect'
+  bio: 'As Solution Architect for  for Smart BI, Sebastien is responsible for integration the different solutions to match the customers’ needs. Prior to joining Smart BI, Sebastien headed up the software team at another BI Software company.',
+  team: team,
+  position: 'Solution Architect',
   phone: 03-5000-8001
 )
 
