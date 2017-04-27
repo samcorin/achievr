@@ -73,27 +73,27 @@ div[data-toggle="buttons"] label.active{
 }
 
 div[data-toggle="buttons"] label {
-display: inline-block;
-padding: 6px 12px;
-margin-bottom: 0;
-font-size: 14px;
-font-weight: normal;
-line-height: 2em;
-text-align: left;
-white-space: nowrap;
-vertical-align: top;
-cursor: pointer;
-background-color: none;
-// border: 0px solid
-// #c8c8c8;
-// border-radius: 3px;
-color: #c8c8c8;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-outline: none;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 2em;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: none;
+  // border: 0px solid
+  // #c8c8c8;
+  // border-radius: 3px;
+  color: #c8c8c8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
 }
 
 div[data-toggle="buttons"] label:hover {
@@ -274,7 +274,7 @@ a, a:focus, a:visited {
 // --------------------------
 // Personal information forms
 
-#personal input {
+#personal input, #personal select {
   background-color: white;
   padding: 8px 12px;
   border-radius: 4px;
@@ -285,7 +285,7 @@ a, a:focus, a:visited {
 
 }
 
-#personal input, #personal .simple_form_select {
+#personal select, #personal input, #personal .simple_form_select {
   color: '#32325d';
   line-height: '24px';
   font-smoothing: 'antialiased';
