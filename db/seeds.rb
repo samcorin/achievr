@@ -30,7 +30,7 @@ company = Company.create!(
 team = Team.create!(
   name: 'Sales Team',
   company: company
-  description: 'The Sales Team is one of the most important element of Smart BI. The Sales Team is not only in charge of selling our BI solution, but to get the requirement from the customers in order to customize our enterprise software to their needs. The team is composed of Sales people who are in charge of the first contact with the customers. Then, they team up with Pre-Sales to get the requirements from the customer. The next step is having the sales, pre-sales and solution architect to work together to design the BI solution for our customers. Finally, they will pass all the information to the Implementation team.'
+  description: "The Sales Team is one of the most important element of Smart BI. The Sales Team is not only in charge of selling our BI solution, but to get the requirement from the customers in order to customize our enterprise software to their needs. The team is composed of Sales people who are in charge of the first contact with the customers. Then, they team up with Pre-Sales to get the requirements from the customer. The next step is having the sales, pre-sales and solution architect to work together to design the BI solution for our customers. Finally, they will pass all the information to the Implementation team."
 )
 
 team2 = Team.create!(
