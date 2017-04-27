@@ -34,9 +34,17 @@
       // Scoring system
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      $('#fullpage').fullpage({
-        anchors:['firstSection', 'secondSection', 'thirdSection']
-      });
+      // $('#fullpage').fullpage({
+      //   anchors:['firstSection', 'secondSection', 'thirdSection']
+      // });
+
+      $('.moveDown').click(function() {
+        console.log("inside move down")
+        setTimeout(function() {
+          console.log("inside timeout")
+          $.fn.fullpage.moveSectionDown();
+        },1500)
+      })
 
       // Carousel
       $('.owl-carousel').owlCarousel({
