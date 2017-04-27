@@ -29,7 +29,7 @@ company = Company.create!(
 
 team = Team.create!(
   name: 'Sales Team',
-  company: company
+  company: company,
   description: "The Sales Team is one of the most important element of Smart BI. The Sales Team is not only in charge of selling our BI solution, but to get the requirement from the customers in order to customize our enterprise software to their needs. The team is composed of Sales people who are in charge of the first contact with the customers. Then, they team up with Pre-Sales to get the requirements from the customer. The next step is having the sales, pre-sales and solution architect to work together to design the BI solution for our customers. Finally, they will pass all the information to the Implementation team."
 )
 
@@ -56,9 +56,9 @@ sam = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/sam_jokcp6.jpg",
   bio: "Sam spends his days working with all the members of the Sales Team, making sure that everything go smoothly with the Integration Team and the Marketing Team. He has been working for 15 years in the industry, and has a strong background selling enterprise software.",
-  team: team
-  fun_fact: 'In his free time, Sam enjoys surfing the waves of Shonan.'
-  position: 'Sales Manager'
+  team: team,
+  fun_fact: 'In his free time, Sam enjoys surfing the waves of Shonan.',
+  position: 'Sales Manager',
   phone: 03-5000-8008
 )
 
