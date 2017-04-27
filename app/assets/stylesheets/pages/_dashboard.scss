@@ -88,7 +88,8 @@
     width: 90%;
   }
   h2 {
-    width: 90%;
+    width: 90% !important;
+    margin: auto;
   }
 }
 
@@ -496,6 +497,7 @@ input[type=checkbox]:checked + .strikethrough {
   padding: 50px;
   text-align: center;
   position: relative;
+  margin-top: 15px;
   p {
     margin-top: 10px;
     font-weight: 200;
