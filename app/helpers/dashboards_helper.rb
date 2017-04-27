@@ -31,4 +31,8 @@ module DashboardsHelper
     current_user.badges.find_by_title(title) ? "" : "hidden"
   end
 
+  def profile_photo(url)
+    url ? url : "https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg"
+  end
+
 end
