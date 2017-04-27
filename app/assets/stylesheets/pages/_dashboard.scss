@@ -316,8 +316,8 @@ input[type=checkbox]:checked + .strikethrough {
 #badge-email-team {
   margin-top: -32px;
   margin: 15px auto;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 #objectives {
@@ -497,7 +497,7 @@ input[type=checkbox]:checked + .strikethrough {
   padding: 40px;
   text-align: center;
   position: relative;
-  margin-top: 15px;
+  // margin-top: 15px;
   p {
     margin-top: 10px;
     font-weight: 200;

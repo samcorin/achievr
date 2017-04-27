@@ -111,12 +111,10 @@
 
             <br>
             <h2>Contact information</h2>
-            <p style="margin-top: 15px;">By the way, your contact information is all ready. These will be your new email and office phone. </p>
+            <p style="margin-top: 15px;">By the way, the email and phone number you'll be using is: </p>
+
             <div class="home-contact-info">
-
               <strong class="strong-green"><%= current_user.email %></strong>
-
-              <!-- insert actual phone number -->
               <p><%= current_user.phone_number %></p>
             </div>
 
@@ -124,8 +122,9 @@
             <% if current_user.has_the_badge?("email-team") %>
               <div class="text-center">
                 <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "done-2" %>
-                <p class="done-text">Introduction sent!</p>
+                <p class="done-text" style="margin-top:15px;">Introduction sent!</p>
               </div>
+              <hr>
             <% else %>
               <div class="text-center email-team-replace">
                 <p>Want to introduce yourself to the team?</p>
@@ -139,7 +138,7 @@
       </div>
 
         <!-- where to go -->
-        <hr>
+
         <%= image_tag("svg/007-squares.svg", class: "distraction") %>
 
         <div class="lg-card-content">
