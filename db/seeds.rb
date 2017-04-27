@@ -59,7 +59,7 @@ sam = User.create!(
   team: team,
   fun_fact: 'In his free time, Sam enjoys surfing the waves of Shonan.',
   position: 'Sales Manager',
-  phone: 03-5000-8008
+  phone_number: '03-5000-8008'
 )
 
 nico = User.create!(
@@ -73,7 +73,7 @@ nico = User.create!(
   fun_fact: 'Nicolas used to play basketball national competion during high School.',
   team: team,
   position: 'Sales',
-  phone: 03-5000-8007
+  phone_number: '03-5000-8007'
 )
 
 hide = User.create!(
@@ -87,7 +87,7 @@ hide = User.create!(
   fun_fact: 'Hidehiro loves car, and he is the proud owner of a Skyline GT-T R34',
   team: team,
   position: 'Sales',
-  phone: 03-5000-8006
+  phone_number: '03-5000-8006'
 )
 
 dim = User.create!(
@@ -101,7 +101,7 @@ dim = User.create!(
   fun_fact: 'Dimitri has seen the sun rise on top of Mount Fuji.',
   team: team,
   position: 'Pre-Sales',
-  phone: 03-5000-8005
+  phone_number: '03-5000-8005'
 )
 
 
@@ -116,7 +116,7 @@ paul = User.create!(
   fun_fact: 'Paul paid his university tuition fees by doing some web design gigs.',
   team: team,
   position: 'Pre-Sales',
-  phone: 03-5000-8004
+  phone_number: '03-5000-8004'
 )
 
 
@@ -131,7 +131,7 @@ sylvain = User.create!(
   fun_fact: 'Sylvain used to live in Vietnam for 10 years',
   team: team,
   position: 'Pre-Sales',
-  phone: 03-5000-8003
+  phone_number: '03-5000-8003'
 )
 
 boris = User.create!(
@@ -145,7 +145,7 @@ boris = User.create!(
   fun_fact: 'You can find Boris relaxing at the onsen every week end.',
   team: team,
   position: 'Engineer',
-  phone: 03-5000-8002
+  phone_number: '03-5000-8002'
 )
 
 sebastien = User.create!(
@@ -159,7 +159,7 @@ sebastien = User.create!(
   fun_fact: 'In his free time, Sebastien is working on several software open source projects.',
   team: team,
   position: 'Solution Architect',
-  phone: 03-5000-8001
+  phone_number: '03-5000-8001'
 )
 
 

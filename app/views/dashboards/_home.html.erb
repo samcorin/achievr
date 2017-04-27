@@ -90,7 +90,7 @@
                       <div class="email">
                         <strong class="strong-green"><%= member.email %></strong>
                       </div>
-                      <div class="contact-ph">Office: (312) 344-8802</div>
+                      <div class="contact-ph">Office: <%= member.phone_number %></div>
                       <!-- <div class="description">
                           I use to design websites and applications
                           for the web.
@@ -131,9 +131,9 @@
           <h2>Introductions</h2>
           <p>By the way, your contact details are all set up.</p>
           <div class="home-contact-info">
-            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+            <strong class="strong-green"><%= current_user.email %></strong>
             <!-- insert actual phone number -->
-            <p>(080) 555 - 5555</p>
+            <p><%= current_user.phone_number %></p>
           </div>
 
 
