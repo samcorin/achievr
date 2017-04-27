@@ -6,14 +6,17 @@
     <div class="slide" data-anchor="slide3"> Slide 3 </div>
     <div class="slide" data-anchor="slide4"> Slide 4 </div>
   </div> -->
-<div id="fullpage">
 
 
-  <div class="tab-pane active" id="home" data-anchor="slide1">
+<div class="tab-pane active" id="home">
+
     <div class="lg-card">
       <div class="bg-image text-center">
         <h1>First steps</h1>
       </div>
+
+      <!-- <div id="fullpage"> -->
+
       <div class="lg-card-content" id="welcome-content">
         <div class="live-content">
           <div class="content-container text-center">
@@ -65,7 +68,7 @@
 
         <div class="lg-card-content">
           <div class="live-content">
-            <div class="content-container section">
+            <div class="content-container">
             <h2>The Team</h2>
             <p style="margin-top: 15px;">No surprises.</p><br>
             <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
@@ -106,15 +109,12 @@
         </div>
       </div>
 
-
-          <!-- <br> -->
-            <%= image_tag("svg/001-business.svg", class: "distraction") %>
-
-
+      <!-- <br> -->
+      <%= image_tag("svg/001-business.svg", class: "distraction") %>
 
       <div class="lg-card-content">
         <div class="live-content">
-          <div class="content-container section">
+          <div class="content-container">
             <div class="completed-badge email-team">
               <%= image_tag("icons/001-quality.png", class: toggle_badge("email-team"), id: "badge-email-team") %>
             </div>
@@ -153,7 +153,7 @@
         <%= image_tag("svg/007-squares.svg", class: "distraction") %>
 
         <div class="lg-card-content">
-          <div class="live-content section">
+          <div class="live-content">
             <!-- PERSONAL INFORMATION -->
             <%= render 'personal_information' %>
           </div>
@@ -161,7 +161,7 @@
 
 
         <div class="lg-card-content">
-          <div class="live-content section">
+          <div class="live-content">
             <!-- WHERE TO GO -->
             <%= render 'where' %>
           </div>
@@ -173,7 +173,7 @@
 
         <!-- Tools -->
         <div class="lg-card-content">
-          <div class="live-content section">
+          <div class="live-content">
             <%= render 'tools' %>
           </div>
         </div>
@@ -198,5 +198,3 @@
     </div>
   </div>
 
-
-</div>

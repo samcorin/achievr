@@ -38,11 +38,15 @@
       //   anchors:['firstSection', 'secondSection', 'thirdSection']
       // });
 
+      // $(document).on('click', '.moveDown', function(){
+      //   $.fn.fullpage.moveSectionDown();
+      // });
+
       $('.moveDown').click(function() {
         console.log("inside move down")
         setTimeout(function() {
           console.log("inside timeout")
-          $.fn.fullpage.moveSectionDown();
+          $('#fullpage').fullpage().moveSectionDown();
         },1500)
       })
 
@@ -94,7 +98,7 @@
           $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
         }
         if ($(this)[0].id == "email-team") {
-          progressChecker.addPoints(20);
+          progressChecker.addPoints(30);
           $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
 
