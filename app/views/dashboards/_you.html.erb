@@ -16,7 +16,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-xs-12 col-sm-4">
-                  <%#= image_tag @user.photo, class: "img-circle center-block" %>
+                  <%= image_tag profile_photo(@user.photo), class: "img-circle center-block" %>
                   <h2 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %></h2>
                   <p><%= current_user.email %></p>
                   <p>Team: <%= current_user.team.name %></p>
@@ -61,7 +61,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-xs-12 col-sm-4">
-                  <%#= image_tag current_user.mentor.photo, class: "img-circle center-block" %>
+                  <%= image_tag profile_photo(current_user.mentor.photo), class: "img-circle center-block" %>
                   <h2 class="text-center"><%= current_user.mentor.first_name %> <%= current_user.mentor.last_name %></h2>
                   <p><%= current_user.mentor.email %></p>
                   <p>Team: <%= current_user.mentor.team.name %></p>
