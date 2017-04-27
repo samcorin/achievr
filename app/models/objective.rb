@@ -6,11 +6,11 @@ class Objective < ApplicationRecord
   def self.objective_class(objective)
     case objective.status
     when "Not Started"
-      "btn btn-warning"
+      "btn btn-warning btn-block"
     when "In Progress"
-      "btn btn-info"
+      "btn btn-info btn-block"
     when "Completed"
-      "btn btn-success"
+      "btn btn-success btn-block"
     end
   end
 end
