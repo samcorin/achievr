@@ -67,6 +67,7 @@
 }
 
 .live-content {
+  margin: auto;
   position: relative;
   width: 700px;
   padding: 30px;
@@ -84,6 +85,9 @@
   padding: 15px;
   position: relative;
   p {
+    width: 90%;
+  }
+  h2 {
     width: 90%;
   }
 }
@@ -552,4 +556,17 @@ input[type=checkbox]:checked + .strikethrough {
   margin: 15px auto;
   width: 100px;
   height: 100px;
+}
+
+.final-button-wrapper {
+  margin-top: 20px;
+}
+
+.light-text p {
+  // color: lighten($brand-color, 30%);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: lighten(#6b7c93, 15%);
+  // margin: 0;
 }
