@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Achievr
+=========================================
+
+
+[Achievr.io](http://www.achievr.io) is a minimal and clean implementation of a guided onboarding journey that allows new employees quick and easy integration into a new company. 
