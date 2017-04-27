@@ -1,4 +1,3 @@
-<div class="tab-pane active" id="home">
 
   <!-- fullScreen.js TEST -->
   <!-- <div class="section">
@@ -8,6 +7,7 @@
     <div class="slide" data-anchor="slide4"> Slide 4 </div>
   </div> -->
 
+<div class="tab-pane active" id="home" data-anchor="slide1">
   <div class="lg-card">
     <div class="bg-image text-center">
       <h1>First steps</h1>
@@ -24,7 +24,7 @@
 
           <h2>Welcome, <%= current_user.first_name %>.</h2>
 
-          <p>
+          <p style="margin-top:15px">
             First of all, welcome to the company. We're excited to have you. Before you start there are some things you can do to supercharge the onboarding process.
           </p>
 
@@ -63,12 +63,12 @@
 
       <div class="lg-card-content">
         <div class="live-content">
-          <div class="content-container">
+          <div class="content-container section">
           <h2>The Team</h2>
-          <p style="margin-top: 10px;">No surprises.</p><br>
+          <p style="margin-top: 15px;">No surprises.</p><br>
           <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
           <br>
-          <div class="content-container-team content-container-team-home">
+          <div class="content-container-team content-container-team-home" style="margin-bottom: 20px">
             <div class="row">
               <% @team.users.each do |member| %>
                 <div class="col-xs-12 col-sm-6 team-member">
@@ -118,8 +118,8 @@
           </div>
 
           <br>
-          <h2>By the way..</h2>
-          <p>Your contact information is all ready.</p>
+          <h2>Contact information</h2>
+          <p>By the way, your contact information is all ready. </p>
           <div class="home-contact-info">
             <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
             <!-- insert actual phone number -->
@@ -128,7 +128,7 @@
 
 
           <% if current_user.has_the_badge?("email-team") %>
-            <div class="text-center m-top-15">
+            <div class="text-center">
               <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
               <p class="done-text">Introduction sent!</p>
             </div>
