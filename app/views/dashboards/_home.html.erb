@@ -1,13 +1,3 @@
-
-  <!-- fullScreen.js TEST -->
-  <!-- <div class="section">
-    <div class="slide" data-anchor="slide1"> Slide 1 </div>
-    <div class="slide" data-anchor="slide2"> Slide 2 </div>
-    <div class="slide" data-anchor="slide3"> Slide 3 </div>
-    <div class="slide" data-anchor="slide4"> Slide 4 </div>
-  </div> -->
-
-
 <div class="tab-pane active" id="home">
 
     <div class="lg-card">
@@ -69,7 +59,7 @@
         <div class="lg-card-content">
           <div class="live-content">
             <div class="content-container">
-            <h2>The Team</h2>
+            <h2 id="theTeam">The Team</h2>
             <p style="margin-top: 15px;">No surprises.</p><br>
             <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
             <br>
@@ -133,7 +123,7 @@
 
             <% if current_user.has_the_badge?("email-team") %>
               <div class="text-center">
-                <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
+                <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "done-2" %>
                 <p class="done-text">Introduction sent!</p>
               </div>
             <% else %>
@@ -183,11 +173,11 @@
           <div class="live-content">
             <hr>
             <div class="final-button-wrapper">
-              <h2>Final touches</h2>
+              <h2>One last thing</h2>
               <br>
               <div class="text-center">
-                <p>You've introduced yourself to the team and you have access to more information in the resources section. Feel free to contact one of us if you have any questions.</p>
-                <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Great!</button>
+                <p>You've introduced yourself to the team and you have access to more information in the resources section. Feel free to get in touch with members of your team if you have any questions. We're all here to help.</p>
+                <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Finish</button>
                 <!-- replace with anim -->
               <!-- </div> -->
             <!-- </div> -->
