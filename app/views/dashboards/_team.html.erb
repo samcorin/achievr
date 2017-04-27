@@ -2,8 +2,8 @@
   <div class="lg-card">
     <div class="lg-card-content">
 
-      <h2>The Team</h2>
-      <p>Find our more about the people you'll be working with.</p>
+      <h2>The <%= @team.name %></h2>
+      <p><%= @team.description %></p>
       <br>
         <div class="content-container-team-detail">
           <div class="row">
@@ -20,7 +20,9 @@
                           <strong><%= member.email %></strong>
                         </div>
                         <div class="contact-ph">Office: <%= member.phone_number %></div>
-                        <!-- <div class="description"><%#= member.bio %></div> -->
+                        <div class="description"><%= member.bio %></div><br>
+                        <p><strong>Fun Fact:</strong></p>
+                        <div class="description"><%= member.fun_fact %></div>
                       </div>
                     </div>
                   </div>
