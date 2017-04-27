@@ -1,99 +1,102 @@
+<div class="tab-pane active" id="home">
 
-  <!-- fullScreen.js TEST -->
-  <!-- <div class="section">
-    <div class="slide" data-anchor="slide1"> Slide 1 </div>
-    <div class="slide" data-anchor="slide2"> Slide 2 </div>
-    <div class="slide" data-anchor="slide3"> Slide 3 </div>
-    <div class="slide" data-anchor="slide4"> Slide 4 </div>
-  </div> -->
+    <div class="lg-card">
+      <div class="bg-image text-center">
+        <h1>First steps</h1>
+      </div>
 
-<div class="tab-pane active" id="home" data-anchor="slide1">
-  <div class="lg-card">
-    <div class="bg-image text-center">
-      <h1>First steps</h1>
-    </div>
-    <div class="lg-card-content" id="welcome-content">
-      <div class="live-content">
-        <div class="content-container text-center">
+      <!-- <div id="fullpage"> -->
 
-          <div class="completed-badge toStepOne">
-            <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
-          </div>
+      <div class="lg-card-content" id="welcome-content">
+        <div class="live-content">
+          <div class="content-container text-center">
 
-          <%= image_tag current_user.photo, class: "img-circle" %>
+            <div class="completed-badge toStepOne">
+              <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+            </div>
 
-          <h2>Welcome, <%= current_user.first_name %>.</h2>
+            <%= image_tag current_user.photo, class: "img-circle" %>
 
-          <p style="margin-top:15px">
-            First of all, welcome to the company. We're excited to have you. Before you start there are some things you can do to supercharge the onboarding process.
-          </p>
+            <h2>Welcome, <%= current_user.first_name %>.</h2>
+
+            <p style="margin-top:15px">
+              First of all, welcome to the company. We're excited to have you. Before you start there are some things you can do to supercharge the onboarding process.
+            </p>
+
+            <br>
+
+            <% if current_user.has_the_badge?("toStepOne") %>
+              <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
+              <p class="done-text">You're in the loop!</p>
+            <% else %>
+            <div class="welcome-screen-buttons text-center light-text">
+              <p>Want to stay up to date with news about your role?</p>
+              <p>Enable notifications.</p>
+              <button id="toStepOne" class="btn btn-pink moveDown">Sure</button>
+            </div>
+          <% end %>
 
           <br>
+          <hr>
 
-          <% if current_user.has_the_badge?("toStepOne") %>
-            <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
-            <p class="done-text">You're in the loop!</p>
-          <% else %>
-          <div class="welcome-screen-buttons text-center light-text">
-            <p>Want to stay up to date with news about your role?</p>
-            <p>Enable notifications.</p>
-            <button id="toStepOne" class="btn btn-pink">Sure</button>
           </div>
-        <% end %>
 
-        <br>
-        <hr>
+          <!-- <hr> -->
 
         </div>
-
-        <!-- <hr> -->
-
       </div>
-    </div>
 
 
 
-        <!-- <hr> -->
+          <!-- <hr> -->
 
-        <%= image_tag("svg/012-team.svg", class: "distraction") %>
+          <%= image_tag("svg/012-team.svg", class: "distraction") %>
 
-        <!-- <div class="separator"></div> -->
+          <!-- <div class="separator"></div> -->
 
 
 
-      <div class="lg-card-content">
-        <div class="live-content">
-          <div class="content-container section">
-          <h2>The Team</h2>
-          <p style="margin-top: 15px;">No surprises.</p><br>
-          <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
-          <br>
-          <div class="content-container-team content-container-team-home" style="margin-bottom: 20px">
-            <div class="row">
-              <% @team.users.each do |member| %>
-                <div class="col-xs-12 col-sm-6 team-member">
-                  <div class="user-profile-small">
-                  <%= image_tag member.photo, class: "img-circle" %>
-                    <!-- <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle"> -->
-                    <div class="user-profile-text">
-                      <div class="username"><%= member.first_name %> <%= member.last_name %></div>
-                      <div class="email">
-                        <strong class="strong-green"><%= member.email %></strong>
+        <div class="lg-card-content">
+          <div class="live-content">
+            <div class="content-container">
+            <h2 id="theTeam">The Team</h2>
+            <p style="margin-top: 15px;">No surprises.</p><br>
+            <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
+            <br>
+            <div class="content-container-team content-container-team-home" style="margin-bottom: 20px">
+              <div class="row">
+                <% @team.users.each do |member| %>
+                  <div class="col-xs-12 col-sm-6 team-member">
+                    <div class="user-profile-small">
+                    <%= image_tag member.photo, class: "img-circle" %>
+                      <!-- <img src="http://i.pravatar.cc/100?img=<%= (1..50).to_a.sample %>" alt="<%= member.first_name %>" class="img-circle"> -->
+                      <div class="user-profile-text">
+                        <div class="username"><%= member.first_name %> <%= member.last_name %></div>
+                        <div class="email">
+                          <strong class="strong-green"><%= member.email %></strong>
+                        </div>
+                        <div class="contact-ph">Office: <%= member.phone_number %></div>
+                        <!-- <div class="description">
+                            I use to design websites and applications
+                            for the web.
+                        </div> -->
                       </div>
-                      <div class="contact-ph">Office: <%= member.phone_number %></div>
-                      <!-- <div class="description">
-                          I use to design websites and applications
-                          for the web.
-                      </div> -->
                     </div>
                   </div>
-                </div>
-                <div class="card hidden" id="hide-<%= member.email %>">
-                  hello
-                </div>
-              <% end %>
+                  <div class="card hidden" id="hide-<%= member.email %>">
+                    hello
+                  </div>
+                <% end %>
+              </div>
             </div>
+            <br>
+            <div class="tab-content text-center">
+              <p><span class="light-text">You can learn more about the team </span><a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
+            </div>
+            <br>
+            <hr>
           </div>
+
           <br>
           <div class="tab-content text-center">
             <p><span class="light-text">You can learn more about the team </span><a href="#team" data-toggle="tab" id="link-to-team-in-home"><strong class="strong-green">HERE</strong></a>.</p>
@@ -102,97 +105,99 @@
           <hr>
         </div>
       </div>
-    </div>
 
+      <!-- <br> -->
+      <%= image_tag("svg/001-business.svg", class: "distraction") %>
 
-        <!-- <br> -->
-          <%= image_tag("svg/001-business.svg", class: "distraction") %>
-
-
-
-    <div class="lg-card-content">
-      <div class="live-content">
-        <div class="content-container">
-          <div class="completed-badge email-team">
-            <%= image_tag("icons/001-quality.png", class: toggle_badge("email-team"), id: "badge-email-team") %>
-          </div>
-
-          <br>
-          <h2>Contact information</h2>
-          <p style="margin-top: 15px;">By the way, your contact information is all ready. These will be your new email and office phone. </p>
-          <div class="home-contact-info">
-
-            <strong class="strong-green"><%= current_user.email %></strong>
-
-            <!-- insert actual phone number -->
-            <p><%= current_user.phone_number %></p>
-          </div>
-
-
-          <% if current_user.has_the_badge?("email-team") %>
-            <div class="text-center">
-              <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
-              <p class="done-text">Introduction sent!</p>
+      <div class="lg-card-content">
+        <div class="live-content">
+          <div class="content-container">
+            <div class="completed-badge email-team">
+              <%= image_tag("icons/001-quality.png", class: toggle_badge("email-team"), id: "badge-email-team") %>
             </div>
-          <% else %>
-            <div class="text-center email-team-replace">
-              <p>Want to introduce yourself to the team?</p>
-              <a href="<%= @email2 %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
-              <br>
-              <p>Or you can wait until your first day.</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
 
-      <!-- where to go -->
-      <hr>
-      <%= image_tag("svg/007-squares.svg", class: "distraction") %>
-
-      <div class="lg-card-content">
-        <div class="live-content">
-          <!-- PERSONAL INFORMATION -->
-          <%= render 'personal_information' %>
-        </div>
-      </div>
-
-
-      <div class="lg-card-content">
-        <div class="live-content">
-          <!-- WHERE TO GO -->
-          <%= render 'where' %>
-        </div>
-      </div>
-
-
-      <!-- HR -->
-      <%#= render 'hr' %>
-
-      <!-- Tools -->
-      <div class="lg-card-content">
-        <div class="live-content">
-          <%= render 'tools' %>
-        </div>
-      </div>
-
-      <br>
-      <div class="lg-card-content">
-        <div class="live-content">
-          <hr>
-          <div class="final-button-wrapper">
-            <h2>Final touches</h2>
             <br>
-            <div class="text-center">
-              <p>You've introduced yourself to the team and you have access to more information in the resources section. Feel free to contact one of us if you have any questions.</p>
-              <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Great!</button>
-              <!-- replace with anim -->
-            <!-- </div> -->
-          <!-- </div> -->
+            <h2>Contact information</h2>
+            <p style="margin-top: 15px;">By the way, the email and phone number you'll be using is: </p>
+
+            <div class="home-contact-info">
+              <strong class="strong-green"><%= current_user.email %></strong>
+              <p><%= current_user.phone_number %></p>
+            </div>
+
+            <% if current_user.has_the_badge?("email-team") %>
+              <div class="text-center">
+                <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "done-2" %>
+                <p class="done-text" style="margin-top:15px;">Introduction sent!</p>
+              </div>
+              <hr>
+            <% else %>
+              <div class="text-center email-team-replace">
+                <p>Want to introduce yourself to the team?</p>
+                <a href="<%= @email2 %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
+                <br>
+                <p>Or you can wait until your first day.</p>
+              </div>
+            <% end %>
+
+          </div>
         </div>
       </div>
 
+        <!-- where to go -->
+
+        <%= image_tag("svg/007-squares.svg", class: "distraction") %>
+
+        <div class="lg-card-content">
+          <div class="live-content">
+            <!-- PERSONAL INFORMATION -->
+            <%= render 'personal_information' %>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <%= image_tag("svg/004-gps.svg", class: "distraction") %>
+
+        <div class="lg-card-content">
+          <div class="live-content">
+            <!-- WHERE TO GO -->
+            <%= render 'where' %>
+          </div>
+        </div>
+
+
+        <!-- HR -->
+        <%#= render 'hr' %>
+
+        <%= image_tag("svg/003-technology.svg", class: "distraction") %>
+
+        <!-- Tools -->
+        <div class="lg-card-content">
+          <div class="live-content">
+            <%= render 'tools' %>
+          </div>
+        </div>
+
+        <%= image_tag("svg/009-tasks.svg", class: "distraction") %>
+
+        <br>
+        <div class="lg-card-content">
+          <div class="live-content">
+            <hr>
+            <div class="final-button-wrapper">
+              <h2></h2>
+              <br>
+              <div class="text-center">
+                <p>You've introduced yourself to the team and you have access to a lot more useful information in the resources section. Feel free to get in touch with members of your team if you have any questions. We're all here to help.</p>
+                <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Finish</button>
+                <!-- replace with anim -->
+              <!-- </div> -->
+            <!-- </div> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+

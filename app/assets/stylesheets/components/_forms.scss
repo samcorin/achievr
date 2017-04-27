@@ -279,10 +279,23 @@ a, a:focus, a:visited {
   padding: 8px 12px;
   border-radius: 4px;
   border: 1px solid transparent;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
+  box-shadow: 0 1px 3px 0 #e6ebf1 !important;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+}
 
+.smaller-inputs {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 60%;
+  // text-align: center;
+}
+
+#personal {
+  color: '#32325d';
+  font-weight: normal;
 }
 
 #personal select, #personal input, #personal .simple_form_select {

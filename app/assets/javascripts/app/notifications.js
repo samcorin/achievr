@@ -1,6 +1,6 @@
 
-function do_notify(string) {
-  console.log('here')
+function do_notify(string, image) {
+  // console.log('here')
 
   // window.addEventListener('load', function () {
   // At first, let's check if we have permission for notification
@@ -25,10 +25,10 @@ function do_notify(string) {
         // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
 
         // setTimeout(function() {
-          var n = new Notification(string, { body: "You'll receive information about your role."});
+          var n = new Notification(string, { body: "You'll receive news about your role.", icon: image});
         // }, 600)
 
-        setTimeout(n.close.bind(n), 5000);
+        setTimeout(n.close.bind(n), 7000);
         // if (i++ == 9) {
 
           // window.clearInterval(interval);
@@ -53,15 +53,15 @@ function do_notify(string) {
             // Thanks to the tag, we should only see the "Hi! 9" notification
             // var n = new Notification('Email received', { body: 'You have a total of 3 unread emails', tag: 'soManyNotification'});
             // setTimeout(function() {
-              var n = new Notification(string, { body: "You'll receive information about your role."});
+              var n = new Notification(string, { body: "You'll receive news about your role.", icon: image});
             // }, 600)
-            setTimeout(n.close.bind(n), 5000);
+            setTimeout(n.close.bind(n), 7000);
 
         }
 
         // Otherwise, we can fallback to a regular modal alert
         else {
-          alert("Hi!");
+          alert("All set!");
         }
       });
     }
@@ -69,6 +69,6 @@ function do_notify(string) {
     // If the user refuses to get notified
     else {
       // We can fallback to a regular modal alert
-      alert("Hi!");
+      alert("All set!");
     }
 };

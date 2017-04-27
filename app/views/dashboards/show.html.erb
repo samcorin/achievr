@@ -23,7 +23,7 @@
         <!-- THE TEAM -->
         <%= render 'team' %>
         <!-- resources? -->
-
+        <a href="scrollToBottom"></a>
       </div>
     </div>
   </div>
@@ -34,9 +34,9 @@
       // Scoring system
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
-      $('#fullpage').fullpage({
-        anchors:['firstSection', 'secondSection', 'thirdSection']
-      });
+      if (progressChecker.getPoints() >= 100) {
+        console.log("Congratulations!")
+      }
 
       // Carousel
       $('.owl-carousel').owlCarousel({
@@ -46,14 +46,39 @@
         loop:true
       });
 
+      // $('#toStepOne').bind("click", function () {
+      //   $('html, body').animate({ scrollTop: $(document).height() }, 1200);
+      //   return false;
+      // });
+
+      var scrolled_team = false;
+      var scrolled_where = false;
+      $('#main').scroll(function() {
+        // console.log($(this).scrollTop());
+
+        // 10 points for looking at team
+          if ($(this).scrollTop() >= 1600 && scrolled_team == false) { // this refers to window
+              // console.log("firing event")
+              scrolled_team = true;
+            // setTimeout(function() {
+              progressChecker.addPoints(10);
+            // },700)
+          }
+
+        // 10 points for looking at where to go
+
+        if ($(this).scrollTop() >= 4000 && scrolled_where == false) { // this refers to window
+          scrolled_where = true;
+          progressChecker.addPoints(10);
+        }
+
+      });
 
       $('#email-team').click(function(e) {
         e.preventDefault();
 
-        // if ($(this)[0].id == "email-team") {
-        progressChecker.addPoints(20);
-        $(".email-team-replace").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p></div>');
-        // }
+        progressChecker.addPoints(25);
+        $(".email-team-replace").replaceWith('<div class="text-center" style="margin-top:15px;"><%= image_tag "maps-and-flags.svg", id: "done-2" %><p class="done-text">Introduction sent!</p></div>');
 
         // Open new window for email
         var mailto_link = $(this).prop('href');
@@ -77,21 +102,24 @@
 
 
         if ($(this)[0].id == "toStepOne") {
-          progressChecker.addPoints(20);
-          do_notify("All done!");
+
+          progressChecker.addPoints(25);
+          do_notify("All done!", "<%= image_url('logo2.png') %>");
           $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
 
-        if ($(this)[0].id == "hrDocs") {
-          $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
-        }
-        if ($(this)[0].id == "email-team") {
-          progressChecker.addPoints(20);
-          $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
-        }
+        // if ($(this)[0].id == "hrDocs") {
+        //   $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
+        // }
+
+
+        // if ($(this)[0].id == "email-team") {
+        //   progressChecker.addPoints(30);
+        //   $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %><p class="done-text">You\'re in the loop!</p>');
+        // }
 
         if ($(this)[0].id == "personal-information") {
-          progressChecker.addPoints(20);
+          progressChecker.addPoints(25);
           $("#personal").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-personal-information" %><p class="done-text">You\'re almost done!</p></div>');
         }
         $.ajax({
@@ -106,11 +134,14 @@
       })
 
     $("#final-button").click(function(el) {
+
       swal(
         'You\'re all set!',
         'The hardest parts are over. Not so bad, huh?',
         'success'
       )
+      // or other animation.
+
     });
 
     // Team
