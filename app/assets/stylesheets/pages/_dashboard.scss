@@ -67,6 +67,7 @@
 }
 
 .live-content {
+  margin: auto;
   position: relative;
   width: 700px;
   padding: 30px;
@@ -85,6 +86,10 @@
   position: relative;
   p {
     width: 90%;
+  }
+  h2 {
+    width: 90% !important;
+    margin: auto;
   }
 }
 
@@ -311,8 +316,8 @@ input[type=checkbox]:checked + .strikethrough {
 #badge-email-team {
   margin-top: -32px;
   margin: 15px auto;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 #objectives {
@@ -489,9 +494,10 @@ input[type=checkbox]:checked + .strikethrough {
 }
 
 .home-contact-info {
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   position: relative;
+  margin-top: 15px;
   p {
     margin-top: 10px;
     font-weight: 200;
@@ -552,4 +558,17 @@ input[type=checkbox]:checked + .strikethrough {
   margin: 15px auto;
   width: 100px;
   height: 100px;
+}
+
+.final-button-wrapper {
+  margin-top: 20px;
+}
+
+.light-text p {
+  // color: lighten($brand-color, 30%);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: lighten(#6b7c93, 15%);
+  // margin: 0;
 }

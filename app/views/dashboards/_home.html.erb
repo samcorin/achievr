@@ -1,58 +1,48 @@
-<div class="tab-pane active" id="home">
-  <!-- <div class="lg-card">
-    <div class="lg-card-content">
-      <div class="bg-image text-center m-bottom-15">
-        <h1>Your first day.</h1>
-      </div>
-    </div>
+
+  <!-- fullScreen.js TEST -->
+  <!-- <div class="section">
+    <div class="slide" data-anchor="slide1"> Slide 1 </div>
+    <div class="slide" data-anchor="slide2"> Slide 2 </div>
+    <div class="slide" data-anchor="slide3"> Slide 3 </div>
+    <div class="slide" data-anchor="slide4"> Slide 4 </div>
   </div> -->
 
-
-
-<!-- fullScreen.js TEST -->
-<!-- <div class="section">
-  <div class="slide" data-anchor="slide1"> Slide 1 </div>
-  <div class="slide" data-anchor="slide2"> Slide 2 </div>
-  <div class="slide" data-anchor="slide3"> Slide 3 </div>
-  <div class="slide" data-anchor="slide4"> Slide 4 </div>
-</div> -->
-
-
-
-
+<div class="tab-pane active" id="home" data-anchor="slide1">
   <div class="lg-card">
-      <div class="bg-image text-center">
-        <h1>First steps</h1>
-      </div>
-      <div class="lg-card-content" id="welcome-content">
-        <div class="live-content">
-          <div class="content-container text-center">
+    <div class="bg-image text-center">
+      <h1>First steps</h1>
+    </div>
+    <div class="lg-card-content" id="welcome-content">
+      <div class="live-content">
+        <div class="content-container text-center">
 
-            <div class="completed-badge toStepOne">
-              <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
-            </div>
+          <div class="completed-badge toStepOne">
+            <%= image_tag("icons/001-quality.png", class: toggle_badge("toStepOne"), id: "badge-toStepOne") %>
+          </div>
 
-            <%= image_tag current_user.photo, class: "img-circle" %>
+          <%= image_tag current_user.photo, class: "img-circle" %>
 
-            <h2>Welcome, <%= current_user.first_name %>.</h2>
+          <h2>Welcome, <%= current_user.first_name %>.</h2>
 
-            <p>
-              You're not in the office yet, but there are still things to do. As you progress, you'll collect more and more badges that <em>will</em> earn you cood free stuff.
-            </p>
-            <br>
-
-            <% if current_user.has_the_badge?("toStepOne") %>
-              <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
-              <p class="done-text">You're in the loop!</p>
-            <% else %>
-            <div class="welcome-screen-buttons text-center">
-              <p>Want to stay up to date? Enable notifications.</p>
-              <button id="toStepOne" class="btn btn-pink">Sure</button>
-            </div>
-          <% end %>
+          <p style="margin-top:15px">
+            First of all, welcome to the company. We're excited to have you. Before you start there are some things you can do to supercharge the onboarding process.
+          </p>
 
           <br>
-          <hr>
+
+          <% if current_user.has_the_badge?("toStepOne") %>
+            <%= image_tag "maps-and-flags.svg", class: toggle_badge("toStepOne"), id: "done-1" %>
+            <p class="done-text">You're in the loop!</p>
+          <% else %>
+          <div class="welcome-screen-buttons text-center light-text">
+            <p>Want to stay up to date with news about your role?</p>
+            <p>Enable notifications.</p>
+            <button id="toStepOne" class="btn btn-pink">Sure</button>
+          </div>
+        <% end %>
+
+        <br>
+        <hr>
 
         </div>
 
@@ -73,12 +63,12 @@
 
       <div class="lg-card-content">
         <div class="live-content">
-          <div class="content-container">
+          <div class="content-container section">
           <h2>The Team</h2>
-          <p>No surprises.</p>
-          <p style="margin-top: 10px;">Just in case you feel nervous about meeting your future colleagues, here they are. You'll be working with them most days.</p>
+          <p style="margin-top: 15px;">No surprises.</p><br>
+          <p>In case you're dying to know, here's who you'll be working with. The best part is you won't have to try to remember everyone's names on the first day.</p>
           <br>
-          <div class="content-container-team content-container-team-home">
+          <div class="content-container-team content-container-team-home" style="margin-bottom: 20px">
             <div class="row">
               <% @team.users.each do |member| %>
                 <div class="col-xs-12 col-sm-6 team-member">
@@ -106,7 +96,7 @@
           </div>
           <br>
           <div class="tab-content text-center">
-            <p>You can learn more about everyone <a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
+            <p><span class="light-text">You can learn more about the team </span><a href="#team" data-toggle="tab"><strong class="strong-green">HERE</strong></a>.</p>
           </div>
           <br>
           <hr>
@@ -128,22 +118,22 @@
           </div>
 
           <br>
-          <h2>Introductions</h2>
-          <p>By the way, your contact details are all set up.</p>
+          <h2>Contact information</h2>
+          <p style="margin-top: 15px;">By the way, your contact information is all ready. These will be your new email and office phone. </p>
           <div class="home-contact-info">
-            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %></strong>
+            <strong class="strong-green"><%= current_user.first_name.downcase %>.<%= current_user.last_name.downcase %>@<%= current_user.team.company.name.downcase %>.com</strong>
             <!-- insert actual phone number -->
             <p>(080) 555 - 5555</p>
           </div>
 
 
           <% if current_user.has_the_badge?("email-team") %>
-            <div class="text-center m-top-15">
+            <div class="text-center">
               <%= image_tag "maps-and-flags.svg", class: toggle_badge("email-team"), id: "badge-email-team" %>
               <p class="done-text">Introduction sent!</p>
             </div>
           <% else %>
-            <div class="text-center email-team">
+            <div class="text-center email-team-replace">
               <p>Want to introduce yourself to the team?</p>
               <a href="<%= @email2 %>" target="_blank" class="btn btn-pink" id="email-team">Okay</a>
               <br>
@@ -170,105 +160,37 @@
         <div class="live-content">
           <!-- WHERE TO GO -->
           <%= render 'where' %>
+        </div>
+      </div>
 
 
       <!-- HR -->
       <%#= render 'hr' %>
 
       <!-- Tools -->
-      <%= render 'tools' %>
-
-    </div>
-
-
-
-      <!-- <section id="checklist">
-        <aside class="intro note">
-          <h3 id="checklist-progress">Checklist progress<a class="anchor" href="#checklist-progress"></a></h3>
-          <p>As you complete each item and check it off, the state of each checkbox is stored within your browser's cache. You can refer back to this page at any time to see what has been completed so far.</p>
-          <p><a href="https://dashboard.stripe.com">Log in</a> to see some of your current settings below.</p>
-        </aside>
-
-        <p>Stripe allows you to begin accepting payments in only a matter of minutes. But there are certain steps you should take before going live, enumerated in the two checklists below:</p>
-
-        <ul>
-          <li>One specific to your <a href="#account">Stripe account</a>, intended for account holders</li>
-          <li>One specific to your <a href="#integration">Stripe integration</a>, intended for developers</li>
-        </ul>
-
-        <p>You'll want to review one or both checklists, depending on your particular situation.</p>
-
-        <h2 id="account">Your Stripe account checklist<a class="anchor" href="#account"></a></h2>
-
-        <p>The items within this checklist focus on your Stripe account itself. The ideas apply whether you have an account through a connected website, simply use a Stripe plugin, or developed a custom integration (yourself or through a developer).</p>
-
-        <dl class="checklist">
-          <dt id="account-2fa"><label><input type="checkbox" name="checklist-2fa" value="checklist-2fa"> Enable two-step authentication</label></dt>
-          <dd>
-
-            <p>For security purposes, we highly recommend <a href="https://support.stripe.com/questions/how-do-i-enable-two-step-verification">enabling two-step authentication</a> on your Stripe account, which adds an additional requirement to log in. With two-step authentication, not only are your username and password needed, but you'll also have to provide a code received by your mobile device. This makes it much harder for someone else to access your Stripe account.</p>
-            <p>(Two-step authentication is also sometimes called "two-step verification" or "two factor authentication" or "2fa", all of which refer to the same concept.)</p>
-          </dd>
-
-          <dt id="account-public-info"><label><input type="checkbox" name="checklist-public-info" value="checklist-public-info"> Confirm your statement descriptor and public information</label></dt>
-          <dd>
-
-            <p>The <a href="https://support.stripe.com/questions/when-i-charge-a-customer-what-will-they-see-on-their-card-statements">statement descriptor</a> appears on customer statements when you charge their card. Missing or incorrect information can result in confused customers creating disputes, so review your information in the <a href="https://dashboard.stripe.com/account">Dashboard</a>.</p>
-            <p>You may also want to have text on your site telling the user what they'll see on their statements.</p>
-            <p>Note that the card issuing bank can automatically include other account information—e.g., business name, address, email, or phone number—to show on your customer's statements. Check that all of this information in your Stripe account is fine for your customers to see.</p>
-          </dd>
-
-          <dt id="account-email"><label><input type="checkbox" name="checklist-email" value="checklist-email"> Set up your email notifications</label></dt>
-          <dd>
-
-
-
-          <p>Stripe can automatically <a href="https://support.stripe.com/questions/payment-email-notifications">send emails</a> for some account activity. At the very least, we recommend you specify that you'd like to be emailed for successful charges and disputes. (There are other <a href="https://dashboard.stripe.com/account/emails">notification settings</a>, but those two are the most important.)</p> <p>These settings are specific per <a href="#account-team">team member</a>, so your preferences won't affect anyone else's.</p>
-          </dd>
-
-          <dt id="account-disputes-fraud"><label><input type="checkbox" name="checklist-disputes-fraud" value="checklist-disputes-fraud"> Be prepared to prevent and manage fraud and disputes</label></dt>
-          <dd>
-            <p><a href="https://support.stripe.com/questions/avoiding-fraud-and-disputes">Fraud and disputes</a> are unfortunate realities in all commerce, although Stripe is constantly improving its tools to help reduce both. Still, your diligence is imperative, and before going live we recommend you're set up to:</p>
-
-            <ul>
-              <li>Regularly review <a href="https://dashboard.stripe.com/payments">payments in the Dashboard</a></li>
-              <li>Report charges that appear suspicious (via the Dashboard or the <a href="/docs/fraud">API</a>)</li>
-              <li>Have <a href="/docs/disputes/evidence">evidence</a> at the ready for disputes</li>
-            </ul>
-          </dd>
-
-          <dt id="account-bank"><label><input type="checkbox" name="checklist-bank" value="checklist-bank"> Review your bank account information</label></dt>
-          <dd>
-
-            <p>Incorrect bank information is a common cause of <a href="https://support.stripe.com/questions/bank-account-and-transfers#transfer-failures">transfer delays</a>. Before accepting live charges, confirm <a href="https://dashboard.stripe.com/account/transfers">your bank details</a> are correct.</p>
-            <p>If you process charges in <a href="https://support.stripe.com/questions/which-currencies-does-stripe-support">multiple currencies</a> and have multiple bank accounts, also confirm you've established the correct default currency. Multiple bank accounts for additional currencies are optional as Stripe can convert any payments into your default currency.</p>
-            <p>When reviewing your bank information, set your preferred <a href="https://support.stripe.com/questions/bank-account-and-transfers#first-transfer">transfer schedule</a>. The recommended and default option is daily—as funds become available—but you can change this to best suit your business and reporting needs.</p>
-          </dd>
-
-          <dt id="account-team"><label><input type="checkbox" name="checklist-team" value="checklist-team"> Establish Stripe access for your teammates</label></dt>
-          <dd>
-            <p>Stripe supports a <a href="https://support.stripe.com/questions/can-i-invite-other-team-members-or-my-developer-to-use-my-stripe-account">team of people</a> being able to access the same Stripe account. Different team members can even be given different permissions corresponding to their roles.</p>
-            <p>Please use this capability and <strong>do not give others your login credentials</strong>. After inviting a team member, recommend they use <a href="#account-2fa">two-step verification</a> on their login as well.</p>
-            <p>Once a team member no longer needs access to your Stripe account, be certain to remove them.</p>
-          </dd>
-        </dl>
-      </section> -->
-
-
-
-
-      <!-- <div class="card-showcase">
-        <div class="s-card card">
-          <h2 class="uppercase">explore the docs</h2>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, officia.
+      <div class="lg-card-content">
+        <div class="live-content">
+          <%= render 'tools' %>
         </div>
+      </div>
 
-        <div class="s-card card">
-          <h2 class="uppercase">explore the docs</h2>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, officia.
+      <br>
+      <div class="lg-card-content">
+        <div class="live-content">
+          <hr>
+          <div class="final-button-wrapper">
+            <h2>Final touches</h2>
+            <br>
+            <div class="text-center">
+              <p>You've introduced yourself to the team and you have access to more information in the resources section. Feel free to contact one of us if you have any questions.</p>
+              <button id="final-button" class="btn btn-pink" style="margin-top:15px;">Great!</button>
+              <!-- replace with anim -->
+            <!-- </div> -->
+          <!-- </div> -->
         </div>
-      </div> -->
+      </div>
 
       </div>
     </div>
   </div>
+</div>
