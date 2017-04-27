@@ -1,22 +1,21 @@
 <div class="dashboard-wrapper">
   <div id="main">
-
+  <div class="progress-block progress-block-fixed">
+    <h3 class="one-pc">100%</h3>
+    <div class="progress-wrapper center-block">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width: <%= current_user.points %>%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="zero-pc">0%</h3>
+  </div>
 
     <div class="row">
       <div class="tab-content">
-      <div class="progress-block progress-block-fixed">
-        <h3 class="one-pc">100%</h3>
-        <div class="progress-wrapper center-block">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: <%= current_user.points %>%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3 class="zero-pc">0%</h3>
-      </div>
         <!-- HOME -->
         <%= render 'home' %>
         <!-- YOU -->
@@ -36,7 +35,7 @@
       progressChecker.init(<%= current_user.id %>, <%= current_user.points %>);
 
       $('#fullpage').fullpage({
-        anchors:['firstPage', 'secondPage', 'thirdPage']
+        anchors:['firstSection', 'secondSection', 'thirdSection']
       });
 
       // Carousel
@@ -45,28 +44,16 @@
         items:1,
         center:true,
         loop:true
-        // responsive:{
-        //     0:{
-        //         items:1
-        //     },
-        //     600:{
-        //         items:1
-        //     },
-        //     1000:{
-        //         items:2
-        //     }
-        // }
       });
 
 
       $('#email-team').click(function(e) {
         e.preventDefault();
 
-        if ($(this)[0].id == "email-team") {
-          progressChecker.addPoints(20);
-          // do_notify("All done!");
-          $(".email-team").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p></div>');
-        }
+        // if ($(this)[0].id == "email-team") {
+        progressChecker.addPoints(20);
+        $(".email-team-replace").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p></div>');
+        // }
 
         // Open new window for email
         var mailto_link = $(this).prop('href');
@@ -107,7 +94,6 @@
           progressChecker.addPoints(20);
           $("#personal").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-personal-information" %><p class="done-text">You\'re almost done!</p></div>');
         }
-
         $.ajax({
           crossOrigin: true,
           type: "POST",
@@ -119,34 +105,20 @@
         });
       })
 
-    // $('a[href*="team"]').click(function(event) {
-    //   $('#main').scrollTop(0);
-    // });
-
-    // $("#test").click(function(el) {
-    //   threeQuestions();
-    // });
+    $("#final-button").click(function(el) {
+      swal(
+        'You\'re all set!',
+        'The hardest parts are over. Not so bad, huh?',
+        'success'
+      )
+    });
 
     // Team
     $('.team-member').on('click', function() {
       $('#show-' + $(this)[0].id).hide().remove();
       $('#hide-' + $(this)[0].id).removeClass('hidden');
     })
-
-
-
   </script>
-    <!--   // Points events
-    // <%# if @user.points > 50 %>
-    // // need to add default value on points for users
-    //   $.notify({
-    //     // options
-    //     message: 'Congrats on joining'
-    //   },{
-    //     // settings
-    //     type: 'danger'
-    //   });
-    // <%# end %> -->
 <% end %>
 
 
