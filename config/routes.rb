@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root "dashboards#show" #, subdomain: 'app'
 
     post '/add_points', to: 'users#add_points'
-    post '/reset_points', to: 'users#reset'
+    post '/reset_points', to: 'users#reset_points'
 
     # Show user badges on page
     resources :badges, only: [:index, :create]

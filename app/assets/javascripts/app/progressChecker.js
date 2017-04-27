@@ -41,15 +41,15 @@ var progressChecker = (function() {
       // url: "<%#= request.base_url %>/reset_points",
       url: url + "/reset_points",
       success: function(response) {
-        // Dimitri
-        console.log(response);
+        console.log("success")
+        // console.log(response);
       }
     });
   };
 
   function update() {
     update_page_score();
-    update_progress_bar();
+    // update_progress_bar();
   };
 
   function updatePoints(points) {
@@ -63,7 +63,7 @@ var progressChecker = (function() {
       // url: "<%#= request.base_url %>/reset_points",
       url: url + "/add_points",
       success: function(response) {
-        console.log(response)
+        // console.log(response)
       }
     });
   };
@@ -75,30 +75,31 @@ var progressChecker = (function() {
     $("#user-progress-bar").css({"width": current_user_points + "%"});
   };
 
+  // adds checkpoints
   function update_progress_bar() {
-    if (current_user_points <= 24) {
-      $('.one').replaceWith('<div class="one no-color">');
-      $('.two').replaceWith('<div class="two no-color">');
-      $('.three').replaceWith('<div class="three no-color">');
-      $('.first-star-done').replaceWith('<%= image_tag("icons/009-star.png", class: "first-star") %>');
-    };
+    // if (current_user_points <= 24) {
+    //   $('.one').replaceWith('<div class="one no-color">');
+    //   $('.two').replaceWith('<div class="two no-color">');
+    //   $('.three').replaceWith('<div class="three no-color">');
+    //   $('.first-star-done').replaceWith('<%= image_tag("icons/009-star.png", class: "first-star") %>');
+    // };
 
     // if ($('.progress-bar')[0].style.width >= '25%') {
-    if (current_user_points >= 25) {
-      $('.one').replaceWith('<div class="one success-color">');
+    // if (current_user_points >= 25) {
+      // $('.one').replaceWith('<div class="one success-color">');
       // $('.one').clone().insertBefore('.one').addClass('animated pulse').delay(200).removeClass('animated pulse');
-    };
+    // };
     // need to add default circle  again..
-    if (current_user_points >= 50) {
-      $('.two').replaceWith('<div class="two success-color">');
-    };
-    if (current_user_points >= 75) {
-      $('.three').replaceWith('<div class="three success-color">');
-    };
-    if (current_user_points >= 100) {
-      $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
-      $('.first-star-done').addClass('animated rubberBand');
-    };
+    // if (current_user_points >= 50) {
+    //   $('.two').replaceWith('<div class="two success-color">');
+    // };
+    // if (current_user_points >= 75) {
+    //   $('.three').replaceWith('<div class="three success-color">');
+    // };
+    // if (current_user_points >= 100) {
+    //   $('.first-star').replaceWith('<%= image_tag("icons/003-star-3.png", class: "first-star-done") %>');
+    //   $('.first-star-done').addClass('animated rubberBand');
+    // };
   };
 
   return {

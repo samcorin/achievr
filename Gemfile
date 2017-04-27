@@ -34,6 +34,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-moment'
   gem 'rails-assets-OwlCarousel2'
   gem "rails-assets-underscore"
+  gem 'rails-assets-fullpage'
 end
 
 gem 'devise_invitable'

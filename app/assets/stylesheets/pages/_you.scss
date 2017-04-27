@@ -5,3 +5,31 @@
 .progress-block {
   margin: 50px 0;
 }
+
+
+.progress-block-fixed {
+  position: fixed;
+  left: -153px !important;
+  top: 339px !important;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  z-index: 999;
+  width: 450px;
+}
+
+
+.zero-pc, .one-pc {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.one-pc {
+  background-color: blue;
+  color: #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  width: 466px;
+  position: relative;
+  top: 216px;
+  left: 300px;
+}
