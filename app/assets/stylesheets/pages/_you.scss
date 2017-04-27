@@ -9,7 +9,13 @@
 
 .progress-block-fixed {
   position: fixed;
-  left: -237px !important;
+  // $screen-width: 100vw;
+  // $progress-offset: -273px;
+  // $lg-card-width: 1000px;
+
+  left: -222px !important;
+  // left: #{($progress-offset - calc($screen-width - $lg-card-width)) / 2}px !important;
+
   top: 330px !important;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -19,11 +25,11 @@
 
 
 .zero-pc, .one-pc {
-  color: lighten($brand-color, 30%)
+  color: lighten($brand-color, 30%);
   // color: #32325d !important;
-  line-height: '24px';
-  font-smoothing: 'antialiased';
-  font-size: '16px';
+  line-height: 24px;
+  font-smoothing: antialiased;
+  font-size: 19px;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   position: relative;

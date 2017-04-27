@@ -65,7 +65,7 @@
         if ($(this)[0].id == "email-team") {
           progressChecker.addPoints(20);
           // do_notify("All done!");
-          $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p>');
+          $(".email-team").replaceWith('<div class="text-center"><%= image_tag "maps-and-flags.svg", id: "badge-email-team" %><p class="done-text">Introduction sent!</p></div>');
         }
 
         // Open new window for email

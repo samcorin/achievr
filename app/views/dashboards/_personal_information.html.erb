@@ -5,11 +5,10 @@
 
   <h2>Personal Information</h2>
 
-  <p>
-    In order to avoid having you filling many documents and asking
-    the same information again and again, please fill the below form.
-  </p>
-
+  <p>Filling documents isn't always fun.</p>
+  <br>
+  <p>In order to avoid having you asking for the same information again and again, please complete the form below.</p>
+  <br>
 
 
 <% if current_user.has_the_badge?("personal-information") %>
@@ -23,8 +22,8 @@
       <%= f.input :birthday, :start_year => 1900, placeholder: "1960", label: false %>
       <%= f.input :address, placeholder: "Address", label: false %>
       <div class="form-inline">
-        <%= f.input :city, collection: cities, placeholder: "Tokyo", label: false, class: "simple_form_select" %>
-        <%= f.input :prefecture, collection: prefectures, placeholder: "Prefecture", label: false, class: "simple_form_select" %>
+        <%= f.input :city, collection: cities, placeholder: "Tokyo", label: false, placeholder: "City", class: "simple_form_select" %>
+        <%= f.input :prefecture, collection: prefectures, placeholder: "Prefecture", label: false, placeholder: "Prefecture", class: "simple_form_select" %>
         <%= f.input :postal_code, label: 'Postal Code', placeholder: "Postal Code", label: false %>
       </div>
       <%= f.input :bank_account_number, label: 'Bank Account Number', placeholder: "Bank Account Number", label: false %>
