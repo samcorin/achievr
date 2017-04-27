@@ -3,33 +3,47 @@
 }
 
 .progress-block {
-  margin: 50px 0;
+  margin: 0;
 }
 
 
 .progress-block-fixed {
   position: fixed;
-  left: -153px !important;
-  top: 339px !important;
+  left: -237px !important;
+  top: 330px !important;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   z-index: 999;
-  width: 450px;
+  width: 580px;
 }
 
 
 .zero-pc, .one-pc {
-  color: #fff;
+  color: lighten($brand-color, 30%)
+  // color: #32325d !important;
+  line-height: '24px';
+  font-smoothing: 'antialiased';
+  font-size: '16px';
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+  position: relative;
+  margin: 0;
 }
 
 .one-pc {
-  background-color: blue;
-  color: #fff;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  width: 466px;
-  position: relative;
-  top: 216px;
-  left: 300px;
+  // background-color: blue;
+  width: 65px;
+  top: 18px;
+  left: 505px;
+}
+
+.zero-pc {
+  // background-color: green;
+  left: 27px;
+  top: -8px;
+  width: 30px;
+}
+
+.progress-bar-success {
+  background-color: lighten($brand-color, 20%) !important;
 }
