@@ -57,6 +57,7 @@ sam = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Sales Manager'
+  phone: 03-5000-8008
 )
 
 nico = User.create!(
@@ -69,6 +70,7 @@ nico = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Sales'
+  phone: 03-5000-8007
 )
 
 hide = User.create!(
@@ -80,6 +82,7 @@ hide = User.create!(
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   position: 'Sales'
+  phone: 03-5000-8006
 )
 
 dim = User.create!(
@@ -92,6 +95,7 @@ dim = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Pre-Sales'
+  phone: 03-5000-8005
 )
 
 
@@ -105,6 +109,7 @@ paul = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Pre-Sales'
+  phone: 03-5000-8004
 )
 
 
@@ -118,6 +123,7 @@ sylvain = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Pre-Sales'
+  phone: 03-5000-8003
 )
 
 boris = User.create!(
@@ -130,6 +136,7 @@ boris = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Engineer'
+  phone: 03-5000-8002
 )
 
 sebastien = User.create!(
@@ -142,6 +149,7 @@ sebastien = User.create!(
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   team: team
   position: 'Solution Architect'
+  phone: 03-5000-8001
 )
 
 
