@@ -1,13 +1,16 @@
 var objectiveId = "#objective-<%= @objective.id %>";
 var status = "<%= @objective.status %>";
-var classBtn = "<%=
-  case @objective.status
-  when "Not Started"
-    "btn btn-warning btn-block"
-  when "In Progress"
-    "btn btn-info btn-block"
-  when "Completed"
-    "btn btn-success btn-block"
-  end
- %>";
+var classBtn
+switch ("<%= @objective.status %>") {
+  case "Not Started":
+    classBtn = "btn btn-obj-not-started btn-block";
+    break;
+  case "In Progress":
+    classBtn = "btn btn-obj-in-progress btn-block";
+    break;
+  case "Completed":
+    classBtn = "btn btn-obj-completed btn-block";
+    break;
+};
+
 $(objectiveId).text(status).removeClass().addClass(classBtn);
