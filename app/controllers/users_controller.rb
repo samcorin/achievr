@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   end
 
   def reset_points
+    # Reset everything.
+    Badge.destroy_all
     @user = current_user
     @user.points = 0
     @user.save

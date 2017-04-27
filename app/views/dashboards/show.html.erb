@@ -46,26 +46,88 @@
         loop:true
       });
 
-      // $('#toStepOne').bind("click", function () {
-      //   $('html, body').animate({ scrollTop: $(document).height() }, 1200);
-      //   return false;
+
+      // $('#toStepOne').on('click', function() {
+      //   document.querySelector('#theTeam').scrollIntoView({
+      //     behavior: 'smooth'
+      //   });
+        // window.scrollto(0,1000)
+        //
+        // $( "#main" ).scrollTop( 678 );
+
+        // window.scroll({
+        //   top: 2500,
+        //   left: 0,
+        //   behavior: 'smooth'
+        // });
       // });
+
+      // $('#toStepOne').on('click', function(e) {
+      //   e.preventDefault();
+      //   target = $("#final-button");
+      //   $('html, body').stop().animate(
+      //     { 'scrollTop': target.offset().top },
+      //     900,
+      //     'swing',
+      //     function (){
+      //     }
+      //   );
+      // });
+
+        // document.querySelector('#theTeam').scrollIntoView({
+        //   behavior: 'smooth'
+        // });
+        // window.scrollto(0,1000)
+        //
+        // $( "#main" ).scrollTop( 678 );
+
+        // window.scroll({
+        //   top: 2500,
+        //   left: 0,
+        //   behavior: 'smooth'
+        // });
+        // t = current time
+      // b = start value
+      // c = change in value
+      // d = duration
+      // Math.easeInOutQuad = function (t, b, c, d) {
+      //   t /= d/2;
+      //   if (t < 1) return c/2*t*t + b;
+      //   t--;
+      //   return -c/2 * (t*(t-2) - 1) + b;
+      // }
+      // $('button').on('click', function () {
+         // scrollTo(document.body, 1000, 1250);
+      // });
+
+      // function scrollTo(element, to, duration) {
+      //     var start = element.scrollTop,
+      //         change = to - start,
+      //         currentTime = 0,
+      //         increment = 20;
+
+      //     var animateScroll = function(){
+      //         currentTime += increment;
+      //         var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      //         element.scrollTop = val;
+      //         if(currentTime < duration) {
+      //             setTimeout(animateScroll, increment);
+      //         }
+      //     };
+      //     animateScroll();
+      //   }
+
+
 
       var scrolled_team = false;
       var scrolled_where = false;
       $('#main').scroll(function() {
-        // console.log($(this).scrollTop());
-
+        // console.log($("#main").scrollTop());
         // 10 points for looking at team
-          if ($(this).scrollTop() >= 1600 && scrolled_team == false) { // this refers to window
-              // console.log("firing event")
-              scrolled_team = true;
-            // setTimeout(function() {
-              progressChecker.addPoints(10);
-            // },700)
-          }
-
-        // 10 points for looking at where to go
+        if ($(this).scrollTop() >= 1600 && scrolled_team == false) { // this refers to window
+          scrolled_team = true;
+          progressChecker.addPoints(10);
+        }
 
         if ($(this).scrollTop() >= 4000 && scrolled_where == false) { // this refers to window
           scrolled_where = true;
@@ -73,6 +135,7 @@
         }
 
       });
+
 
       $('#email-team').click(function(e) {
         e.preventDefault();
@@ -100,6 +163,13 @@
       $('#toStepOne, #step1, #meet-mentor, #hrDocs, #personal-information').click(function(e) {
         e.preventDefault();
 
+        // var target = $("#final-button");
+        // console.log(target.scrollTop());
+        // $('html, body').stop().animate({
+        //   scrollTop: target.offset().top
+        // }, 900, function() {
+        //   window.scrollTo(0, $(this).scrollTop());
+        // });
 
         if ($(this)[0].id == "toStepOne") {
 
@@ -107,16 +177,6 @@
           do_notify("All done!", "<%= image_url('logo2.png') %>");
           $(".welcome-screen-buttons").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-1" %><p class="done-text">You\'re in the loop!</p>');
         }
-
-        // if ($(this)[0].id == "hrDocs") {
-        //   $(".hr-button").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %>');
-        // }
-
-
-        // if ($(this)[0].id == "email-team") {
-        //   progressChecker.addPoints(30);
-        //   $(".email-team").replaceWith('<%= image_tag "maps-and-flags.svg", id: "done-2" %><p class="done-text">You\'re in the loop!</p>');
-        // }
 
         if ($(this)[0].id == "personal-information") {
           progressChecker.addPoints(25);
@@ -156,6 +216,3 @@
     })
   </script>
 <% end %>
-
-
-
