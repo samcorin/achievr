@@ -69,6 +69,7 @@ nico = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/nico_r2kflm.jpg",
   bio: 'Nicolas has a strong background as a direct B2B sales, selling SaaS to enterprise customers. His connections are mainly with medium sized companies. Before joining Smart BI, he was working for a startup providing digital marketing solutions.',
+  fun_fact: '',
   team: team,
   position: 'Sales',
   phone: 03-5000-8007
@@ -82,6 +83,7 @@ hide = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760707/hide_u4ff8b.jpg",
   bio: 'Hidehiro  has a strong sales acumen and proven track record selling enterprise software to tech companies. He is solid are reliable. Prior to joining Smart BI, Hidehiro used to work for an SIer selling a multitude of solutions.',
+  fun_fact: '',
   team: team,
   position: 'Sales',
   phone: 03-5000-8006
@@ -95,6 +97,7 @@ dim = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1492760706/dim_e8ykqe.jpg",
   bio: 'Dimitri’s strength is to make complicated concepts simple. Besides his technical background, his interpersonal skills are helpful to team up with the Sales during negotiations. He has been working for 10 years, so he has a good knowledge of the product as well as the company.',
+  fun_fact: '',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8005
@@ -109,6 +112,7 @@ paul = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/paul_l3sten.jpg",
   bio: 'Paul moved from the Development Team to the Sales Team recently. His technical knowledge of Smart BI is a huge asset for the customers as well as for the team. He used to work for several years for another enterprise software company as a Lead Developer.',
+  fun_fact: '',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8004
@@ -123,6 +127,7 @@ sylvain = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012934/sylvain_flyqtb.png",
   bio: 'Sylvain is a seasoned Pre-Sales with a strong sales background. With both technical and sales skills, he’s making sure to manage the customer’s expectations. He used to be sales but decided quickly that he wanted to move to the technical side.',
+  fun_fact: '',
   team: team,
   position: 'Pre-Sales',
   phone: 03-5000-8003
@@ -136,6 +141,7 @@ boris = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/boris_q1q3qv.jpg",
   bio: 'Boris keeps improving the different modules composing Smart BI. He also works on testing experimental modules from the development team. Previously Boris was a lead engineer at lwg.com, a non-profit teaching how to code to kids.',
+  fun_fact: '',
   team: team,
   position: 'Engineer',
   phone: 03-5000-8002
@@ -149,6 +155,7 @@ sebastien = User.create!(
   password: '123123',
   photo: "http://res.cloudinary.com/hidehiro98/image/upload/v1493012932/saunier_zwrxwb.jpg",
   bio: 'As Solution Architect for  for Smart BI, Sebastien is responsible for integration the different solutions to match the customers’ needs. Prior to joining Smart BI, Sebastien headed up the software team at another BI Software company.',
+  fun_fact: '',
   team: team,
   position: 'Solution Architect',
   phone: 03-5000-8001
