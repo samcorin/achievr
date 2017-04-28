@@ -244,7 +244,7 @@ Objective.create!(
 
 Objective.create!(
   name: 'Schedule a lunch appointment with your mentor',
-  due_date: '2017-05-10',
+  due_date: '2017-05-02',
   user: nico,
 )
 
