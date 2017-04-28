@@ -237,25 +237,19 @@ Objective.create!(
 )
 
 Objective.create!(
-  name: 'Fill the personal information sheet',
+  name: 'Sign the Non-disclosure Agreement',
   due_date: '2017-05-01',
   user: nico,
 )
 
 Objective.create!(
-  name: 'Fill the payroll information sheet',
+  name: 'Fill out the health insurance information sheet',
   due_date: '2017-05-01',
   user: nico,
 )
 
 Objective.create!(
-  name: 'Fill the health insurance information sheet',
-  due_date: '2017-05-01',
-  user: nico,
-)
-
-Objective.create!(
-  name: 'Get the lunch appointment with your mentor',
+  name: 'Schedule a lunch appointment with your mentor',
   due_date: '2017-05-10',
   user: nico,
 )
