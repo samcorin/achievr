@@ -237,25 +237,13 @@ Objective.create!(
 )
 
 Objective.create!(
-  name: 'Fill the personal information sheet',
+  name: 'Sign the Non-disclosure Agreement',
   due_date: '2017-05-01',
   user: nico,
 )
 
 Objective.create!(
-  name: 'Fill the payroll information sheet',
-  due_date: '2017-05-01',
-  user: nico,
-)
-
-Objective.create!(
-  name: 'Fill the health insurance information sheet',
-  due_date: '2017-05-01',
-  user: nico,
-)
-
-Objective.create!(
-  name: 'Get the lunch appointment with your mentor',
+  name: 'Schedule a lunch appointment with your mentor',
   due_date: '2017-05-10',
   user: nico,
 )
@@ -268,6 +256,24 @@ Objective.create!(
 
 Objective.create!(
   name: 'Meeting w/ Chris - Talk about strategy',
+  due_date: '2017-05-02',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Smart BI Sales Training B02',
+  due_date: '2017-05-02',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'Meeting with Mike from the development team',
+  due_date: '2017-05-02',
+  user: nico,
+)
+
+Objective.create!(
+  name: 'One-on-one with Sam regarding the KPIs',
   due_date: '2017-05-02',
   user: nico,
 )
